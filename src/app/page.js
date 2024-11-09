@@ -1,7 +1,7 @@
-import ProfileCard from "./components/cards/card-profile";
+import AnimatedLoginPanel from "./components/buttons/button-card";
 
 export default function Home() {
   return (
-    <ProfileCard />
+    <AnimatedLoginPanel />
   );
 }
