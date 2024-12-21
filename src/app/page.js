@@ -1,7 +1,7 @@
-import AnimatedLoginPanel from "./components/buttons/button-card";
+import ChristmasGift from "./components/animations/christmas-gift";
 
 export default function Home() {
   return (
-    <AnimatedLoginPanel />
+     <ChristmasGift></ChristmasGift>
   );
 }
