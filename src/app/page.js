@@ -1,7 +1,7 @@
-import ChristmasGift from "./components/animations/christmas-gift";
+import Activities from "./components/activities/activities";
 
 export default function Home() {
   return (
-     <ChristmasGift></ChristmasGift>
+     <Activities></Activities>
   );
 }
