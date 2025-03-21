@@ -5,10 +5,10 @@
 
 # ✨ Características
 
- ✔️ Componentes reutilizables y modulares.
- ✔️ Compatible con cualquier proyecto React o Next.js.
- ✔️ Estilos personalizables con CSS, Styled Components o Tailwind CSS.
- ✔️ Código optimizado para rendimiento y accesibilidad.
+ ✔️ Componentes reutilizables y modulares.  
+ ✔️ Compatible con cualquier proyecto React o Next.js.  
+ ✔️ Estilos personalizables con CSS, Styled Components o Tailwind CSS.  
+ ✔️ Código optimizado para rendimiento y accesibilidad.  
 
 # 📌 Instalación
 
