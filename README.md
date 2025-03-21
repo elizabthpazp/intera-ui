@@ -5,10 +5,10 @@
 
 # ✨ Características
 
-#### ✔️ Componentes reutilizables y modulares.
-#### ✔️ Compatible con cualquier proyecto React o Next.js.
-#### ✔️ Estilos personalizables con CSS, Styled Components o Tailwind CSS.
-#### ✔️ Código optimizado para rendimiento y accesibilidad.
+ ✔️ Componentes reutilizables y modulares.
+ ✔️ Compatible con cualquier proyecto React o Next.js.
+ ✔️ Estilos personalizables con CSS, Styled Components o Tailwind CSS.
+ ✔️ Código optimizado para rendimiento y accesibilidad.
 
 # 📌 Instalación
 
@@ -34,7 +34,7 @@ export default App;
 
 react-components/
 │── src/
-│   ├── components/     # Componentes individuales
+│   ├── components/ # Componentes individuales
 │   │   ├── Button.js
 │   │   ├── Card.js
 │   │   ├── index.js    # Punto de entrada de la librería
