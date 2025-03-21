@@ -1,24 +1,24 @@
-📦 react-components
+# 📦 react-components
 
 ¡Bienvenido a react-components! 
 🚀 Esta es una colección de componentes reutilizables en React, diseñados para mejorar el desarrollo de interfaces de usuario de manera eficiente y rápida.
 
-✨ Características
+# ✨ Características
 
-✔️ Componentes reutilizables y modulares.
-✔️ Compatible con cualquier proyecto React o Next.js.
-✔️ Estilos personalizables con CSS, Styled Components o Tailwind CSS.
-✔️ Código optimizado para rendimiento y accesibilidad.
+### ✔️ Componentes reutilizables y modulares.
+### ✔️ Compatible con cualquier proyecto React o Next.js.
+### ✔️ Estilos personalizables con CSS, Styled Components o Tailwind CSS.
+### ✔️ Código optimizado para rendimiento y accesibilidad.
 
-📌 Instalación
+# 📌 Instalación
 
 Puedes instalar esta librería en tu proyecto usando npm o yarn:
 
 npm install @elizabthpazp/react-components
-# o
+o
 yarn add @elizabthpazp/react-components
 
-🚀 Uso
+# 🚀 Uso
 
 Importa y usa los componentes en tu aplicación React:
 
@@ -30,7 +30,7 @@ function App() {
 
 export default App;
 
-📂 Estructura del Proyecto
+# 📂 Estructura del Proyecto
 
 react-components/
 │── src/
@@ -44,7 +44,7 @@ react-components/
 │── README.md
 │── tsconfig.json       # (Si usas TypeScript)
 
-🛠️ Desarrollo
+# 🛠️ Desarrollo
 
 Si quieres contribuir o modificar los componentes, clona el repositorio y usa los siguientes comandos:
 
@@ -55,7 +55,7 @@ git clone https://github.com/elizabthpazp/react-components.git
 cd react-components
 npm install
 
-✅ Contribuciones
+# ✅ Contribuciones
 
 ¡Las contribuciones son bienvenidas! Para mejorar esta librería:
 
@@ -68,7 +68,8 @@ npm install
 4. Envía un pull request 🚀.
 
 
-📜 Licencia
+
+# 📜 Licencia
 
 Este proyecto está bajo la licencia MIT. Puedes usarlo libremente en proyectos personales y comerciales.
 
