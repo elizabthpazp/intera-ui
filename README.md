@@ -14,9 +14,11 @@
 
 Puedes instalar esta librería en tu proyecto usando npm o yarn:
 
-npm install @elizabthpazp/react-components.   
-o. 
-yarn add @elizabthpazp/react-components.  
+npm install @elizabthpazp/react-components  
+
+o  
+
+yarn add @elizabthpazp/react-components  
 
 # 🚀 Uso
 
