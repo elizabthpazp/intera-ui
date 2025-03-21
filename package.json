@@ -1,7 +1,11 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@elizabthpazp/react-components",
+  "version": "1.0.0",
+  "description": "Una colección de componentes reutilizables en React",
+  "keywords": ["react", "components", "UI"],
+  "author": "elijs.dev",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
