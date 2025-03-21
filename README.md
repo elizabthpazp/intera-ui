@@ -1,7 +1,8 @@
 # 📦 react-components
 
-¡Bienvenido a react-components! 
+¡Bienvenido a react-components!  
 🚀 Esta es una colección de componentes reutilizables en React, diseñados para mejorar el desarrollo de interfaces de usuario de manera eficiente y rápida.
+
 
 # ✨ Características
 
@@ -9,6 +10,7 @@
  ✔️ Compatible con cualquier proyecto React o Next.js.  
  ✔️ Estilos personalizables con CSS, Styled Components o Tailwind CSS.  
  ✔️ Código optimizado para rendimiento y accesibilidad.  
+
 
 # 📌 Instalación
 
@@ -18,7 +20,8 @@ npm install @elizabthpazp/react-components
 
 o  
 
-yarn add @elizabthpazp/react-components  
+yarn add @elizabthpazp/react-components
+  
 
 # 🚀 Uso
 
@@ -30,7 +33,8 @@ function App() {
   return <Button label="¡Hola mundo!" onClick={() => alert('Hola!')} />;
 }  
 
-export default App;  
+export default App; 
+ 
 
 # 📂 Estructura del Proyecto
 
@@ -46,6 +50,7 @@ react-components/
 │── README.md. 
 │── tsconfig.json       # (Si usas TypeScript)  
 
+
 # 🛠️ Desarrollo
 
 Si quieres contribuir o modificar los componentes, clona el repositorio y usa los siguientes comandos:  
@@ -56,6 +61,7 @@ git clone https://github.com/elizabthpazp/react-components.git
 ### Instalar dependencias
 cd react-components
 npm install
+
 
 # ✅ Contribuciones
 
@@ -68,7 +74,6 @@ npm install
 3. Realiza los cambios y haz un commit (git commit -m "Agrega nuevo componente").  
 
 4. Envía un pull request 🚀.  
-
 
 
 # 📜 Licencia
