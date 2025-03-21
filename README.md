@@ -1,6 +1,7 @@
 📦 react-components
 
-¡Bienvenido a react-components! 🚀 Esta es una colección de componentes reutilizables en React, diseñados para mejorar el desarrollo de interfaces de usuario de manera eficiente y rápida.
+¡Bienvenido a react-components! 
+🚀 Esta es una colección de componentes reutilizables en React, diseñados para mejorar el desarrollo de interfaces de usuario de manera eficiente y rápida.
 
 ✨ Características
 
