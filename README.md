@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+📦 react-components
 
-## Getting Started
+¡Bienvenido a react-components! 🚀 Esta es una colección de componentes reutilizables en React, diseñados para mejorar el desarrollo de interfaces de usuario de manera eficiente y rápida.
 
-First, run the development server:
+✨ Características
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✔️ Componentes reutilizables y modulares.
+✔️ Compatible con cualquier proyecto React o Next.js.
+✔️ Estilos personalizables con CSS, Styled Components o Tailwind CSS.
+✔️ Código optimizado para rendimiento y accesibilidad.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📌 Instalación
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Puedes instalar esta librería en tu proyecto usando npm o yarn:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm install @elizabthpazp/react-components
+# o
+yarn add @elizabthpazp/react-components
 
-## Learn More
+🚀 Uso
 
-To learn more about Next.js, take a look at the following resources:
+Importa y usa los componentes en tu aplicación React:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+import { Button } from "@elizabthpazp/react-components";
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+function App() {
+  return <Button label="¡Hola mundo!" onClick={() => alert('Hola!')} />;
+}
 
-## Deploy on Vercel
+export default App;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📂 Estructura del Proyecto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+react-components/
+│── src/
+│   ├── components/     # Componentes individuales
+│   │   ├── Button.js
+│   │   ├── Card.js
+│   │   ├── index.js    # Punto de entrada de la librería
+│   ├── styles/         # Estilos globales (opcional)
+│── .gitignore
+│── package.json
+│── README.md
+│── tsconfig.json       # (Si usas TypeScript)
+
+🛠️ Desarrollo
+
+Si quieres contribuir o modificar los componentes, clona el repositorio y usa los siguientes comandos:
+
+# Clonar el repositorio
+git clone https://github.com/elizabthpazp/react-components.git  
+
+# Instalar dependencias
+cd react-components
+npm install
+
+✅ Contribuciones
+
+¡Las contribuciones son bienvenidas! Para mejorar esta librería:
+
+1. Haz un fork del repositorio.
+
+2. Crea una rama (git checkout -b feature/nuevo-componente).
+
+3. Realiza los cambios y haz un commit (git commit -m "Agrega nuevo componente").
+
+4. Envía un pull request 🚀.
+
+
+📜 Licencia
+
+Este proyecto está bajo la licencia MIT. Puedes usarlo libremente en proyectos personales y comerciales.
+
+📬 Contacto
+
+Si tienes preguntas o sugerencias, contáctame en [https://t.me/elijs_dev]
