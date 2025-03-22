@@ -1,85 +1,82 @@
 # 📦 react-components
 
-¡Bienvenido a react-components!  
-🚀 Esta es una colección de componentes reutilizables en React, diseñados para mejorar el desarrollo de interfaces de usuario de manera eficiente y rápida.
+Welcome to **react-components**!  
+🚀 This is a collection of reusable React components designed to enhance UI development efficiently and quickly.
 
 
-# ✨ Características
+# ✨ Features
 
- ✔️ Componentes reutilizables y modulares.  
- ✔️ Compatible con cualquier proyecto React o Next.js.  
- ✔️ Estilos personalizables con CSS, Styled Components o Tailwind CSS.  
- ✔️ Código optimizado para rendimiento y accesibilidad.  
+✔️ Reusable and modular components.  
+✔️ Compatible with any React or Next.js project.  
+✔️ Customizable styles using CSS, Styled Components, or Tailwind CSS.  
+✔️ Optimized code for performance and accessibility.  
 
 
-# 📌 Instalación
+# 📌 Installation
 
-Puedes instalar esta librería en tu proyecto usando npm o yarn:
+You can install this library in your project using npm or yarn:
 
-npm install @elizabthpazp/react-components  
-
-o  
-
+```
+npm install @elizabthpazp/react-components
+or 
 yarn add @elizabthpazp/react-components
-  
+```
 
-# 🚀 Uso
+# 🚀 Usage
+Import and use the components in your React application:
 
-Importa y usa los componentes en tu aplicación React:  
-
-import { Button } from "@elizabthpazp/react-components";  
+```
+import { Button } from "@elizabthpazp/react-components";
 
 function App() {
-  return <Button label="¡Hola mundo!" onClick={() => alert('Hola!')} />;
-}  
+  return <Button label="Hello, world!" onClick={() => alert('Hello!')} />;
+}
 
-export default App; 
- 
+export default App;
+```
 
-# 📂 Estructura del Proyecto
+# 📂 Project Structure
+``` 
+react-components/
+│── src/
+│   ├── components/  # Individual components
+│   │   ├── Button.js
+│   │   ├── Card.js
+│   │   ├── index.js  # Library entry point
+│   ├── styles/       # Global styles (optional)
+│── .gitignore
+│── package.json
+│── README.md
+│── tsconfig.json     # (If using TypeScript)
+```
 
-react-components/  
-│── src/  
-│   ├── components/ # Componentes individuales. 
-│   │   ├── Button.js. 
-│   │   ├── Card.js. 
-│   │   ├── index.js    # Punto de entrada de la librería. 
-│   ├── styles/         # Estilos globales (opcional)  
-│── .gitignore. 
-│── package.json. 
-│── README.md. 
-│── tsconfig.json       # (Si usas TypeScript)  
+# 🛠️ Development
 
+If you want to contribute or modify the components, clone the repository and use the following commands:
 
-# 🛠️ Desarrollo
+Clone the repository
 
-Si quieres contribuir o modificar los componentes, clona el repositorio y usa los siguientes comandos:  
-
-### Clonar el repositorio
-git clone https://github.com/elizabthpazp/react-components.git 
-
-### Instalar dependencias
+```
+git clone https://github.com/elizabthpazp/react-components.git
+Install dependencies
 cd react-components
 npm install
+```
 
+# ✅ Contributions
+Contributions are welcome! To improve this library:
 
-# ✅ Contribuciones
+Fork the repository.
 
-¡Las contribuciones son bienvenidas! Para mejorar esta librería:  
+Create a new branch (git checkout -b feature/new-component).
 
-1. Haz un fork del repositorio.  
+Make your changes and commit them (git commit -m "Add new component").
 
-2. Crea una rama (git checkout -b feature/nuevo-componente).  
+Submit a pull request 🚀.
 
-3. Realiza los cambios y haz un commit (git commit -m "Agrega nuevo componente").  
+# 📜 License
+This project is licensed under the MIT License. You can use it freely in personal and commercial projects.
 
-4. Envía un pull request 🚀.  
+# 📬 Contact
 
-
-# 📜 Licencia
-
-Este proyecto está bajo la licencia MIT. Puedes usarlo libremente en proyectos personales y comerciales.
-
-📬 Contacto
-
-Si tienes preguntas o sugerencias, contáctame en [https://t.me/elijs_dev]
+If you have any questions or suggestions, contact me at [https://t.me/elijs_dev].
