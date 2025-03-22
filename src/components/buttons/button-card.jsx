@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 
-const AnimatedLoginPanel = () => {
+const ButtonCard = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -119,4 +119,4 @@ const AnimatedLoginPanel = () => {
   );
 };
 
-export default AnimatedLoginPanel;
+export default ButtonCard;

@@ -1,7 +1,7 @@
 import React from "react"; 
 import BorderImage from "../animations/border-image";
 
-const ProfileCard = () => {
+const CardProfile = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br font-mono from-purple-600 to-violet-300 flex items-center justify-center p-6">
       <div className="bg-black/80 backdrop-blur-sm rounded-[2.5rem] p-8 max-w-sm w-full shadow-xl">
@@ -29,4 +29,4 @@ const ProfileCard = () => {
   );
 };
 
-export default ProfileCard;
+export default CardProfile;
