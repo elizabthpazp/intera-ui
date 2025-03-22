@@ -27,6 +27,7 @@ Import and use the components in your React application:
 
 ```
 import { Button } from "@elizabthpazp/react-components";
+import "@elizabthpazp/react-components/dist/globals.css";
 
 function App() {
   return <Button label="Hello, world!" onClick={() => alert('Hello!')} />;
