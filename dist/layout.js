@@ -1,3 +1,4 @@
+import "./globals.css";
 import React from "react";
 import { jsx as _jsx } from "react/jsx-runtime";
 export var metadata = {
