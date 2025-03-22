@@ -39,7 +39,7 @@ export default App;
 # 📂 Estructura del Proyecto
 
 react-components/  
-│── src/  
+│── src/ 
 │   ├── components/ # Componentes individuales. 
 │   │   ├── Button.js. 
 │   │   ├── Card.js. 
