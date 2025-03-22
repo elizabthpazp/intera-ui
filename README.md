@@ -50,7 +50,8 @@ react-components/
 │── tsconfig.json     # (If using TypeScript)
 ```
 
-🛠️ Development
+# 🛠️ Development
+
 If you want to contribute or modify the components, clone the repository and use the following commands:
 
 Clone the repository
