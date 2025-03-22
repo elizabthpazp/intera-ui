@@ -38,6 +38,7 @@ export default App;
 
 # 📂 Estructura del Proyecto
 
+```
 react-components/
 │── src/
 │   ├── components/  # Componentes individuales
@@ -49,6 +50,7 @@ react-components/
 │── package.json
 │── README.md
 │── tsconfig.json     # (Si usas TypeScript)
+```
 
 
 # 🛠️ Desarrollo
