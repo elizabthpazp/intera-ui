@@ -9,25 +9,30 @@
   ],
   "author": "elijs.dev",
   "license": "MIT",
-  "module": "src/components/index.js",
-  "types": "src/components/index.d.ts",
+  "module": "dist/components/index.js",
+  "types": "dist/components/index.d.ts",
   "scripts": {
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "next build",
+    "build": "babel src --out-dir dist --extensions .js,.jsx",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "framer-motion": "^11.11.11",
+    "framer-motion": "^11.18.2",
     "lucide-react": "^0.456.0",
     "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "babel-loader": "^10.0.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
   },
-  "main": "src/components/index.js"
+  "main": "dist/components/index.js"
 }
