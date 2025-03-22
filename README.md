@@ -38,17 +38,17 @@ export default App;
 
 # 📂 Estructura del Proyecto
 
-react-components/  
-│── src/ 
-│   ├── components/ # Componentes individuales. 
-│   │   ├── Button.js. 
-│   │   ├── Card.js. 
-│   │   ├── index.js    # Punto de entrada de la librería. 
-│   ├── styles/         # Estilos globales (opcional)  
-│── .gitignore. 
-│── package.json. 
-│── README.md. 
-│── tsconfig.json       # (Si usas TypeScript)  
+react-components/
+│── src/
+│   ├── components/  # Componentes individuales
+│   │   ├── Button.js
+│   │   ├── Card.js
+│   │   ├── index.js  # Punto de entrada de la librería
+│   ├── styles/       # Estilos globales (opcional)
+│── .gitignore
+│── package.json
+│── README.md
+│── tsconfig.json     # (Si usas TypeScript)
 
 
 # 🛠️ Desarrollo
