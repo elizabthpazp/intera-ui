@@ -26,11 +26,11 @@ yarn add @elizabthpazp/react-components
 Import and use the components in your React application:
 
 ```
-import { Button } from "@elizabthpazp/react-components";
 import "@elizabthpazp/react-components/dist/globals.css";
+import { ButtonCard } from "@elizabthpazp/react-components";
 
 function App() {
-  return <Button label="Hello, world!" onClick={() => alert('Hello!')} />;
+  return <ButtonCard label="Hello, world!" onClick={() => alert('Hello!')} />;
 }
 
 export default App;
