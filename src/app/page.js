@@ -1,4 +1,4 @@
-import Activities from "./components/activities/activities";
+import Activities from "../components/activities/activities";
 
 export default function Home() {
   return (

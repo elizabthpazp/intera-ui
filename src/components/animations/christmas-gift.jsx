@@ -1,6 +1,6 @@
 import Tree from "./tree";
 import GiftBox from "./gift-box";
-import { generateSnowflakes } from "../../utils/globalMethods";
+import { generateSnowflakes } from "../../app/utils/globalMethods";
 
 export default function ChristmasGift() {
   return (

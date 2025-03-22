@@ -23,5 +23,5 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   },
-  "main": "src/app/components/index.js"
+  "main": "src/components/index.js"
 }
