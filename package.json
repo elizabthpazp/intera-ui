@@ -1,10 +1,14 @@
 {
   "name": "@elizabthpazp/react-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Una colección de componentes reutilizables en React",
-  "keywords": ["react", "components", "UI"],
+  "keywords": [
+    "react",
+    "components",
+    "UI"
+  ],
   "author": "elijs.dev",
-  "license": "MIT",  
+  "license": "MIT",
   "module": "src/components/index.js",
   "types": "src/components/index.d.ts",
   "scripts": {
@@ -13,7 +17,7 @@
     "lint": "next lint",
     "build": "next build",
     "prepublishOnly": "npm run build"
-  }, 
+  },
   "dependencies": {
     "framer-motion": "^11.11.11",
     "lucide-react": "^0.456.0",
