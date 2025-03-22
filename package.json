@@ -1,6 +1,6 @@
 {
   "name": "@elizabthpazp/react-components",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Una colección de componentes reutilizables en React",
   "keywords": [
     "react",
@@ -15,8 +15,8 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "babel src --out-dir dist --extensions .js,.jsx",
-    "postbuild": "cp src/globals.css dist/globals.css",
+    "build": "babel src --out-dir dist --extensions .js,.jsx", 
+    "postbuild": "postcss src/globals.css -o dist/globals.css",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
@@ -36,6 +36,7 @@
     "babel-plugin-file-loader": "^2.0.0",
     "babel-plugin-transform-assets": "^1.0.2",
     "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
     "tailwindcss": "^3.4.17"
   },
   "main": "dist/components/index.js",
