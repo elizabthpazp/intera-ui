@@ -16,7 +16,7 @@
     "start": "next start",
     "lint": "next lint",
     "build": "babel src --out-dir dist --extensions .js,.jsx",
-    "postbuild": "cp src\\globals.css dist\\globals.css",
+    "postbuild": "cp src/globals.css dist/globals.css",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
