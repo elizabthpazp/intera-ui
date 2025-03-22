@@ -1,7 +1,7 @@
 import React from "react";
 import BorderImage from "../animations/border-image";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-var ProfileCard = function ProfileCard() {
+var CardProfile = function CardProfile() {
   return /*#__PURE__*/_jsx("div", {
     className: "min-h-screen bg-gradient-to-br font-mono from-purple-600 to-violet-300 flex items-center justify-center p-6",
     children: /*#__PURE__*/_jsx("div", {
@@ -34,4 +34,4 @@ var ProfileCard = function ProfileCard() {
     })
   });
 };
-export default ProfileCard;
+export default CardProfile;

@@ -9,7 +9,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 import React, { useState } from 'react';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-var AnimatedLoginPanel = function AnimatedLoginPanel() {
+var ButtonCard = function ButtonCard() {
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
     isOpen = _useState2[0],
@@ -105,4 +105,4 @@ var AnimatedLoginPanel = function AnimatedLoginPanel() {
     })
   });
 };
-export default AnimatedLoginPanel;
+export default ButtonCard;

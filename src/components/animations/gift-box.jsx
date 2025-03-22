@@ -1,4 +1,4 @@
-const GiftBox = () => { 
+export default function GiftBox(){ 
   return (
     <div className="h-[150vh] w-[500px] mx-auto relative zoom-gift z-60">
       <section className="absolute bottom-0 w-[150px] left-[172px] z-[12] h-[180px] group">
@@ -25,5 +25,4 @@ const GiftBox = () => {
     </div>
   );
 };
-
-export default GiftBox;
+ 
