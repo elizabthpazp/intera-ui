@@ -25,7 +25,7 @@ yarn add @elizabthpazp/react-components
 # 🚀 Usage
 Import and use the components in your React application:
 
-```
+```jsx
 import "@elizabthpazp/react-components/dist/globals.css";
 import { ButtonCard } from "@elizabthpazp/react-components";
 
