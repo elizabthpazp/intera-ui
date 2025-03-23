@@ -16,10 +16,20 @@ Welcome to **react-components**!
 
 You can install this library in your project using npm or yarn:
 
-```
+```bash
 npm install @elizabthpazp/react-components
-or 
+```
+
+Or with yarn:
+
+```bash
 yarn add @elizabthpazp/react-components
+```
+
+Or with pnpm:
+
+```bash
+pnpm add @elizabthpazp/react-components
 ```
 
 # 🚀 Usage
