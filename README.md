@@ -47,7 +47,7 @@ export default App;
 ```
 
 # 📂 Project Structure
-``` 
+```plaintext 
 react-components/
 │── src/
 │   ├── components/  # Individual components
@@ -67,9 +67,8 @@ If you want to contribute or modify the components, clone the repository and use
 
 Clone the repository
 
-```
+```sh
 git clone https://github.com/elizabthpazp/react-components.git
-Install dependencies
 cd react-components
 npm install
 ```
