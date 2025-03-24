@@ -19,13 +19,13 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
     onSignUp(email, password, rememberMe);
   };
 
-  return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+  return ( 
+    <div className="min-h-screen flex justify-center p-4">
       <div className="relative">
         <button 
           onClick={() => setIsOpen(!isOpen)}
           className={`
-            ${darkMode ? 'bg-gray-900 border-gray-900 text-white hover:border-gray-500' : 'bg-gray-100 border-gray-300 text-gray-800 hover:border-gray-400'}
+            ${darkMode ? '!bg-gray-900 border-gray-900 text-white hover:border-gray-500' : 'bg-gray-100 border-gray-300 text-gray-800 hover:border-gray-400'}
             relative 
             px-8 py-3
              font-medium
@@ -52,7 +52,7 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
 
         <div className={`
           absolute 
-          left-1/2 top-1/2  
+          left-16 top-48 
           -translate-x-1/2 
           ${darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300'}
           rounded-2xl
@@ -133,7 +133,7 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
           ${isOpen ? 'scale-150' : 'scale-100'}
         `}/>
       </div>
-    </div>
+    </div> 
   );
 };
 
