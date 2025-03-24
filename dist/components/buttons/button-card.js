@@ -51,7 +51,7 @@ var ButtonCard = function ButtonCard(_ref) {
     onSignUp(email, password, rememberMe);
   };
   return /*#__PURE__*/_jsx("div", {
-    className: "min-h-screen flex justify-center p-4",
+    className: "flex justify-center p-4",
     children: /*#__PURE__*/_jsxs("div", {
       className: "relative",
       children: [/*#__PURE__*/_jsxs("button", {
@@ -150,7 +150,7 @@ var ButtonCard = function ButtonCard(_ref) {
           })]
         })
       }), /*#__PURE__*/_jsx("div", {
-        className: "\n          absolute inset-0\n          -z-10\n          blur-3xl\n          bg-purple-400\n          opacity-20\n          transition-all duration-500\n          ".concat(isOpen ? 'scale-150' : 'scale-100', "\n        ")
+        className: "\n          absolute inset-0\n          -z-10 \n          transition-all duration-500\n          ".concat(isOpen ? 'scale-150' : 'scale-100', "\n        ")
       })]
     })
   });
