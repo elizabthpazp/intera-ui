@@ -1,9 +1,11 @@
 {
-  "compilerOptions": {
+  "compilerOptions": {     
     "declaration": true,
-    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
     "outDir": "dist",
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"]
     }
