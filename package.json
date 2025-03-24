@@ -45,6 +45,7 @@
   ],
   "files": [
     "dist",
+    "dist/**/*.d.ts",
     "src/globals.css"
   ]
 }
