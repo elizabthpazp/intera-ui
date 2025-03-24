@@ -69,9 +69,15 @@ var ButtonCard = function ButtonCard(_ref) {
         onClick: function onClick() {
           return setIsOpen(false);
         }
-      }), /*#__PURE__*/_jsx("div", {
-        className: "\n          absolute \n          left-16 top-48 \n          -translate-x-1/2 \n          ".concat(darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300', "\n          rounded-2xl\n          p-6 border-2 \n          transform\n          transition-all duration-300 ease-out\n          shadow-[0_0_40px_rgba(75,85,99,0.3)]\n          backdrop-blur-sm\n          ").concat(isOpen ? 'opacity-100 -translate-y-1/2 scale-100' : 'opacity-0 -translate-y-[40%] scale-95 pointer-events-none', "\n          min-w-[320px]\n          z-50\n        "),
-        children: /*#__PURE__*/_jsxs("div", {
+      }), /*#__PURE__*/_jsxs("div", {
+        className: "\n          absolute \n          left-16 top-18 \n          -translate-x-1/2 \n          ".concat(darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300', "\n          rounded-2xl\n          p-6 border-2 \n          transform\n          transition-all duration-300 ease-out\n          shadow-[0_0_40px_rgba(75,85,99,0.3)]\n          backdrop-blur-sm\n          ").concat(isOpen ? 'opacity-100 -translate-y-1/2 scale-100' : 'opacity-0 -translate-y-[40%] scale-95 pointer-events-none', "\n          min-w-[320px]\n          z-50\n        "),
+        children: [/*#__PURE__*/_jsx("button", {
+          onClick: function onClick() {
+            return setIsOpen(false);
+          },
+          className: "".concat(darkMode ? 'text-gray-500 hover:text-gray-300' : 'text-gray-400 hover:text-gray-600', " absolute top-2 right-4 font-semibold transition"),
+          children: "\u2715"
+        }), /*#__PURE__*/_jsxs("div", {
           className: "space-y-5",
           children: [/*#__PURE__*/_jsxs("div", {
             className: "text-center",
@@ -148,7 +154,7 @@ var ButtonCard = function ButtonCard(_ref) {
               children: button2 !== null && button2 !== void 0 ? button2 : 'Create Account'
             })]
           })]
-        })
+        })]
       }), /*#__PURE__*/_jsx("div", {
         className: "\n          absolute inset-0\n          -z-10 \n          transition-all duration-500\n          ".concat(isOpen ? 'scale-150' : 'scale-100', "\n        ")
       })]
