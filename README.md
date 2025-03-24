@@ -40,7 +40,13 @@ import "@elizabthpazp/react-components/dist/globals.css";
 import { ButtonCard } from "@elizabthpazp/react-components";
 
 function App() {
-  return <ButtonCard label="Hello, world!" onClick={() => alert('Hello!')} />;
+ const [userData, setUserData] = useState(null);
+
+ const handleLogin = (email, password, rememberMe) => {
+   setUserData({ email, password, rememberMe }); 
+ };
+
+ return <ButtonCard title={'Login'} darkMode={true} onLogin={handleLogin}></ButtonCard>;
 }
 
 export default App;

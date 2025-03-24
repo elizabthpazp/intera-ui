@@ -20,7 +20,7 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
   };
 
   return ( 
-    <div className="min-h-screen flex justify-center p-4">
+    <div className="flex justify-center p-4">
       <div className="relative">
         <button 
           onClick={() => setIsOpen(!isOpen)}
@@ -125,10 +125,7 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
 
         <div className={`
           absolute inset-0
-          -z-10
-          blur-3xl
-          bg-purple-400
-          opacity-20
+          -z-10 
           transition-all duration-500
           ${isOpen ? 'scale-150' : 'scale-100'}
         `}/>
