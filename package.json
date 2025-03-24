@@ -15,7 +15,7 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "babel src --out-dir dist --extensions .js,.jsx", 
+    "build": "babel src --out-dir dist --extensions .js,.jsx",
     "postbuild": "postcss src/globals.css -o dist/globals.css",
     "prepublishOnly": "npm run build"
   },
@@ -27,7 +27,7 @@
     "react-dom": "19.0.0-rc-02c0e824-20241028"
   },
   "devDependencies": {
-    "@babel/cli": "^7.26.4",
+    "@babel/cli": "^7.27.0",
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",

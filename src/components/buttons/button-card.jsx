@@ -52,7 +52,7 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
 
         <div className={`
           absolute 
-          left-16 top-48 
+          left-16 top-18 
           -translate-x-1/2 
           ${darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300'}
           rounded-2xl
@@ -65,6 +65,9 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
           min-w-[320px]
           z-50
         `}>
+          <button onClick={() => setIsOpen(false)} className={`${darkMode ? 'text-gray-500 hover:text-gray-300' : 'text-gray-400 hover:text-gray-600'} absolute top-2 right-4 font-semibold transition`}>
+            ✕
+          </button>
           <div className="space-y-5">
             <div className="text-center">
               <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
