@@ -9,7 +9,7 @@ export default function BorderImage(_ref) {
   return /*#__PURE__*/_jsx("div", {
     className: "flex",
     style: {
-      marginBottom: '-5px'
+      marginBottom: '-10px'
     },
     children: /*#__PURE__*/_jsxs(motion.div, {
       className: "".concat(!darkMode ? 'from-gray-800 via-gray-500 to-zinc-600' : 'from-gray-300 via-gray-600 to-zinc-500', " relative p-1 rounded-full bg-gradient-to-r"),
