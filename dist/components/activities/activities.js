@@ -8,7 +8,11 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 import { useState } from "react";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-export default function Activities() {
+export default function Activities(_ref) {
+  var activities = _ref.activities,
+    button1Text = _ref.button1Text,
+    button2Text = _ref.button2Text,
+    darkMode = _ref.darkMode;
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
     expanded = _useState2[0],
@@ -16,7 +20,7 @@ export default function Activities() {
   var toggleExpand = function toggleExpand() {
     setExpanded(!expanded);
   };
-  var activities = [{
+  var tempActivities = [{
     name: "Work hard",
     location: "At work",
     date: "1 April"
@@ -29,59 +33,54 @@ export default function Activities() {
     location: "At home",
     date: "3 April"
   }];
+  var _useState3 = useState(activities !== null && activities !== void 0 ? activities : tempActivities),
+    _useState4 = _slicedToArray(_useState3, 2),
+    activitiesList = _useState4[0],
+    setActivitiesList = _useState4[1];
   return /*#__PURE__*/_jsx("div", {
-    className: "flex items-center justify-center min-h-screen bg-purple-200",
+    className: "flex justify-center",
     children: /*#__PURE__*/_jsxs("div", {
-      className: "relative max-w-md w-full p-4 rounded-3xl",
-      style: {
-        marginTop: "-500px"
-      },
-      children: [/*#__PURE__*/_jsx("div", {
-        className: "relative h-24",
-        children: activities.map(function (activity, index) {
+      className: "relative max-w-md w-full p-4 rounded-xl",
+      children: [activitiesList.length > 1 && /*#__PURE__*/_jsx("div", {
+        className: "\n            flex items-center justify-center \n            transition-all duration-300 ease-out mb-4\n          ",
+        children: /*#__PURE__*/_jsx("button", {
+          onClick: toggleExpand,
+          className: "\n              relative px-8 py-2 rounded-2xl \n              border-2 shadow text-sm font-semibold \n              cursor-pointer after:content-[''] \n              after:absolute  \n              after:w-2 after:h-2 after:right-6 \n              after:top-3 after:transition-all \n              after:duration-300 \n              ".concat(expanded ? "after:rotate-45" : "after:rotate-225", "\n              ").concat(darkMode ? 'text-white bg-gray-900 border-zinc-800 hover:border-zinc-600' : 'border-zinc-200 hover:border-zinc-300 bg-white text-gray-900', "\n            "),
+          children: expanded ? button1Text !== null && button1Text !== void 0 ? button1Text : "Hide" : button2Text !== null && button2Text !== void 0 ? button2Text : "Show"
+        })
+      }), /*#__PURE__*/_jsx("div", {
+        className: "relative",
+        style: {
+          height: expanded ? "".concat(activitiesList.length * 7, "rem") : "".concat((activitiesList.length + 1) * 3, "rem")
+        },
+        children: activitiesList.map(function (activity, index) {
           return /*#__PURE__*/_jsxs("div", {
+            className: "\n              absolute top-0 left-0 right-0 w-full p-4 \n              border-2 rounded-3xl \n              flex items-end justify-between \n              transition-all duration-300 ease-out \n               shadow-lg \n              ".concat(darkMode ? 'bg-gray-900 border-zinc-800' : 'bg-white border-gray-200', "\n              ").concat(expanded ? "transform-none" : "transform scale-".concat(95 - index * 5, " z-").concat(20 - index * 5)),
             style: {
-              marginTop: "".concat(index === 0 ? 30 : index === 1 ? 20 : 10, "px")
+              top: expanded ? "".concat(index * 6, "rem") : "".concat(index, "rem"),
+              transform: expanded ? "scale(1)" : "scale(".concat(1 - index * 0.05, ")"),
+              zIndex: activitiesList.length - index
             },
-            className: "absolute font-sans left-0 right-0 top-0 w-full p-4 border-2 border-gray-200 rounded-3xl flex items-end justify-between transition-all duration-300 ease-out bg-white shadow-lg ".concat(expanded ? "transform translate-y-".concat(index * 28) : "transform scale-90 z-10"),
             children: [/*#__PURE__*/_jsxs("div", {
-              className: "flex",
+              className: "flex items-center",
               children: [/*#__PURE__*/_jsx("span", {
-                className: "w-12 h-12 bg-purple-700 rounded-full"
+                className: "".concat(darkMode ? 'bg-gray-700' : 'bg-gray-300', " w-12 h-12 rounded-3xl mr-2")
               }), /*#__PURE__*/_jsxs("div", {
-                className: "ml-2",
                 children: [/*#__PURE__*/_jsx("h2", {
-                  className: "m-0 text-purple-900 font-medium",
-                  children: activity.name
+                  className: "".concat(darkMode ? 'text-white' : 'text-gray-900', " m-0 text-base font-medium"),
+                  children: activity.name || "Unnamed Activity"
                 }), /*#__PURE__*/_jsx("span", {
-                  className: "text-gray-500 text-sm",
-                  children: activity.location
+                  className: "".concat(darkMode ? 'text-gray-400' : 'text-gray-500', " text-sm"),
+                  children: activity.location || "Unknown Location"
                 })]
               })]
             }), /*#__PURE__*/_jsx("span", {
-              className: "text-gray-500 text-sm",
-              children: activity.date
+              className: "".concat(darkMode ? 'text-gray-400' : 'text-gray-500', " text-sm"),
+              children: activity.date || "No Date"
             })]
           }, index);
-        })
-      }), /*#__PURE__*/_jsx("div", {
-        className: "relative h-16 flex items-center justify-center",
-        style: {
-          marginTop: "-160px"
-        },
-        children: /*#__PURE__*/_jsx("button", {
-          onClick: toggleExpand,
-          className: "relative px-8 py-2 bg-white text-purple-900 rounded-full border-0 shadow text-sm font-semibold cursor-pointer after:content-[''] after:absolute   after:w-2 after:h-2 after:right-6 after:top-3 after:transition-all after:duration-300",
-          style: {
-            transform: expanded ? "rotate(0deg)" : "rotate(0deg)",
-            ":after": {
-              transform: expanded ? "rotate(45deg)" : "rotate(225deg)"
-            }
-          },
-          children: expanded ? "Hide" : "Show"
         })
       })]
     })
   });
 }
-;
