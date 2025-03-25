@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function BorderImage({image, darkMode}) {
   return (
-    <div className="flex" style={{marginBottom:'-10px'}}>
+    <div className="flex">
       <motion.div
         className={`${!darkMode ? 'from-gray-800 via-gray-500 to-zinc-600' : 'from-gray-300 via-gray-600 to-zinc-500'} relative p-1 rounded-full bg-gradient-to-r`}
         transition={{ duration: 8, repeat: Infinity, ease: "linear" }}

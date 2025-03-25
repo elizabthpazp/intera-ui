@@ -1,7 +1,7 @@
-import Activities from "../components/activities/activities";
+import CardProfile from "../components/cards/card-profile";
 
 export default function Home() {
   return (
-     <Activities></Activities>
+     <CardProfile></CardProfile>
   );
 }

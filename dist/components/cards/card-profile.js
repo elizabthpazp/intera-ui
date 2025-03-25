@@ -24,6 +24,9 @@ var CardProfile = function CardProfile(_ref) {
           darkMode: darkMode
         }), /*#__PURE__*/_jsxs("div", {
           className: "space-y-2 text-center",
+          style: {
+            marginTop: '-5px'
+          },
           children: [/*#__PURE__*/_jsx("h2", {
             className: "".concat(darkMode ? 'text-white' : 'text-gray-900', " text-2xl font-bold"),
             children: title !== null && title !== void 0 ? title : 'Emily Brooks '
