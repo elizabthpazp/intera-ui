@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import BorderImage from "../animations/border-image";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
@@ -12,7 +14,7 @@ var CardProfile = function CardProfile(_ref) {
     onClickTwo = _ref.onClickTwo,
     image = _ref.image;
   return /*#__PURE__*/_jsx("div", {
-    className: "bg-gradient-to-br font-medium flex justify-center p-6",
+    className: "bg-gradient-to-br font-medium flex justify-center",
     children: /*#__PURE__*/_jsx("div", {
       className: "".concat(darkMode ? 'bg-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300 text-gray-800 border', " backdrop-blur-sm rounded-[2rem] px-4 py-8 max-w-sm w-full shadow-2xl"),
       children: /*#__PURE__*/_jsxs("div", {

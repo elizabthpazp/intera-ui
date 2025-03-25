@@ -16,7 +16,7 @@ export default function BorderImage({image, darkMode}) {
         />
         <div className={`${!darkMode ? 'border-gray-600' : 'border-gray-400'} relative rounded-full overflow-hidden h-28 w-28 border-2`}>
           <Image
-            src={image ?? "https://vcbomutuhqqrhxmoxtbx.supabase.co/storage/v1/object/public/images//image.webp"}
+            src={image ?? ""}
             alt="Animated Image"
             width={256}
             height={256}

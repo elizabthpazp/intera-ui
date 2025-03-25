@@ -1,9 +1,10 @@
+"use client";
 import React from "react"; 
 import BorderImage from "../animations/border-image";
 
 const CardProfile = ({darkMode, title, subtitle, description, button1Text, button2Text, onClickOne, onClickTwo, image}) => {
   return (
-    <div className="bg-gradient-to-br font-medium flex justify-center p-6">
+    <div className="bg-gradient-to-br font-medium flex justify-center">
       <div className={`${darkMode ? 'bg-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300 text-gray-800 border'} backdrop-blur-sm rounded-[2rem] px-4 py-8 max-w-sm w-full shadow-2xl`}>
         <div className="flex flex-col items-center gap-5">
           <BorderImage image={image} darkMode={darkMode} />

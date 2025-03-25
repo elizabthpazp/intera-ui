@@ -28,7 +28,7 @@ export default function BorderImage(_ref) {
       }), /*#__PURE__*/_jsx("div", {
         className: "".concat(!darkMode ? 'border-gray-600' : 'border-gray-400', " relative rounded-full overflow-hidden h-28 w-28 border-2"),
         children: /*#__PURE__*/_jsx(Image, {
-          src: image !== null && image !== void 0 ? image : "https://vcbomutuhqqrhxmoxtbx.supabase.co/storage/v1/object/public/images//image.webp",
+          src: image !== null && image !== void 0 ? image : "",
           alt: "Animated Image",
           width: 256,
           height: 256,
