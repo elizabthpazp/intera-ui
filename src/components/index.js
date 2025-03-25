@@ -1,6 +1,5 @@
 export { default as ButtonCard } from "./buttons/button-card";
-export { default as CardProfile } from "./cards/card-profile";
-export { default as CardLogin } from "./cards/card-login";
+export { default as CardProfile } from "./cards/card-profile"; 
 export { default as Activities } from "./activities/activities";
 export { default as Tree } from "./animations/tree";
 export { default as MatrixTree } from "./animations/matrix-tree";
