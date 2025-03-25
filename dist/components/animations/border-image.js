@@ -26,7 +26,7 @@ export default function BorderImage(_ref) {
         className: "".concat(!darkMode ? 'border-gray-600' : 'border-gray-400', " relative rounded-full overflow-hidden h-28 w-28 border-2"),
         children: /*#__PURE__*/_jsx(Image, {
           style: {
-            marginTop: '-15px'
+            marginTop: '0px'
           },
           src: image !== null && image !== void 0 ? image : "",
           alt: "Animated Image",

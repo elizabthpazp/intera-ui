@@ -15,7 +15,7 @@ export default function BorderImage({image, darkMode}) {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         />
         <div className={`${!darkMode ? 'border-gray-600' : 'border-gray-400'} relative rounded-full overflow-hidden h-28 w-28 border-2`}>
-          <Image style={{marginTop:'-15px'}}
+          <Image style={{marginTop:'0px'}}
             src={image ?? ""}
             alt="Animated Image"
             width={256}
