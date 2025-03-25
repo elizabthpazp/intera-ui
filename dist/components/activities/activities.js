@@ -10,8 +10,8 @@ import { useState } from "react";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function Activities(_ref) {
   var activities = _ref.activities,
-    button1Text = _ref.button1Text,
-    button2Text = _ref.button2Text,
+    primaryButton = _ref.primaryButton,
+    secondaryButton = _ref.secondaryButton,
     darkMode = _ref.darkMode;
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
@@ -46,7 +46,7 @@ export default function Activities(_ref) {
         children: /*#__PURE__*/_jsx("button", {
           onClick: toggleExpand,
           className: "\n              relative px-8 py-2 rounded-2xl \n              border-2 shadow text-sm font-semibold \n              cursor-pointer after:content-[''] \n              after:absolute  \n              after:w-2 after:h-2 after:right-6 \n              after:top-3 after:transition-all \n              after:duration-300 \n              ".concat(expanded ? "after:rotate-45" : "after:rotate-225", "\n              ").concat(darkMode ? 'text-white bg-gray-900 border-zinc-800 hover:border-zinc-600' : 'border-zinc-200 hover:border-zinc-300 bg-white text-gray-900', "\n            "),
-          children: expanded ? button1Text !== null && button1Text !== void 0 ? button1Text : "Hide" : button2Text !== null && button2Text !== void 0 ? button2Text : "Show"
+          children: expanded ? primaryButton !== null && primaryButton !== void 0 ? primaryButton : "Hide" : secondaryButton !== null && secondaryButton !== void 0 ? secondaryButton : "Show"
         })
       }), /*#__PURE__*/_jsx("div", {
         className: "relative",

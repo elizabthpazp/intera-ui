@@ -14,17 +14,17 @@ var ButtonCard = function ButtonCard(_ref) {
     darkMode = _ref.darkMode,
     title = _ref.title,
     description = _ref.description,
-    button1 = _ref.button1,
-    button2 = _ref.button2,
-    input1 = _ref.input1,
-    input2 = _ref.input2,
+    primaryButton = _ref.primaryButton,
+    secondaryButton = _ref.secondaryButton,
+    emailPlaceholder = _ref.emailPlaceholder,
+    passwordPlaceholder = _ref.passwordPlaceholder,
     notShowArrow = _ref.notShowArrow,
     notShowCombobox = _ref.notShowCombobox,
     notShowForgot = _ref.notShowForgot,
     combobox = _ref.combobox,
     forgot = _ref.forgot,
     onLogin = _ref.onLogin,
-    hrefLink = _ref.hrefLink,
+    forgotLink = _ref.forgotLink,
     onSignUp = _ref.onSignUp;
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
@@ -101,7 +101,7 @@ var ButtonCard = function ButtonCard(_ref) {
                 onChange: function onChange(e) {
                   return setEmail(e.target.value);
                 },
-                placeholder: input1 !== null && input1 !== void 0 ? input1 : 'Email',
+                placeholder: emailPlaceholder !== null && emailPlaceholder !== void 0 ? emailPlaceholder : 'Email',
                 className: "".concat(darkMode ? 'text-white bg-gray-900 border-gray-500' : 'text-gray-800 bg-purple-50/50 border-gray-300', " w-full pl-10 pr-4 py-2.5 border rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-purple-200 transition-all duration-200 text-sm")
               })]
             }), /*#__PURE__*/_jsxs("div", {
@@ -115,7 +115,7 @@ var ButtonCard = function ButtonCard(_ref) {
                 onChange: function onChange(e) {
                   return setPassword(e.target.value);
                 },
-                placeholder: input2 !== null && input2 !== void 0 ? input2 : 'Password',
+                placeholder: passwordPlaceholder !== null && passwordPlaceholder !== void 0 ? passwordPlaceholder : 'Password',
                 className: "".concat(darkMode ? 'text-white bg-gray-900 border-gray-500' : 'text-gray-800 bg-purple-50/50 border-gray-300', " w-full pl-10 pr-4 py-2.5 border rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-purple-200 transition-all duration-200 text-sm")
               })]
             })]
@@ -134,7 +134,7 @@ var ButtonCard = function ButtonCard(_ref) {
             }) : !notShowForgot ? /*#__PURE__*/_jsx("label", {
               className: "flex items-center text-gray-600"
             }) : '', !notShowForgot ? /*#__PURE__*/_jsx("a", {
-              href: hrefLink !== null && hrefLink !== void 0 ? hrefLink : '#',
+              href: forgotLink !== null && forgotLink !== void 0 ? forgotLink : '#',
               className: "".concat(darkMode ? 'text-white' : 'text-gray-800', " hover:text-gray-500 font-medium"),
               children: forgot !== null && forgot !== void 0 ? forgot : 'Forgot?'
             }) : '']
@@ -145,13 +145,13 @@ var ButtonCard = function ButtonCard(_ref) {
                 return handleSubmit(e);
               },
               className: "w-full ".concat(darkMode ? ' bg-white hover:text-white text-gray-800 hover:bg-slate-950' : 'bg-slate-950 hover:bg-white hover:text-gray-800 text-white hover:border-gray-600 border', " py-2.5 rounded-xl hover:bg-gray-700 transition-all duration-200 font-medium shadow-lg shadow-gray-500/20"),
-              children: button1 !== null && button1 !== void 0 ? button1 : 'Sign In'
+              children: primaryButton !== null && primaryButton !== void 0 ? primaryButton : 'Sign In'
             }), /*#__PURE__*/_jsx("button", {
               onClick: function onClick(e) {
                 return handleSubmit2(e);
               },
               className: "w-full ".concat(darkMode ? ' bg-slate-950 hover:bg-white hover:text-gray-800 text-white' : 'bg-white hover:text-white text-gray-800 hover:bg-slate-950 border-gray-600 border', " py-2.5 rounded-xl transition-colors duration-200 font-medium"),
-              children: button2 !== null && button2 !== void 0 ? button2 : 'Create Account'
+              children: secondaryButton !== null && secondaryButton !== void 0 ? secondaryButton : 'Create Account'
             })]
           })]
         })]

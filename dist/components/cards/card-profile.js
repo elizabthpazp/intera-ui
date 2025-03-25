@@ -8,10 +8,10 @@ var CardProfile = function CardProfile(_ref) {
     title = _ref.title,
     subtitle = _ref.subtitle,
     description = _ref.description,
-    button1Text = _ref.button1Text,
-    button2Text = _ref.button2Text,
-    onClickOne = _ref.onClickOne,
-    onClickTwo = _ref.onClickTwo,
+    buttonLeftLabel = _ref.buttonLeftLabel,
+    buttonRightLabel = _ref.buttonRightLabel,
+    onClickRight = _ref.onClickRight,
+    onClickLeft = _ref.onClickLeft,
     image = _ref.image;
   return /*#__PURE__*/_jsx("div", {
     className: "bg-gradient-to-br font-medium flex justify-center",
@@ -25,7 +25,7 @@ var CardProfile = function CardProfile(_ref) {
         }), /*#__PURE__*/_jsxs("div", {
           className: "space-y-2 text-center",
           style: {
-            marginTop: '-5px'
+            marginTop: '-30px'
           },
           children: [/*#__PURE__*/_jsx("h2", {
             className: "".concat(darkMode ? 'text-white' : 'text-gray-900', " text-2xl font-bold"),
@@ -40,13 +40,13 @@ var CardProfile = function CardProfile(_ref) {
         }), /*#__PURE__*/_jsxs("div", {
           className: "flex gap-3 mt-2",
           children: [/*#__PURE__*/_jsx("button", {
-            onClick: onClickOne,
+            onClick: onClickLeft,
             className: "".concat(darkMode ? 'bg-transparent border-gray-700 text-white hover:bg-white/10' : 'bg-slate-950 border-gray-700 text-white hover:bg-gray-800', " px-8 py-2.5 rounded-xl text-sm font-medium border transition-all duration-300"),
-            children: button1Text !== null && button1Text !== void 0 ? button1Text : 'Portfolio'
+            children: buttonLeftLabel !== null && buttonLeftLabel !== void 0 ? buttonLeftLabel : 'Portfolio'
           }), /*#__PURE__*/_jsx("button", {
-            onClick: onClickTwo,
+            onClick: onClickRight,
             className: "".concat(darkMode ? 'text-gray-900 hover:text-black hover:bg-gray-300' : 'text-gray-900 hover:text-black hover:bg-gray-300 border-gray-500 border', " px-8 py-2.5 rounded-xl bg-white text-sm font-medium transition-all duration-300"),
-            children: button2Text !== null && button2Text !== void 0 ? button2Text : 'Follow'
+            children: buttonRightLabel !== null && buttonRightLabel !== void 0 ? buttonRightLabel : 'Follow'
           })]
         })]
       })
