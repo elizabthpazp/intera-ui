@@ -8,7 +8,7 @@ const CardProfile = ({darkMode, title, subtitle, description, buttonLeftLabel, b
       <div className={`${darkMode ? 'bg-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300 text-gray-800 border'} backdrop-blur-sm rounded-[2rem] px-4 py-8 max-w-sm w-full shadow-2xl`}>
         <div className="flex flex-col items-center gap-5">
           <BorderImage image={image} darkMode={darkMode} />
-          <div className="space-y-2 text-center">
+          <div className="space-y-2 text-center" style={{marginTop:'-30px'}}>
             <h2 className={`${darkMode ? 'text-white' : 'text-gray-900'} text-2xl font-bold`}>{ title ?? 'Emily Brooks '}</h2>
             <p className={`${darkMode ? 'text-zinc-300' : 'text-gray-800'} text-sm`}>{ subtitle ?? 'Senior Full Stack Engineer'}</p>
             <p className={`${darkMode ? 'text-gray-400/90' : 'text-gray-500'} text-sm leading-relaxed`}>
