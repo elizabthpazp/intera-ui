@@ -3,20 +3,20 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-export default function BorderImage() {
+export default function BorderImage({image, darkMode}) {
   return (
     <div className="flex" style={{marginBottom:'-5px'}}>
       <motion.div
-        className="relative p-1 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
+        className={`${!darkMode ? 'from-gray-800 via-gray-500 to-zinc-600' : 'from-gray-300 via-gray-600 to-zinc-500'} relative p-1 rounded-full bg-gradient-to-r`}
         transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
       >
         <motion.div
-          className="absolute inset-0 rounded-full blur-md bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 opacity-75"
+          className={`${!darkMode ? 'from-gray-800 via-gray-500 to-zinc-600' : 'from-gray-300 via-gray-600 to-zinc-500'} absolute inset-0 rounded-full blur-md bg-gradient-to-r opacity-75`}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         />
-        <div className="relative rounded-full overflow-hidden h-28 w-28 border-2 border-purple-400">
+        <div className={`${!darkMode ? 'border-gray-600' : 'border-gray-400'} relative rounded-full overflow-hidden h-28 w-28 border-2`}>
           <Image
-            src="/img/image.jpg"
+            src={image ?? "https://vcbomutuhqqrhxmoxtbx.supabase.co/storage/v1/object/public/images//image.webp"}
             alt="Animated Image"
             width={256}
             height={256}
