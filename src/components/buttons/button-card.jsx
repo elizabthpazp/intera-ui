@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 
-const ButtonCard = ({principalButton, darkMode, title, description, button1, button2, input1, input2, notShowArrow, notShowCombobox, notShowForgot, combobox, forgot, onLogin, hrefLink, onSignUp }) => {
+const ButtonCard = ({principalButton, darkMode, title, description, primaryButton, secondaryButton, emailPlaceholder, passwordPlaceholder, notShowArrow, notShowCombobox, notShowForgot, combobox, forgot, onLogin, forgotLink, onSignUp }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -81,7 +81,7 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
                 <Mail className={` ${darkMode ? 'text-white' : 'text-gray-800'} absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 group-focus-within:text-gray-600`} size={18} />
                 <input 
                   type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                  placeholder={ input1 ?? 'Email'}
+                  placeholder={ emailPlaceholder ?? 'Email'}
                   className={`${darkMode ? 'text-white bg-gray-900 border-gray-500' : 'text-gray-800 bg-purple-50/50 border-gray-300'} w-full pl-10 pr-4 py-2.5 border rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-purple-200 transition-all duration-200 text-sm`}
                 />
               </div>
@@ -91,7 +91,7 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
                 <input 
                   type="password" value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder={ input2 ?? 'Password'}
+                  placeholder={ passwordPlaceholder ?? 'Password'}
                   className={`${darkMode ? 'text-white bg-gray-900 border-gray-500' : 'text-gray-800 bg-purple-50/50 border-gray-300'} w-full pl-10 pr-4 py-2.5 border rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-purple-200 transition-all duration-200 text-sm`}
                 />
               </div>
@@ -107,7 +107,7 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
               <label className={`flex items-center text-gray-600`}></label> : ''
               }
               { !notShowForgot ?
-              <a href={hrefLink ?? '#'} className={`${darkMode ? 'text-white' : 'text-gray-800'} hover:text-gray-500 font-medium`}>{ forgot ?? 'Forgot?'}</a>
+              <a href={forgotLink ?? '#'} className={`${darkMode ? 'text-white' : 'text-gray-800'} hover:text-gray-500 font-medium`}>{ forgot ?? 'Forgot?'}</a>
                 : ''}
             </div>
 
@@ -115,12 +115,12 @@ const ButtonCard = ({principalButton, darkMode, title, description, button1, but
               <button onClick={(e) => handleSubmit(e)} 
                 className={`w-full ${darkMode ? ' bg-white hover:text-white text-gray-800 hover:bg-slate-950' : 'bg-slate-950 hover:bg-white hover:text-gray-800 text-white hover:border-gray-600 border'} py-2.5 rounded-xl hover:bg-gray-700 transition-all duration-200 font-medium shadow-lg shadow-gray-500/20`}
               >
-                { button1 ?? 'Sign In'}  
+                { primaryButton ?? 'Sign In'}  
               </button>
               <button onClick={(e) => handleSubmit2(e)}
                 className={`w-full ${darkMode ? ' bg-slate-950 hover:bg-white hover:text-gray-800 text-white' : 'bg-white hover:text-white text-gray-800 hover:bg-slate-950 border-gray-600 border'} py-2.5 rounded-xl transition-colors duration-200 font-medium`}
               >
-               { button2 ?? 'Create Account'} 
+               { secondaryButton ?? 'Create Account'} 
               </button>
             </div>
           </div>

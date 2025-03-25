@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function Activities({ activities, button1Text, button2Text, darkMode }) {
+export default function Activities({ activities, primaryButton, secondaryButton, darkMode }) {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -43,7 +43,7 @@ export default function Activities({ activities, button1Text, button2Text, darkM
               ${darkMode ? 'text-white bg-gray-900 border-zinc-800 hover:border-zinc-600' : 'border-zinc-200 hover:border-zinc-300 bg-white text-gray-900'}
             `}
             >
-              {expanded ? button1Text ?? "Hide" : button2Text ?? "Show"}
+              {expanded ? primaryButton ?? "Hide" : secondaryButton ?? "Show"}
             </button>
           </div>
         )}
