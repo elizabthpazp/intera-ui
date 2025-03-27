@@ -70,7 +70,7 @@ var ButtonCard = function ButtonCard(_ref) {
           return setIsOpen(false);
         }
       }), /*#__PURE__*/_jsxs("div", {
-        className: "\n          absolute \n          left-16 top-18 \n          -translate-x-1/2 \n          ".concat(darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300', "\n          rounded-2xl\n          p-6 border-2 \n          transform\n          transition-all duration-300 ease-out\n          shadow-[0_0_40px_rgba(75,85,99,0.3)]\n          backdrop-blur-sm\n          ").concat(isOpen ? 'opacity-100 -translate-y-1/2 scale-100' : 'opacity-0 -translate-y-[40%] scale-95 pointer-events-none', "\n          min-w-[320px]\n          z-50\n        "),
+        className: "\n          absolute \n          left-16 top-18 \n          -translate-x-1/2 \n          ".concat(darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300', "\n          rounded-2xl\n          p-6 border-2 \n          transform\n          transition-all duration-300 ease-out \n          shadow-xl\n          backdrop-blur-sm\n          ").concat(isOpen ? 'opacity-100 -translate-y-1/2 scale-100' : 'opacity-0 -translate-y-[40%] scale-95 pointer-events-none', "\n          min-w-[320px]\n          z-50\n        "),
         children: [/*#__PURE__*/_jsx("button", {
           onClick: function onClick() {
             return setIsOpen(false);

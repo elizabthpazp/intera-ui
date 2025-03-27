@@ -5,21 +5,18 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
 function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-var Tree = function Tree() {
-  var lines = [];
-  for (var i = 0; i < 256; i++) {
-    var t = 6 * 360 * i / 256;
-    var angle = (Math.sin(t * Math.PI / 180) + Math.cos(t * Math.PI / 540) * 0.1) * 20;
-    lines.push({
-      transform: "rotate(".concat(angle, "deg)"),
-      animationDelay: "".concat(-(i * (4 / 256)), "s"),
-      color: ["#D8334A", "#FFCE54", "#2ECC71", "#5D9CEC"][i % 4]
-    });
-  }
+var TreeTriangle = function TreeTriangle() {
+  var generateSwingLineStyle = function generateSwingLineStyle(i) {
+    return {
+      height: "calc(100vh * ((".concat(i + 4, ") / (128 + 4)))"),
+      animationDelay: "calc(-4s * (".concat(i, " / (128 / 7)))"),
+      backgroundColor: "#2ECC71"
+    };
+  };
   return /*#__PURE__*/_jsxs("div", {
-    className: "relative h-[390px]",
+    className: "relative w-full h-[calc(320px)]",
     children: [/*#__PURE__*/_jsx("ul", {
-      className: "absolute left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 z-50",
+      className: "absolute top-0 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 z-50",
       children: _toConsumableArray(Array(5)).map(function (_, i) {
         return /*#__PURE__*/_jsx("li", {
           className: "absolute w-0 h-0 border-[8px] border-transparent border-b-[#FFCE54]",
@@ -30,26 +27,14 @@ var Tree = function Tree() {
         }, i);
       })
     }), /*#__PURE__*/_jsx("ul", {
-      className: "p-0",
-      children: lines.map(function (line, i) {
+      className: "absolute top-0 right-0 left-0 w-full p-0",
+      children: _toConsumableArray(Array(64)).map(function (_, i) {
         return /*#__PURE__*/_jsx("li", {
-          className: "matrix-line absolute left-1/2 w-[1px] h-[400px]" // Cambia '60vh' por una altura fija en px
-          ,
-          style: {
-            transformOrigin: "50% 0%",
-            transform: line.transform
-          },
-          children: /*#__PURE__*/_jsx("div", {
-            className: "absolute bottom-0 w-[3px] h-[3px] rounded-full",
-            style: {
-              backgroundColor: line.color,
-              animation: "fall2 4s linear infinite",
-              animationDelay: line.animationDelay
-            }
-          })
+          className: "swing-line absolute left-1/2 top-4",
+          style: generateSwingLineStyle(i + 1)
         }, i);
       })
     })]
   });
 };
-export default Tree;
+export default TreeTriangle;
