@@ -58,8 +58,8 @@ const ButtonCard = ({principalButton, darkMode, title, description, primaryButto
           rounded-2xl
           p-6 border-2 
           transform
-          transition-all duration-300 ease-out
-          shadow-[0_0_40px_rgba(75,85,99,0.3)]
+          transition-all duration-300 ease-out 
+          shadow-xl
           backdrop-blur-sm
           ${isOpen ? 'opacity-100 -translate-y-1/2 scale-100' : 'opacity-0 -translate-y-[40%] scale-95 pointer-events-none'}
           min-w-[320px]

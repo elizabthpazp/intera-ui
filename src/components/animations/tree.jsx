@@ -1,12 +1,20 @@
 const Tree = () => {
-  const generateSwingLineStyle = (i) => ({
-    height: `calc(100vh * ((${i + 4}) / (128 + 4)))`,
-    animationDelay: `calc(-4s * (${i} / (128 / 7)))`,
-  });
+  const lines = [];
+  for (let i = 0; i < 256; i++) {
+    const t = (6 * 360 * i) / 256;
+    const angle =
+      (Math.sin((t * Math.PI) / 180) + Math.cos((t * Math.PI) / 540) * 0.1) *
+      20;
+    lines.push({
+      transform: `rotate(${angle}deg)`,
+      animationDelay: `${-(i * (4 / 256))}s`,
+      color: ["#D8334A", "#FFCE54", "#2ECC71", "#5D9CEC"][i % 4],
+    });
+  }
 
   return (
-    <div>
-      <ul className="absolute top-[33vh] left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 z-50">
+    <div className="relative h-[390px]"> 
+      <ul className="absolute left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 z-50">
         {[...Array(5)].map((_, i) => (
           <li
             key={i}
@@ -18,13 +26,27 @@ const Tree = () => {
           />
         ))}
       </ul>
+ 
       <ul className="p-0">
-        {[...Array(64)].map((_, i) => (
+        {lines.map((line, i) => (
           <li
-            key={i}
-            className={`swing-line`}
-            style={generateSwingLineStyle(i + 1)}
-          />
+          key={i}
+          className="matrix-line absolute left-1/2 w-[1px] h-[400px]" // Cambia '60vh' por una altura fija en px
+          style={{
+            transformOrigin: "50% 0%",
+            transform: line.transform,
+          }}
+        >
+        
+            <div
+              className="absolute bottom-0 w-[3px] h-[3px] rounded-full"
+              style={{
+                backgroundColor: line.color,
+                animation: "fall2 4s linear infinite",
+                animationDelay: line.animationDelay,
+              }}
+            />
+          </li>
         ))}
       </ul>
     </div>
