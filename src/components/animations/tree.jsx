@@ -14,13 +14,13 @@ const Tree = () => {
 
   return (
     <div className="relative h-[390px]">
-      <ul className="absolute top-0 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 z-50">
+      <ul className="absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50" style={{marginLeft: '-10px'}}>
         {[...Array(5)].map((_, i) => (
           <li
             key={i}
-            className="absolute w-0 h-0 border-[12px] border-transparent border-b-[24px] border-b-[#FFCE54]"
+            className="absolute w-0 h-0 border-[10px] border-transparent border-b-[20px] border-b-[#FFCE54]"
             style={{
-              transformOrigin: "12px 24px",
+              transformOrigin: "10px 20px",
               transform: `rotate(${i * 72}deg)`,
             }}
           />
@@ -31,7 +31,7 @@ const Tree = () => {
         {lines.map((line, i) => (
           <li
             key={i}
-            className="matrix-line absolute left-1/2 w-[1px] h-[400px]" // Cambia '60vh' por una altura fija en px
+            className="matrix-line absolute left-1/2 w-[1px] h-[400px]"
             style={{
               transformOrigin: "50% 0%",
               transform: line.transform,
