@@ -5,7 +5,7 @@ var TextMasking = function TextMasking(_ref) {
   return /*#__PURE__*/_jsx("div", {
     className: "imageMark",
     style: {
-      backgroundImage: "url(".concat(image, ")")
+      backgroundImage: "url(".concat(image !== null && image !== void 0 ? image : "", ")!important")
     },
     children: /*#__PURE__*/_jsx("h1", {
       className: "text-6xl font-extrabold py-2",

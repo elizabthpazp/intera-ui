@@ -19,12 +19,12 @@ var Tree = function Tree() {
   return /*#__PURE__*/_jsxs("div", {
     className: "relative h-[390px]",
     children: [/*#__PURE__*/_jsx("ul", {
-      className: "absolute left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 z-50",
+      className: "absolute top-0 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 z-50",
       children: _toConsumableArray(Array(5)).map(function (_, i) {
         return /*#__PURE__*/_jsx("li", {
-          className: "absolute w-0 h-0 border-[8px] border-transparent border-b-[#FFCE54]",
+          className: "absolute w-0 h-0 border-[12px] border-transparent border-b-[24px] border-b-[#FFCE54]",
           style: {
-            transformOrigin: "8px 16px",
+            transformOrigin: "12px 24px",
             transform: "rotate(".concat(i * 72, "deg)")
           }
         }, i);

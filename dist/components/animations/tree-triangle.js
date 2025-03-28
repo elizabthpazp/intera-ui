@@ -9,19 +9,18 @@ var TreeTriangle = function TreeTriangle() {
   var generateSwingLineStyle = function generateSwingLineStyle(i) {
     return {
       height: "calc(100vh * ((".concat(i + 4, ") / (128 + 4)))"),
-      animationDelay: "calc(-4s * (".concat(i, " / (128 / 7)))"),
-      backgroundColor: "#2ECC71"
+      animationDelay: "calc(-4s * (".concat(i, " / (128 / 7)))")
     };
   };
   return /*#__PURE__*/_jsxs("div", {
-    className: "relative w-full h-[calc(320px)]",
+    className: "relative w-full h-[320px]",
     children: [/*#__PURE__*/_jsx("ul", {
-      className: "absolute top-0 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 z-50",
+      className: "absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50",
       children: _toConsumableArray(Array(5)).map(function (_, i) {
         return /*#__PURE__*/_jsx("li", {
-          className: "absolute w-0 h-0 border-[8px] border-transparent border-b-[#FFCE54]",
+          className: "absolute w-0 h-0 border-[10px] border-transparent border-b-[20px] border-b-[#FFCE54]",
           style: {
-            transformOrigin: "8px 16px",
+            transformOrigin: "10px 20px",
             transform: "rotate(".concat(i * 72, "deg)")
           }
         }, i);
