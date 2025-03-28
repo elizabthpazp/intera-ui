@@ -13,9 +13,12 @@ var TreeTriangle = function TreeTriangle() {
     };
   };
   return /*#__PURE__*/_jsxs("div", {
-    className: "relative w-full h-[320px]",
+    className: "relative w-full h-[400px]",
     children: [/*#__PURE__*/_jsx("ul", {
       className: "absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50",
+      style: {
+        marginLeft: '-10px'
+      },
       children: _toConsumableArray(Array(5)).map(function (_, i) {
         return /*#__PURE__*/_jsx("li", {
           className: "absolute w-0 h-0 border-[10px] border-transparent border-b-[20px] border-b-[#FFCE54]",

@@ -1,3 +1,5 @@
+"use client";
+
 import { jsx as _jsx } from "react/jsx-runtime";
 var TextMasking = function TextMasking(_ref) {
   var title = _ref.title,
@@ -5,7 +7,7 @@ var TextMasking = function TextMasking(_ref) {
   return /*#__PURE__*/_jsx("div", {
     className: "imageMark",
     style: {
-      backgroundImage: "url(".concat(image !== null && image !== void 0 ? image : "", ")!important")
+      backgroundImage: "url(".concat(image !== null && image !== void 0 ? image : "", ")")
     },
     children: /*#__PURE__*/_jsx("h1", {
       className: "text-6xl font-extrabold py-2",

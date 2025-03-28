@@ -19,12 +19,15 @@ var Tree = function Tree() {
   return /*#__PURE__*/_jsxs("div", {
     className: "relative h-[390px]",
     children: [/*#__PURE__*/_jsx("ul", {
-      className: "absolute top-0 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 z-50",
+      className: "absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50",
+      style: {
+        marginLeft: '-10px'
+      },
       children: _toConsumableArray(Array(5)).map(function (_, i) {
         return /*#__PURE__*/_jsx("li", {
-          className: "absolute w-0 h-0 border-[12px] border-transparent border-b-[24px] border-b-[#FFCE54]",
+          className: "absolute w-0 h-0 border-[10px] border-transparent border-b-[20px] border-b-[#FFCE54]",
           style: {
-            transformOrigin: "12px 24px",
+            transformOrigin: "10px 20px",
             transform: "rotate(".concat(i * 72, "deg)")
           }
         }, i);
@@ -33,8 +36,7 @@ var Tree = function Tree() {
       className: "p-0",
       children: lines.map(function (line, i) {
         return /*#__PURE__*/_jsx("li", {
-          className: "matrix-line absolute left-1/2 w-[1px] h-[400px]" // Cambia '60vh' por una altura fija en px
-          ,
+          className: "matrix-line absolute left-1/2 w-[1px] h-[400px]",
           style: {
             transformOrigin: "50% 0%",
             transform: line.transform

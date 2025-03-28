@@ -665,9 +665,6 @@ video {
 .h-0 {
   height: 0px;
 }
-.h-10 {
-  height: 2.5rem;
-}
 .h-12 {
   height: 3rem;
 }
@@ -704,9 +701,6 @@ video {
 .h-\[2px\] {
   height: 2px;
 }
-.h-\[320px\] {
-  height: 320px;
-}
 .h-\[390px\] {
   height: 390px;
 }
@@ -739,9 +733,6 @@ video {
 }
 .w-0\.5 {
   width: 0.125rem;
-}
-.w-10 {
-  width: 2.5rem;
 }
 .w-12 {
   width: 3rem;
@@ -915,17 +906,11 @@ video {
 .border-\[10px\] {
   border-width: 10px;
 }
-.border-\[12px\] {
-  border-width: 12px;
-}
 .border-\[8px\] {
   border-width: 8px;
 }
 .border-b-\[20px\] {
   border-bottom-width: 20px;
-}
-.border-b-\[24px\] {
-  border-bottom-width: 24px;
 }
 .border-l-\[6px\] {
   border-left-width: 6px;
@@ -1279,7 +1264,7 @@ video {
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }.zoom-gift{zoom:50%}@keyframes swing{0%,100%{transform:rotate(-20deg)}45%,5%{opacity:.25}0%,100%,50%{opacity:1}50%{transform:rotate(20deg)}}.font-christmas{font-family:"Mountains of Christmas",cursive}.font-principal{font-size:250%}.font-secondary{font-size:180%}@keyframes fall{0%{transform:translate(0,-10px) rotate(0);opacity:1}25%{transform:translate(15px,25vh) rotate(45deg)}50%{transform:translate(-15px,50vh) rotate(90deg)}75%{transform:translate(15px,75vh) rotate(135deg)}100%{transform:translate(-15px,100vh) rotate(180deg);opacity:0}}@keyframes fall2{0%{opacity:0;top:0}5%{opacity:0}15%,90%{opacity:1}100%{opacity:0;top:100%}}
-.cat__body,.cat__head,.cat__tail{animation:1.79s cubic-bezier(.65,.54,.12,.93) infinite rotating}.cat{position:relative;width:200px;max-width:20em;overflow:hidden}.cat::before{content:'';display:block;padding-bottom:100%}.cat:hover>*{animation-play-state:paused}.cat:active>*{animation-play-state:running}.cat__body,.cat__head,.cat__tail{position:absolute;top:0;left:0;right:0;bottom:0}.cat__body::before,.cat__head::before,.cat__tail::before{content:'';position:absolute;width:50%;height:50%;background-size:200%;background-repeat:no-repeat;background-image:url('https://vcbomutuhqqrhxmoxtbx.supabase.co/storage/v1/object/public/images//cat-loader.png')}.cat__head::before{top:0;right:0;background-position:100% 0;transform-origin:0% 100%;transform:rotate(90deg)}.cat__body,.cat__body:nth-of-type(2),.cat__tail{animation-delay:.1s}.cat__tail::before{left:0;bottom:0;background-position:0 100%;transform-origin:100% 0%;transform:rotate(-30deg)}.cat__body::before{right:0;bottom:0;background-position:100% 100%;transform-origin:0% 0%}@keyframes rotating{from{transform:rotate(720deg)}to{transform:none}}.imageMark{background-size:cover;background-clip:text;-webkit-background-clip:text;color:transparent}.after\:absolute::after {
+.cat__body,.cat__head,.cat__tail{animation:1.79s cubic-bezier(.65,.54,.12,.93) infinite rotating}.cat{position:relative;width:200px;max-width:20em;overflow:hidden}.cat::before{content:'';display:block;padding-bottom:100%}.cat:hover>*{animation-play-state:paused}.cat:active>*{animation-play-state:running}.cat__body,.cat__head,.cat__tail{position:absolute;top:0;left:0;right:0;bottom:0}.cat__body::before,.cat__head::before,.cat__tail::before{content:'';position:absolute;width:50%;height:50%;background-size:200%;background-repeat:no-repeat;background-image:url('https://vcbomutuhqqrhxmoxtbx.supabase.co/storage/v1/object/public/images//cat-loader.png')}.cat__head::before{top:0;right:0;background-position:100% 0;transform-origin:0% 100%;transform:rotate(90deg)}.cat__body,.cat__body:nth-of-type(2),.cat__tail{animation-delay:.1s}.cat__tail::before{left:0;bottom:0;background-position:0 100%;transform-origin:100% 0%;transform:rotate(-30deg)}.cat__body::before{right:0;bottom:0;background-position:100% 100%;transform-origin:0% 0%}@keyframes rotating{from{transform:rotate(720deg)}to{transform:none}}.imageMark{background-size:cover;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;}.after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
 }.after\:bottom-0::after {
@@ -1420,3 +1405,4 @@ video {
 }.group:hover .group-hover\:ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+  
