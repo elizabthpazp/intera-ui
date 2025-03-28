@@ -1,6 +1,6 @@
 const TextMasking = ({ title, image }) => {
   return (
-    <div className="imageMark" style={{backgroundImage: `url(${image})`}}> 
+    <div className="imageMark" style={{backgroundImage: `url(${image??""})!important`}}> 
     <h1 className="text-6xl font-extrabold py-2">
       { title ?? "Text ♥️ ♥️  Masking" }  
     </h1>
