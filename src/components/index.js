@@ -6,3 +6,4 @@ export { default as Tree } from "./animations/tree";
 export { default as GiftBox } from "./animations/gift-box";
 export { default as CatLoader } from "./loaders/cat-loader";
 export { default as BorderImage } from "./animations/border-image";
+export { default as TextMasking } from "./texts/text-masking";
