@@ -1,6 +1,6 @@
-# 📦 react-components
+# 📦 InteraUI
 
-Welcome to **react-components**!  
+Welcome to **InteraUI**!  
 🚀 This is a collection of reusable React components designed to enhance UI development efficiently and quickly.
 
 
@@ -17,27 +17,27 @@ Welcome to **react-components**!
 You can install this library in your project using npm or yarn:
 
 ```bash
-npm install @elizabthpazp/react-components
+npm install @elizabthpazp/intera-ui
 ```
 
 Or with yarn:
 
 ```bash
-yarn add @elizabthpazp/react-components
+yarn add @elizabthpazp/intera-ui
 ```
 
 Or with pnpm:
 
 ```bash
-pnpm add @elizabthpazp/react-components
+pnpm add @elizabthpazp/intera-ui
 ```
 
 # 🚀 Usage
 Import and use the components in your React application:
 
 ```jsx
-import "@elizabthpazp/react-components/dist/globals.css";
-import { ButtonCard } from "@elizabthpazp/react-components";
+import "@elizabthpazp/intera-ui/dist/globals.css";
+import { ButtonCard } from "@elizabthpazp/intera-ui";
 
 function App() {
  const [userData, setUserData] = useState(null);
@@ -54,7 +54,7 @@ export default App;
 
 # 📂 Project Structure
 ```plaintext 
-react-components/
+intera-ui/
 │── src/
 │   ├── components/  # Individual components
 │   │   ├── Button.js
@@ -74,8 +74,8 @@ If you want to contribute or modify the components, clone the repository and use
 Clone the repository
 
 ```sh
-git clone https://github.com/elizabthpazp/react-components.git
-cd react-components
+git clone https://github.com/elizabthpazp/intera-ui.git
+cd intera-ui
 npm install
 ```
 

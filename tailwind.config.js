@@ -5,7 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./dist/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@elizabthpazp/react-components/dist/**/*.{js,ts,jsx,tsx}"
+    "./node_modules/@elizabthpazp/intera-ui/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {

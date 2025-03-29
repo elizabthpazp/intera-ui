@@ -1,4 +1,4 @@
-declare module "@elizabthpazp/react-components" {
+declare module "@elizabthpazp/intera-ui" {
     import { FC } from "react";
   
     export const ButtonCard: FC;
