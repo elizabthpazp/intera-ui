@@ -1,6 +1,6 @@
 {
   "name": "@elizabthpazp/react-components",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "Una colección de componentes reutilizables en React",
   "keywords": [
     "react",
@@ -10,12 +10,12 @@
   "author": "elijs.dev",
   "license": "MIT",
   "module": "dist/components/index.js",
-  "types": "dist/components/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "babel src --out-dir dist --extensions .js,.jsx",
+    "build": "babel src --out-dir dist --extensions .js,.jsx && tsc --emitDeclarationOnly",
     "postbuild": "postcss src/globals.css -o dist/globals.css",
     "prepublishOnly": "npm run build"
   },
@@ -44,8 +44,7 @@
     "dist/app/globals.css"
   ],
   "files": [
-    "dist",
-    "dist/**/*.d.ts",
+    "dist", 
     "src/globals.css"
   ]
 }

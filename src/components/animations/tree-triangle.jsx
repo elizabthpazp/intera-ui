@@ -6,7 +6,7 @@ const TreeTriangle = () => {
 
   return (
     <div className="relative w-full h-[400px]">  
-      <ul className="absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50" style={{marginLeft: '-10px'}}>
+      <ul className="absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50" style={{marginLeft: '-20px'}}>
         {[...Array(5)].map((_, i) => (
           <li
             key={i}

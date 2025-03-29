@@ -2,12 +2,14 @@
   "compilerOptions": {     
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": false,
+    "emitDeclarationOnly": true,
     "outDir": "dist",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
-  }
+    },
+    "allowJs": true
+  },
+  "include": ["src"]
 }
