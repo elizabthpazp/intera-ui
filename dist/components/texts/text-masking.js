@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * @param {Object} props
+ * @param {string | null} [props.title=null]
+ * @param {string | null} [props.image=null]
+ */
 import { jsx as _jsx } from "react/jsx-runtime";
 var TextMasking = function TextMasking(_ref) {
   var _ref$title = _ref.title,
@@ -9,7 +14,10 @@ var TextMasking = function TextMasking(_ref) {
   return /*#__PURE__*/_jsx("div", {
     className: "imageMark",
     style: {
-      backgroundImage: "url(".concat(image !== null && image !== void 0 ? image : "", ")")
+      backgroundImage: "url(".concat(image !== null && image !== void 0 ? image : "", ")"),
+      backgroundSize: 'cover',
+      backgroundClip: 'text',
+      color: 'transparent'
     },
     children: /*#__PURE__*/_jsx("h1", {
       className: "text-6xl font-extrabold py-2",

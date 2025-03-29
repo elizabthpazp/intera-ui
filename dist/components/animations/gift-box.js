@@ -1,4 +1,17 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+/**
+ * @param {Object} props
+ * @param {string|null} [props.message=null]
+ * @param {string} [props.primaryColor="#ff7d6d"]
+ * @param {string} [props.secondaryColor="#ffb74a"]
+ * @param {string} [props.secondaryAccentColor="rgba(255, 206, 84, 1)"]
+ * @param {string} [props.tertiaryColor="#ff8168"]
+ * @param {string} [props.accentColor="#ff4149"]
+ * @param {string} [props.shadowColor="#dd4b4c"]
+ * @param {string} [props.textColor="#302E2EFF"]
+ * @param {string} [props.containerColor="#ffa69f"]
+ */
+
 export default function GiftBox(_ref) {
   var _ref$message = _ref.message,
     message = _ref$message === void 0 ? null : _ref$message,

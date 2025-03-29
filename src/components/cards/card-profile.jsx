@@ -2,6 +2,19 @@
 import React from "react"; 
 import BorderImage from "../animations/border-image";
 
+/**
+ * @param {Object} props
+ * @param {boolean} [props.darkMode=false]
+ * @param {string|null} [props.title=null]
+ * @param {string|null} [props.subtitle=null]
+ * @param {string|null} [props.description=null]
+ * @param {string|null} [props.buttonLeftLabel=null]
+ * @param {string|null} [props.buttonRightLabel=null]
+ * @param {function} [props.onClickRight=() => {}]
+ * @param {function} [props.onClickLeft=() => {}]
+ * @param {string|null} [props.image=null]
+ */
+
 const CardProfile = ({darkMode= false, title= null, subtitle= null, description= null, buttonLeftLabel= null, buttonRightLabel= null, onClickRight= () => {}, onClickLeft= () => {}, image= null}) => {
   return (
     <div className="bg-gradient-to-br font-medium flex justify-center">

@@ -2,8 +2,16 @@
 
 import { useState } from "react";
 
+/**
+ * @param {Object} props
+ * @param {boolean} [props.darkMode=false]
+ * @param {any} [props.activities=null]
+ * @param {string|null} [props.primaryButton=null]
+ * @param {string|null} [props.secondaryButton=null]
+ */
+
 export default function Activities({
-  activities = [], 
+  activities = null, 
   primaryButton = null, 
   secondaryButton = null, 
   darkMode = false  }) {

@@ -3,6 +3,12 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 
+/**
+ * @param {Object} props
+ * @param {boolean} [props.darkMode=false] 
+ * @param {string|null} [props.image=null]
+ */
+
 export default function BorderImage({image = null, darkMode = false}) {
   return (
     <div className="flex">

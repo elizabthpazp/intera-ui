@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+
+/**
+ * @param {Object} props
+ * @param {boolean} [props.darkMode=false] 
+ * @param {string|null} [props.image=null]
+ */
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function BorderImage(_ref) {
   var _ref$image = _ref.image,
