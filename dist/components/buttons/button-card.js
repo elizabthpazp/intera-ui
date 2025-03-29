@@ -143,7 +143,7 @@ var ButtonCard = function ButtonCard(_ref) {
             }), /*#__PURE__*/_jsxs("div", {
               className: "relative group",
               children: [/*#__PURE__*/_jsx(Lock, {
-                className: "".concat(darkMode ? 'text-white' : 'text-gray-800', " absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 transition-colors duration-200 group-focus-within:text-gray-600"),
+                className: "".concat(darkMode ? 'text-white' : 'text-gray-800', " absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 group-focus-within:text-gray-600"),
                 size: 18
               }), /*#__PURE__*/_jsx("input", {
                 type: "password",
