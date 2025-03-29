@@ -37,14 +37,15 @@
     "babel-plugin-transform-assets": "^1.0.2",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2"
   },
   "main": "dist/components/index.js",
   "sideEffects": [
     "dist/app/globals.css"
   ],
   "files": [
-    "dist", 
+    "dist",
     "src/globals.css"
   ]
 }

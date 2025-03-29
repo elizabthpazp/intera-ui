@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "outDir": "dist",
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "allowJs": true,
+      "skipLibCheck": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "strict": true
+    },
+    "include": ["src"]
+  }  
