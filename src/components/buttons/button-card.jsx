@@ -107,7 +107,7 @@ const ButtonCard = ({principalButton = null, darkMode = false, title= null, desc
               </div>
               
               <div className="relative group">
-                <Lock className={`${darkMode ? 'text-white' : 'text-gray-800'} absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 transition-colors duration-200 group-focus-within:text-gray-600`} size={18} />
+                <Lock className={`${darkMode ? 'text-white' : 'text-gray-800'} absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 group-focus-within:text-gray-600`} size={18} />
                 <input 
                   type="password" value={password}
                   onChange={(e) => setPassword(e.target.value)}
