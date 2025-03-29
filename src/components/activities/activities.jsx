@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 
-export default function Activities({ activities, primaryButton, secondaryButton, darkMode }) {
+export default function Activities({
+  activities = [], 
+  primaryButton = null, 
+  secondaryButton = null, 
+  darkMode = false  }) {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {

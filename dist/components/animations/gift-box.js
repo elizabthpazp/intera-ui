@@ -1,6 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function GiftBox(_ref) {
-  var message = _ref.message,
+  var _ref$message = _ref.message,
+    message = _ref$message === void 0 ? null : _ref$message,
     _ref$primaryColor = _ref.primaryColor,
     primaryColor = _ref$primaryColor === void 0 ? "#ff7d6d" : _ref$primaryColor,
     _ref$secondaryColor = _ref.secondaryColor,

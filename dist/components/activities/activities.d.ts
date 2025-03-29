@@ -1,6 +1,6 @@
 export default function Activities({ activities, primaryButton, secondaryButton, darkMode }: {
-    activities: any;
-    primaryButton: any;
-    secondaryButton: any;
-    darkMode: any;
+    activities?: never[] | undefined;
+    primaryButton?: null | undefined;
+    secondaryButton?: null | undefined;
+    darkMode?: boolean | undefined;
 }): any;

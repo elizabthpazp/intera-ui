@@ -1,5 +1,5 @@
 export default function GiftBox({
-  message,
+  message = null,
   primaryColor = "#ff7d6d",
   secondaryColor = "#ffb74a",
   secondaryAccentColor = "rgba(255, 206, 84, 1)",

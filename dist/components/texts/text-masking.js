@@ -2,8 +2,10 @@
 
 import { jsx as _jsx } from "react/jsx-runtime";
 var TextMasking = function TextMasking(_ref) {
-  var title = _ref.title,
-    image = _ref.image;
+  var _ref$title = _ref.title,
+    title = _ref$title === void 0 ? null : _ref$title,
+    _ref$image = _ref.image,
+    image = _ref$image === void 0 ? null : _ref$image;
   return /*#__PURE__*/_jsx("div", {
     className: "imageMark",
     style: {

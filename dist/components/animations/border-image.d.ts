@@ -1,4 +1,4 @@
 export default function BorderImage({ image, darkMode }: {
-    image: any;
-    darkMode: any;
+    image?: null | undefined;
+    darkMode?: boolean | undefined;
 }): any;

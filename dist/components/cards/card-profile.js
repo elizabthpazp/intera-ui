@@ -4,15 +4,24 @@ import React from "react";
 import BorderImage from "../animations/border-image";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 var CardProfile = function CardProfile(_ref) {
-  var darkMode = _ref.darkMode,
-    title = _ref.title,
-    subtitle = _ref.subtitle,
-    description = _ref.description,
-    buttonLeftLabel = _ref.buttonLeftLabel,
-    buttonRightLabel = _ref.buttonRightLabel,
-    onClickRight = _ref.onClickRight,
-    onClickLeft = _ref.onClickLeft,
-    image = _ref.image;
+  var _ref$darkMode = _ref.darkMode,
+    darkMode = _ref$darkMode === void 0 ? false : _ref$darkMode,
+    _ref$title = _ref.title,
+    title = _ref$title === void 0 ? null : _ref$title,
+    _ref$subtitle = _ref.subtitle,
+    subtitle = _ref$subtitle === void 0 ? null : _ref$subtitle,
+    _ref$description = _ref.description,
+    description = _ref$description === void 0 ? null : _ref$description,
+    _ref$buttonLeftLabel = _ref.buttonLeftLabel,
+    buttonLeftLabel = _ref$buttonLeftLabel === void 0 ? null : _ref$buttonLeftLabel,
+    _ref$buttonRightLabel = _ref.buttonRightLabel,
+    buttonRightLabel = _ref$buttonRightLabel === void 0 ? null : _ref$buttonRightLabel,
+    _ref$onClickRight = _ref.onClickRight,
+    onClickRight = _ref$onClickRight === void 0 ? function () {} : _ref$onClickRight,
+    _ref$onClickLeft = _ref.onClickLeft,
+    onClickLeft = _ref$onClickLeft === void 0 ? function () {} : _ref$onClickLeft,
+    _ref$image = _ref.image,
+    image = _ref$image === void 0 ? null : _ref$image;
   return /*#__PURE__*/_jsx("div", {
     className: "bg-gradient-to-br font-medium flex justify-center",
     children: /*#__PURE__*/_jsx("div", {

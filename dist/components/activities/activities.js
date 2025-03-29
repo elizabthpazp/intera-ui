@@ -9,10 +9,14 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 import { useState } from "react";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function Activities(_ref) {
-  var activities = _ref.activities,
-    primaryButton = _ref.primaryButton,
-    secondaryButton = _ref.secondaryButton,
-    darkMode = _ref.darkMode;
+  var _ref$activities = _ref.activities,
+    activities = _ref$activities === void 0 ? [] : _ref$activities,
+    _ref$primaryButton = _ref.primaryButton,
+    primaryButton = _ref$primaryButton === void 0 ? null : _ref$primaryButton,
+    _ref$secondaryButton = _ref.secondaryButton,
+    secondaryButton = _ref$secondaryButton === void 0 ? null : _ref$secondaryButton,
+    _ref$darkMode = _ref.darkMode,
+    darkMode = _ref$darkMode === void 0 ? false : _ref$darkMode;
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
     expanded = _useState2[0],

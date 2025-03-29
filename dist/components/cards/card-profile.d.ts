@@ -1,12 +1,12 @@
 export default CardProfile;
 declare function CardProfile({ darkMode, title, subtitle, description, buttonLeftLabel, buttonRightLabel, onClickRight, onClickLeft, image }: {
-    darkMode: any;
-    title: any;
-    subtitle: any;
-    description: any;
-    buttonLeftLabel: any;
-    buttonRightLabel: any;
-    onClickRight: any;
-    onClickLeft: any;
-    image: any;
+    darkMode?: boolean | undefined;
+    title?: null | undefined;
+    subtitle?: null | undefined;
+    description?: null | undefined;
+    buttonLeftLabel?: null | undefined;
+    buttonRightLabel?: null | undefined;
+    onClickRight?: (() => void) | undefined;
+    onClickLeft?: (() => void) | undefined;
+    image?: null | undefined;
 }): any;

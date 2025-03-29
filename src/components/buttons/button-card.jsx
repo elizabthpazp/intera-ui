@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 
-const ButtonCard = ({principalButton, darkMode, title, description, primaryButton, secondaryButton, emailPlaceholder, passwordPlaceholder, notShowArrow, notShowCombobox, notShowForgot, combobox, forgot, onLogin, forgotLink, onSignUp }) => {
+const ButtonCard = ({principalButton = null, darkMode = false, title= null, description= null, primaryButton= null, secondaryButton= null, emailPlaceholder= null, passwordPlaceholder= null, notShowArrow= false, notShowCombobox= false, notShowForgot= false, combobox= null, forgot= null, onLogin = () => {}, forgotLink = null, onSignUp = () => {} }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

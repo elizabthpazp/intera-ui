@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function BorderImage(_ref) {
-  var image = _ref.image,
-    darkMode = _ref.darkMode;
+  var _ref$image = _ref.image,
+    image = _ref$image === void 0 ? null : _ref$image,
+    _ref$darkMode = _ref.darkMode,
+    darkMode = _ref$darkMode === void 0 ? false : _ref$darkMode;
   return /*#__PURE__*/_jsx("div", {
     className: "flex",
     children: /*#__PURE__*/_jsxs(motion.div, {

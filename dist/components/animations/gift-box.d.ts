@@ -1,5 +1,5 @@
 export default function GiftBox({ message, primaryColor, secondaryColor, secondaryAccentColor, tertiaryColor, accentColor, shadowColor, textColor, containerColor }: {
-    message: any;
+    message?: null | undefined;
     primaryColor?: string | undefined;
     secondaryColor?: string | undefined;
     secondaryAccentColor?: string | undefined;
