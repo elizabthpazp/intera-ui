@@ -1,6 +1,6 @@
 {
   "name": "@elizabthpazp/intera-ui",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Una colección de componentes reutilizables en React",
   "keywords": [
     "react",
@@ -23,22 +23,22 @@
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.456.0",
     "next": "15.0.2",
-    "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028"
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.27.0",
-    "@babel/core": "^7.26.10",
-    "@babel/preset-env": "^7.26.9",
-    "@babel/preset-react": "^7.26.3",
-    "autoprefixer": "^10.4.21",
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "autoprefixer": "^10.4.22",
     "babel-loader": "^10.0.0",
     "babel-plugin-file-loader": "^2.0.0",
     "babel-plugin-transform-assets": "^1.0.2",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.2"
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.9.3"
   },
   "main": "dist/components/index.js",
   "sideEffects": [
