@@ -7,9 +7,9 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@elizabthpazp/intera-ui/dist/**/*.{js,ts,jsx,tsx}"
   ],
-  // NOTA: preflight activado para que el playground y consumidores con Tailwind tengan las variables --tw-* necesarias.
-  // La librería también genera una versión aislada `dist/globals.isolated.css` sin preflight para hosts que NO quieren reset global.
-  // Ver `src/globals.isolated.css` y `tailwind.library.config.js`
+  // Para la build aislada: mantenemos preflight false pero el archivo aislado incluye manualmente las variables --tw-* mínimas
+  // Cambiado a true temporalmente para que el playground y la librería generen estilos visibles sin configuración extra.
+  // Si necesitas versión 100% aislada sin reset de html/body, usa `src/globals.isolated.css` + config preflight:false y añade tu propio reset.
   corePlugins: {
     preflight: true,
   },

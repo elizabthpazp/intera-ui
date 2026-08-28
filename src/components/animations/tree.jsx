@@ -1,7 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { cn } from "../../lib/utils";
 
-const Tree = () => {
+/**
+ * @param {Object} props
+ * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
+ */
+const Tree = ({ className = "", style }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -24,7 +30,7 @@ const Tree = () => {
   }
 
   return (
-    <div className="relative h-[390px]">
+    <div className={cn("relative h-[390px]", className)} style={style}>
       <ul className="absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50" style={{marginLeft: '-10px'}}>
         {[...Array(5)].map((_, i) => (
           <li

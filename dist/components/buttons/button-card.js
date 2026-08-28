@@ -8,6 +8,7 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 import React, { useState } from 'react';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
+import { cn } from '../../lib/utils';
 
 /**
  * @param {Object} props
@@ -27,6 +28,10 @@ import { Mail, Lock, ArrowRight } from 'lucide-react';
  * @param {function} [props.onLogin=() => {}]
  * @param {string | null} [props.forgotLink=null]
  * @param {function} [props.onSignUp=() => {}]
+ * @param {string} [props.className=""] - Clases extra para el contenedor raíz (merge con cn)
+ * @param {string} [props.triggerClassName=""] - Clases extra para el botón trigger
+ * @param {string} [props.cardClassName=""] - Clases extra para la card desplegable
+ * @param {React.CSSProperties} [props.style] - Estilos inline raíz
  */
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 var ButtonCard = function ButtonCard(_ref) {
@@ -61,7 +66,14 @@ var ButtonCard = function ButtonCard(_ref) {
     _ref$forgotLink = _ref.forgotLink,
     forgotLink = _ref$forgotLink === void 0 ? null : _ref$forgotLink,
     _ref$onSignUp = _ref.onSignUp,
-    onSignUp = _ref$onSignUp === void 0 ? function () {} : _ref$onSignUp;
+    onSignUp = _ref$onSignUp === void 0 ? function () {} : _ref$onSignUp,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? "" : _ref$className,
+    _ref$triggerClassName = _ref.triggerClassName,
+    triggerClassName = _ref$triggerClassName === void 0 ? "" : _ref$triggerClassName,
+    _ref$cardClassName = _ref.cardClassName,
+    cardClassName = _ref$cardClassName === void 0 ? "" : _ref$cardClassName,
+    style = _ref.style;
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
     isOpen = _useState2[0],
@@ -87,14 +99,15 @@ var ButtonCard = function ButtonCard(_ref) {
     onSignUp(email, password, rememberMe);
   };
   return /*#__PURE__*/_jsx("div", {
-    className: "flex justify-center p-4",
+    className: cn("flex justify-center p-4", className),
+    style: style,
     children: /*#__PURE__*/_jsxs("div", {
       className: "relative",
       children: [/*#__PURE__*/_jsxs("button", {
         onClick: function onClick() {
           return setIsOpen(!isOpen);
         },
-        className: "\n            ".concat(darkMode ? '!bg-gray-900 border-gray-900 text-white hover:border-gray-500' : 'bg-gray-100 border-gray-300 text-gray-800 hover:border-gray-400', "\n            relative \n            px-8 py-3\n             font-medium\n            border-2 \n            bg-transparent\n            rounded-xl\n            transition-all duration-300 ease-out\n            uppercase tracking-wide\n            flex items-center gap-2\n            \n            ").concat(isOpen ? 'opacity-0' : 'opacity-100', "\n          "),
+        className: cn("relative px-8 py-3 font-medium border-2 rounded-xl transition-all duration-300 ease-out uppercase tracking-wide flex items-center gap-2", darkMode ? '!bg-gray-900 border-gray-900 text-white hover:border-gray-500 bg-transparent' : 'bg-gray-100 border-gray-300 text-gray-800 hover:border-gray-400 bg-transparent', isOpen ? 'opacity-0' : 'opacity-100', triggerClassName),
         children: [/*#__PURE__*/_jsx("span", {
           children: principalButton !== null && principalButton !== void 0 ? principalButton : 'Enter'
         }), !notShowArrow ? /*#__PURE__*/_jsx(ArrowRight, {
@@ -106,22 +119,24 @@ var ButtonCard = function ButtonCard(_ref) {
           return setIsOpen(false);
         }
       }), /*#__PURE__*/_jsxs("div", {
-        className: "\n          absolute \n          left-16 top-18 \n          -translate-x-1/2 \n          ".concat(darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300', "\n          rounded-2xl\n          p-6 border-2 \n          transform\n          transition-all duration-300 ease-out \n          shadow-xl\n          backdrop-blur-sm\n          ").concat(isOpen ? 'opacity-100 -translate-y-1/2 scale-100' : 'opacity-0 -translate-y-[40%] scale-95 pointer-events-none', "\n          min-w-[320px]\n          z-50\n        "),
+        className: cn("absolute left-16 -translate-x-1/2 rounded-2xl p-6 border-2 transform transition-all duration-300 ease-out shadow-xl backdrop-blur-sm z-50", "top-[72px]",
+        // reemplaza top-18 (no existe en tailwind por defecto) por valor explícito
+        darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300', isOpen ? 'opacity-100 -translate-y-1/2 scale-100' : 'opacity-0 -translate-y-[40%] scale-95 pointer-events-none', "min-w-[320px]", cardClassName),
         children: [/*#__PURE__*/_jsx("button", {
           onClick: function onClick() {
             return setIsOpen(false);
           },
-          className: "".concat(darkMode ? 'text-gray-500 hover:text-gray-300' : 'text-gray-400 hover:text-gray-600', " absolute top-2 right-4 font-semibold transition"),
+          className: cn("absolute top-2 right-4 font-semibold transition", darkMode ? 'text-gray-500 hover:text-gray-300' : 'text-gray-400 hover:text-gray-600'),
           children: "\u2715"
         }), /*#__PURE__*/_jsxs("div", {
           className: "space-y-5",
           children: [/*#__PURE__*/_jsxs("div", {
             className: "text-center",
             children: [/*#__PURE__*/_jsx("h2", {
-              className: "text-2xl font-bold ".concat(darkMode ? 'text-white' : 'text-gray-800'),
+              className: cn("text-2xl font-bold", darkMode ? 'text-white' : 'text-gray-800'),
               children: title !== null && title !== void 0 ? title : 'Welcome Back'
             }), /*#__PURE__*/_jsxs("p", {
-              className: "".concat(darkMode ? 'text-gray-300' : 'text-gray-800', " text-sm mt-1"),
+              className: cn("text-sm mt-1", darkMode ? 'text-gray-300' : 'text-gray-800'),
               children: [" ", description !== null && description !== void 0 ? description : 'Sign in to continue']
             })]
           }), /*#__PURE__*/_jsxs("div", {
@@ -129,7 +144,7 @@ var ButtonCard = function ButtonCard(_ref) {
             children: [/*#__PURE__*/_jsxs("div", {
               className: "relative group",
               children: [/*#__PURE__*/_jsx(Mail, {
-                className: " ".concat(darkMode ? 'text-white' : 'text-gray-800', " absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 group-focus-within:text-gray-600"),
+                className: cn("absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 group-focus-within:text-gray-600", darkMode ? 'text-white' : 'text-gray-800'),
                 size: 18
               }), /*#__PURE__*/_jsx("input", {
                 type: "email",
@@ -138,12 +153,12 @@ var ButtonCard = function ButtonCard(_ref) {
                   return setEmail(e.target.value);
                 },
                 placeholder: emailPlaceholder !== null && emailPlaceholder !== void 0 ? emailPlaceholder : 'Email',
-                className: "".concat(darkMode ? 'text-white bg-gray-900 border-gray-500' : 'text-gray-800 bg-purple-50/50 border-gray-300', " w-full pl-10 pr-4 py-2.5 border rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-purple-200 transition-all duration-200 text-sm")
+                className: cn("w-full pl-10 pr-4 py-2.5 border rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-purple-200 transition-all duration-200 text-sm", darkMode ? 'text-white bg-gray-900 border-gray-500' : 'text-gray-800 bg-purple-50/50 border-gray-300')
               })]
             }), /*#__PURE__*/_jsxs("div", {
               className: "relative group",
               children: [/*#__PURE__*/_jsx(Lock, {
-                className: "".concat(darkMode ? 'text-white' : 'text-gray-800', " absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 group-focus-within:text-gray-600"),
+                className: cn("absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 group-focus-within:text-gray-600", darkMode ? 'text-white' : 'text-gray-800'),
                 size: 18
               }), /*#__PURE__*/_jsx("input", {
                 type: "password",
@@ -152,13 +167,13 @@ var ButtonCard = function ButtonCard(_ref) {
                   return setPassword(e.target.value);
                 },
                 placeholder: passwordPlaceholder !== null && passwordPlaceholder !== void 0 ? passwordPlaceholder : 'Password',
-                className: "".concat(darkMode ? 'text-white bg-gray-900 border-gray-500' : 'text-gray-800 bg-purple-50/50 border-gray-300', " w-full pl-10 pr-4 py-2.5 border rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-purple-200 transition-all duration-200 text-sm")
+                className: cn("w-full pl-10 pr-4 py-2.5 border rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-purple-200 transition-all duration-200 text-sm", darkMode ? 'text-white bg-gray-900 border-gray-500' : 'text-gray-800 bg-purple-50/50 border-gray-300')
               })]
             })]
           }), /*#__PURE__*/_jsxs("div", {
             className: "flex justify-between items-center text-sm",
             children: [!notShowCombobox ? /*#__PURE__*/_jsxs("label", {
-              className: "".concat(darkMode ? 'text-white' : 'text-gray-600', " flex items-center"),
+              className: cn("flex items-center", darkMode ? 'text-white' : 'text-gray-600'),
               children: [/*#__PURE__*/_jsx("input", {
                 type: "checkbox",
                 className: "mr-2 rounded focus:ring-purple-500",
@@ -171,7 +186,7 @@ var ButtonCard = function ButtonCard(_ref) {
               className: "flex items-center text-gray-600"
             }) : '', !notShowForgot ? /*#__PURE__*/_jsx("a", {
               href: forgotLink !== null && forgotLink !== void 0 ? forgotLink : '#',
-              className: "".concat(darkMode ? 'text-white' : 'text-gray-800', " hover:text-gray-500 font-medium"),
+              className: cn("hover:text-gray-500 font-medium", darkMode ? 'text-white' : 'text-gray-800'),
               children: forgot !== null && forgot !== void 0 ? forgot : 'Forgot?'
             }) : '']
           }), /*#__PURE__*/_jsxs("div", {
@@ -180,19 +195,19 @@ var ButtonCard = function ButtonCard(_ref) {
               onClick: function onClick(e) {
                 return handleSubmit(e);
               },
-              className: "w-full ".concat(darkMode ? ' bg-white hover:text-white text-gray-800 hover:bg-slate-950' : 'bg-slate-950 hover:bg-white hover:text-gray-800 text-white hover:border-gray-600 border', " py-2.5 rounded-xl hover:bg-gray-700 transition-all duration-200 font-medium shadow-lg shadow-gray-500/20"),
+              className: cn("w-full py-2.5 rounded-xl transition-all duration-200 font-medium shadow-lg shadow-gray-500/20 border", darkMode ? ' bg-white hover:text-white text-gray-800 hover:bg-slate-950' : 'bg-slate-950 hover:bg-white hover:text-gray-800 text-white hover:border-gray-600'),
               children: primaryButton !== null && primaryButton !== void 0 ? primaryButton : 'Sign In'
             }), /*#__PURE__*/_jsx("button", {
               onClick: function onClick(e) {
                 return handleSubmit2(e);
               },
-              className: "w-full ".concat(darkMode ? ' bg-slate-950 hover:bg-white hover:text-gray-800 text-white' : 'bg-white hover:text-white text-gray-800 hover:bg-slate-950 border-gray-600 border', " py-2.5 rounded-xl transition-colors duration-200 font-medium"),
+              className: cn("w-full py-2.5 rounded-xl transition-colors duration-200 font-medium border", darkMode ? ' bg-slate-950 hover:bg-white hover:text-gray-800 text-white' : 'bg-white hover:text-white text-gray-800 hover:bg-slate-950 border-gray-600'),
               children: secondaryButton !== null && secondaryButton !== void 0 ? secondaryButton : 'Create Account'
             })]
           })]
         })]
       }), /*#__PURE__*/_jsx("div", {
-        className: "\n          absolute inset-0\n          -z-10 \n          transition-all duration-500\n          ".concat(isOpen ? 'scale-150' : 'scale-100', "\n        ")
+        className: cn("absolute inset-0 -z-10 transition-all duration-500", isOpen ? 'scale-150' : 'scale-100')
       })]
     })
   });

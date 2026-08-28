@@ -7,6 +7,7 @@ export { default as GiftBox } from "./animations/gift-box";
 export { default as CatLoader } from "./loaders/cat-loader";
 export { default as BorderImage } from "./animations/border-image";
 export { default as TextMasking } from "./texts/text-masking";
+export { cn } from "../lib/utils";
 
 // Interactive Components
 export { default as MagneticDock } from "./interactive/MagneticDock";

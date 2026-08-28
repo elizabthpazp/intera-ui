@@ -1,3 +1,5 @@
+import { cn } from "../../lib/utils";
+
 /**
  * @param {Object} props
  * @param {string|null} [props.message=null]
@@ -9,6 +11,8 @@
  * @param {string} [props.shadowColor="#dd4b4c"]
  * @param {string} [props.textColor="#302E2EFF"]
  * @param {string} [props.containerColor="#ffa69f"]
+ * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
  */
 
 export default function GiftBox({
@@ -20,10 +24,12 @@ export default function GiftBox({
   accentColor = "#ff4149",
   shadowColor = "#dd4b4c",
   textColor = "#302E2EFF",
-  containerColor = "#ffa69f"
+  containerColor = "#ffa69f",
+  className = "",
+  style,
 }) {
   return (
-    <div className="h-[260px] relative z-60 flex justify-center items-end">
+    <div className={cn("h-[260px] relative z-60 flex justify-center items-end", className)} style={style}>
       <section className="absolute bottom-0 w-[150px] left-1/2 transform -translate-x-1/2 z-[12] h-[180px] group">
         <div
           className="absolute w-[120px] font-sans font-extrabold rounded-md shadow p-2.5 text-[15px] left-0 top-[100px] right-0 mx-auto leading-[26px] z-[-1] text-center transition-all duration-600 ease-in-out delay-[100ms] group-hover:top-[-10px] group-hover:delay-[400ms]"

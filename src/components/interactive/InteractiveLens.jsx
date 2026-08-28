@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "../../lib/utils";
 
 /**
  * @param {Object} props
@@ -9,13 +10,15 @@ import { motion } from "framer-motion";
  * @param {number} [props.size=200] - Lens size
  * @param {boolean} [props.darkMode=false]
  * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
  */
 export default function InteractiveLens({
   children,
   background,
   size = 200,
   darkMode = false,
-  className = ""
+  className = "",
+  style,
 }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -30,17 +33,16 @@ export default function InteractiveLens({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl cursor-none ${className}`}
+      className={cn("relative overflow-hidden rounded-2xl cursor-none", className)}
+      style={style}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Background (Always visible) */}
       <div className="w-full h-full opacity-40 grayscale select-none pointer-events-none">
         {background || children}
       </div>
 
-      {/* Reveal Lens */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         animate={{
@@ -58,12 +60,9 @@ export default function InteractiveLens({
         </div>
       </motion.div>
 
-      {/* Visual Cursor/Lens Border */}
       {isHovered && (
         <motion.div
-          className={`absolute rounded-full border-2 pointer-events-none z-10 ${
-            darkMode ? "border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)]" : "border-black/20 shadow-[0_0_20px_rgba(0,0,0,0.1)]"
-          }`}
+          className={cn("absolute rounded-full border-2 pointer-events-none z-10", darkMode ? "border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)]" : "border-black/20 shadow-[0_0_20px_rgba(0,0,0,0.1)]")}
           style={{
             width: size,
             height: size,

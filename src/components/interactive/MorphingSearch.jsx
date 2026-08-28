@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from "lucide-react";
+import { cn } from "../../lib/utils";
 
 /**
  * @param {Object} props
@@ -9,12 +10,14 @@ import { Search, X } from "lucide-react";
  * @param {function} [props.onSearch=() => {}]
  * @param {boolean} [props.darkMode=false]
  * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
  */
 export default function MorphingSearch({
   placeholder = "Search anything...",
   onSearch = () => {},
   darkMode = false,
-  className = ""
+  className = "",
+  style,
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [value, setValue] = useState("");
@@ -27,14 +30,8 @@ export default function MorphingSearch({
     }
   };
 
-  const handleClear = (e) => {
-    e.stopPropagation();
-    setValue("");
-    inputRef.current?.focus();
-  };
-
   return (
-    <div className={`flex items-center justify-center ${className}`}>
+    <div className={cn("flex items-center justify-center", className)} style={style}>
       <motion.div
         layout
         initial={false}
@@ -43,11 +40,7 @@ export default function MorphingSearch({
           borderRadius: isExpanded ? 12 : 24,
         }}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
-        className={`relative h-12 overflow-hidden flex items-center border ${
-          darkMode 
-            ? "bg-gray-900 border-gray-700 text-white" 
-            : "bg-white border-gray-200 text-gray-800"
-        } shadow-sm`}
+        className={cn("relative h-12 overflow-hidden flex items-center border shadow-sm", darkMode ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-800")}
         onClick={() => !isExpanded && toggleExpand()}
       >
         <div className="absolute left-3 flex items-center justify-center w-6 h-6">
@@ -68,7 +61,7 @@ export default function MorphingSearch({
                 onSearch(e.target.value);
               }}
               placeholder={placeholder}
-              className={`w-full h-full pl-11 pr-10 bg-transparent outline-none text-sm font-medium`}
+              className="w-full h-full pl-11 pr-10 bg-transparent outline-none text-sm font-medium"
             />
           )}
         </AnimatePresence>
@@ -78,9 +71,7 @@ export default function MorphingSearch({
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             onClick={toggleExpand}
-            className={`absolute right-3 p-1 rounded-full transition-colors ${
-              darkMode ? "hover:bg-gray-800 text-gray-400" : "hover:bg-gray-100 text-gray-500"
-            }`}
+            className={cn("absolute right-3 p-1 rounded-full transition-colors", darkMode ? "hover:bg-gray-800 text-gray-400" : "hover:bg-gray-100 text-gray-500")}
           >
             <X size={16} />
           </motion.button>

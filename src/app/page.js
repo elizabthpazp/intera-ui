@@ -133,9 +133,9 @@ export default function Playground() {
             </div>
           </ComponentWrapper>
 
-          <ComponentWrapper name="SwipeToConfirm" description="A secure slider for critical actions like payments or deletions.">
+          <ComponentWrapper name="SwipeToConfirm" description="Swipe seguro para acciones críticas. Librería no hace alert por defecto — delega a tu onConfirm.">
             <div className="flex justify-center py-6">
-              <SwipeToConfirm darkMode={darkMode} onConfirm={() => alert("Confirmed!")} />
+              <SwipeToConfirm darkMode={darkMode} onConfirm={() => console.log("Confirmed!")} resetDelay={3000} />
             </div>
           </ComponentWrapper>
 

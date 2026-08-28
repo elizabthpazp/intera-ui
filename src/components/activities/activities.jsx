@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { cn } from "../../lib/utils";
 
 /**
  * @param {Object} props
@@ -8,13 +9,18 @@ import { useState } from "react";
  * @param {any} [props.activities=null]
  * @param {string|null} [props.primaryButton=null]
  * @param {string|null} [props.secondaryButton=null]
+ * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
  */
 
 export default function Activities({
   activities = null, 
   primaryButton = null, 
   secondaryButton = null, 
-  darkMode = false  }) {
+  darkMode = false,
+  className = "",
+  style,
+}) {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -27,33 +33,25 @@ export default function Activities({
     { name: "Make dinner", location: "At home", date: "3 April" },
   ];
 
-  const [activitiesList, setActivitiesList] = useState(
+  const [activitiesList] = useState(
     activities ?? tempActivities
   );
 
   return (
-    <div className="flex justify-center">
+    <div className={cn("flex justify-center", className)} style={style}>
       <div className="relative max-w-md w-full p-4 rounded-xl">
         {activitiesList.length > 1 && (
           <div
-            className={`
-            flex items-center justify-center 
-            transition-all duration-300 ease-out mb-4
-          `}
+            className="flex items-center justify-center transition-all duration-300 ease-out mb-4"
           >
             <button
               onClick={toggleExpand}
-              className={`
-              relative px-8 py-2 rounded-2xl 
-              border-2 shadow text-sm font-semibold 
-              cursor-pointer after:content-[''] 
-              after:absolute  
-              after:w-2 after:h-2 after:right-6 
-              after:top-3 after:transition-all 
-              after:duration-300 
-              ${expanded ? "after:rotate-45" : "after:rotate-225"}
-              ${darkMode ? 'text-white bg-gray-900 border-zinc-800 hover:border-zinc-600' : 'border-zinc-200 hover:border-zinc-300 bg-white text-gray-900'}
-            `}
+              className={cn(
+                "relative px-8 py-2 rounded-2xl border-2 shadow text-sm font-semibold cursor-pointer",
+                "after:content-[''] after:absolute after:w-2 after:h-2 after:right-6 after:top-3 after:transition-all after:duration-300",
+                expanded ? "after:rotate-45" : "after:rotate-225",
+                darkMode ? 'text-white bg-gray-900 border-zinc-800 hover:border-zinc-600' : 'border-zinc-200 hover:border-zinc-300 bg-white text-gray-900'
+              )}
             >
               {expanded ? primaryButton ?? "Hide" : secondaryButton ?? "Show"}
             </button>
@@ -71,18 +69,10 @@ export default function Activities({
           {activitiesList.map((activity, index) => (
             <div
               key={index}
-              className={`
-              absolute top-0 left-0 right-0 w-full p-4 
-              border-2 rounded-3xl 
-              flex items-end justify-between 
-              transition-all duration-300 ease-out 
-               shadow-lg 
-              ${darkMode ? 'bg-gray-900 border-zinc-800' : 'bg-white border-gray-200'}
-              ${
-                expanded
-                  ? "transform-none"
-                  : `transform scale-${95 - index * 5} z-${20 - index * 5}`
-              }`}
+              className={cn(
+                "absolute top-0 left-0 right-0 w-full p-4 border-2 rounded-3xl flex items-end justify-between transition-all duration-300 ease-out shadow-lg",
+                darkMode ? 'bg-gray-900 border-zinc-800' : 'bg-white border-gray-200'
+              )}
               style={{
                 top: expanded
                   ? `${index * 6}rem`
@@ -92,17 +82,17 @@ export default function Activities({
               }}
             >
               <div className="flex items-center">
-                <span className={`${darkMode ? 'bg-gray-700' : 'bg-gray-300'} w-12 h-12 rounded-3xl mr-2`}></span>
+                <span className={cn("w-12 h-12 rounded-3xl mr-2", darkMode ? 'bg-gray-700' : 'bg-gray-300')}></span>
                 <div>
-                  <h2 className={`${darkMode ? 'text-white' : 'text-gray-900'} m-0 text-base font-medium`}>
+                  <h2 className={cn("m-0 text-base font-medium", darkMode ? 'text-white' : 'text-gray-900')}>
                     {activity.name || "Unnamed Activity"}
                   </h2>
-                  <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'} text-sm`}>
+                  <span className={cn("text-sm", darkMode ? 'text-gray-400' : 'text-gray-500')}>
                     {activity.location || "Unknown Location"}
                   </span>
                 </div>
               </div>
-              <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'} text-sm`}>
+              <span className={cn("text-sm", darkMode ? 'text-gray-400' : 'text-gray-500')}>
                 {activity.date || "No Date"}
               </span>
             </div>

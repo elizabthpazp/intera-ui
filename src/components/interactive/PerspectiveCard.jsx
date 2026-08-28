@@ -1,17 +1,20 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { cn } from "../../lib/utils";
 
 /**
  * @param {Object} props
  * @param {ReactNode} props.children
  * @param {boolean} [props.darkMode=false]
  * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
  */
 export default function PerspectiveCard({
   children,
   darkMode = false,
-  className = ""
+  className = "",
+  style,
 }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -49,12 +52,9 @@ export default function PerspectiveCard({
         rotateY,
         rotateX,
         transformStyle: "preserve-3d",
+        ...style,
       }}
-      className={`relative w-64 h-96 rounded-3xl border shadow-2xl transition-colors duration-500 overflow-hidden ${
-        darkMode 
-          ? "bg-gray-900 border-gray-800" 
-          : "bg-white border-gray-100"
-      } ${className}`}
+      className={cn("relative w-64 h-96 rounded-3xl border shadow-2xl transition-colors duration-500 overflow-hidden", darkMode ? "bg-gray-900 border-gray-800" : "bg-white border-gray-100", className)}
     >
       <div
         style={{
@@ -66,7 +66,6 @@ export default function PerspectiveCard({
         {children}
       </div>
       
-      {/* Glare effect */}
       <motion.div
         style={{
           background: "radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 80%)",

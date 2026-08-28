@@ -2,17 +2,20 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { cn } from "../../lib/utils";
 
 /**
  * @param {Object} props
  * @param {Array} [props.items=[]] - Array of { id: string, title: string, content: string }
  * @param {boolean} [props.darkMode=false]
  * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
  */
 export default function InteractiveAccordion({
   items = [],
   darkMode = false,
-  className = ""
+  className = "",
+  style,
 }) {
   const [expandedId, setExpandedId] = useState(null);
 
@@ -21,25 +24,17 @@ export default function InteractiveAccordion({
   };
 
   return (
-    <div className={`flex flex-col gap-3 w-full max-w-md ${className}`}>
+    <div className={cn("flex flex-col gap-3 w-full max-w-md", className)} style={style}>
       {items.map((item) => (
         <div
           key={item.id}
-          className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
-            expandedId === item.id
-              ? (darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-black shadow-lg")
-              : (darkMode ? "bg-gray-900 border-gray-800 hover:border-gray-700" : "bg-gray-50 border-gray-200 hover:border-gray-300")
-          }`}
+          className={cn("overflow-hidden rounded-2xl border transition-all duration-300", expandedId === item.id ? (darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-black shadow-lg") : (darkMode ? "bg-gray-900 border-gray-800 hover:border-gray-700" : "bg-gray-50 border-gray-200 hover:border-gray-300"))}
         >
           <button
             onClick={() => toggleItem(item.id)}
             className="w-full px-6 py-5 flex items-center justify-between text-left group"
           >
-            <span className={`font-black uppercase tracking-widest text-sm transition-colors ${
-              expandedId === item.id
-                ? (darkMode ? "text-white" : "text-black")
-                : (darkMode ? "text-gray-400 group-hover:text-gray-200" : "text-gray-500 group-hover:text-gray-900")
-            }`}>
+            <span className={cn("font-black uppercase tracking-widest text-sm transition-colors", expandedId === item.id ? (darkMode ? "text-white" : "text-black") : (darkMode ? "text-gray-400 group-hover:text-gray-200" : "text-gray-500 group-hover:text-gray-900"))}>
               {item.title}
             </span>
             <motion.div
@@ -59,9 +54,7 @@ export default function InteractiveAccordion({
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <div className={`px-6 pb-6 text-sm leading-relaxed ${
-                  darkMode ? "text-gray-400" : "text-gray-600"
-                }`}>
+                <div className={cn("px-6 pb-6 text-sm leading-relaxed", darkMode ? "text-gray-400" : "text-gray-600")}>
                   <motion.div
                     initial={{ y: 10 }}
                     animate={{ y: 0 }}

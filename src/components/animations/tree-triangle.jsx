@@ -1,7 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { cn } from "../../lib/utils";
 
-const TreeTriangle = () => {  
+/**
+ * @param {Object} props
+ * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
+ */
+const TreeTriangle = ({ className = "", style }) => {  
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -14,7 +20,7 @@ const TreeTriangle = () => {
   });
 
   return (
-    <div className="relative w-full h-[400px]">  
+    <div className={cn("relative w-full h-[400px]", className)} style={style}>  
       <ul className="absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50" style={{marginLeft: '-15px'}}>
         {[...Array(5)].map((_, i) => (
           <li
@@ -27,12 +33,12 @@ const TreeTriangle = () => {
           />
         ))}
       </ul>
-  
+   
       <ul className="absolute top-0 right-0 left-0 w-full p-0">
         {mounted && [...Array(64)].map((_, i) => (
           <li
             key={i}
-            className="swing-line absolute left-1/2 top-4"
+            className="swing-line ia-swing-line absolute left-1/2 top-4"
             style={generateSwingLineStyle(i + 1)}
           />
         ))}
@@ -42,4 +48,3 @@ const TreeTriangle = () => {
 }; 
  
 export default TreeTriangle;
-

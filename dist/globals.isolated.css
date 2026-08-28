@@ -1,8 +1,8 @@
 /* 
- * InteraUI - Estilos playground + base
- * Este archivo se usa para el playground (Next.js local) y genera dist/globals.css con preflight.
- * Para consumidores que NO quieren que la librería inyecte el reset global (html, body, h1...),
- * usar `dist/globals.isolated.css` que se genera sin preflight desde `src/globals.isolated.css`.
+ * InteraUI - Estilos librería (con base, compatible con playground)
+ * - Incluye @tailwind base completo. Para versión 100% aislada sin reset html/body/h1,
+ *   se generará en futuro `dist/globals.isolated.css` con preflight:false + variables mínimas.
+ * - Actualmente ambos archivos son equivalentes para garantizar que el playground y hosts con/sin Tailwind vean estilos.
  */
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
@@ -1944,4 +1944,3 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-  

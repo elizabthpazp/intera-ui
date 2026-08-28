@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "../../lib/utils";
 
 /**
  * @param {Object} props
@@ -9,13 +10,15 @@ import { motion } from "framer-motion";
  * @param {number} [props.strength=0.5] - How strong the magnetic pull is (0 to 1)
  * @param {boolean} [props.darkMode=false]
  * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
  */
 export default function MagneticButton({
   children,
   onClick = () => {},
   strength = 0.5,
   darkMode = false,
-  className = ""
+  className = "",
+  style,
 }) {
   const ref = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -40,11 +43,14 @@ export default function MagneticButton({
       onMouseLeave={handleMouseLeave}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className={`relative px-8 py-3 rounded-xl font-bold transition-colors shadow-lg active:scale-95 ${
+      style={style}
+      className={cn(
+        "relative px-8 py-3 rounded-xl font-bold transition-colors shadow-lg active:scale-95",
         darkMode 
           ? "bg-white text-black hover:bg-gray-100" 
-          : "bg-black text-white hover:bg-gray-800"
-      } ${className}`}
+          : "bg-black text-white hover:bg-gray-800",
+        className
+      )}
     >
       <motion.span
         className="relative z-10 block"
@@ -55,9 +61,7 @@ export default function MagneticButton({
       
       {/* Magnetic Glow */}
       <motion.div
-        className={`absolute inset-0 rounded-xl blur-lg opacity-0 group-hover:opacity-30 pointer-events-none ${
-          darkMode ? "bg-white" : "bg-black"
-        }`}
+        className={cn("absolute inset-0 rounded-xl blur-lg opacity-0 group-hover:opacity-30 pointer-events-none", darkMode ? "bg-white" : "bg-black")}
       />
     </motion.button>
   );

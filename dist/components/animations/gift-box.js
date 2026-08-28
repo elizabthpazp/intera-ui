@@ -1,4 +1,5 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { cn } from "../../lib/utils";
+
 /**
  * @param {Object} props
  * @param {string|null} [props.message=null]
@@ -10,8 +11,10 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * @param {string} [props.shadowColor="#dd4b4c"]
  * @param {string} [props.textColor="#302E2EFF"]
  * @param {string} [props.containerColor="#ffa69f"]
+ * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
  */
-
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function GiftBox(_ref) {
   var _ref$message = _ref.message,
     message = _ref$message === void 0 ? null : _ref$message,
@@ -30,9 +33,13 @@ export default function GiftBox(_ref) {
     _ref$textColor = _ref.textColor,
     textColor = _ref$textColor === void 0 ? "#302E2EFF" : _ref$textColor,
     _ref$containerColor = _ref.containerColor,
-    containerColor = _ref$containerColor === void 0 ? "#ffa69f" : _ref$containerColor;
+    containerColor = _ref$containerColor === void 0 ? "#ffa69f" : _ref$containerColor,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? "" : _ref$className,
+    style = _ref.style;
   return /*#__PURE__*/_jsx("div", {
-    className: "h-[260px] relative z-60 flex justify-center items-end",
+    className: cn("h-[260px] relative z-60 flex justify-center items-end", className),
+    style: style,
     children: /*#__PURE__*/_jsxs("section", {
       className: "absolute bottom-0 w-[150px] left-1/2 transform -translate-x-1/2 z-[12] h-[180px] group",
       children: [/*#__PURE__*/_jsx("div", {
