@@ -1,15 +1,26 @@
+"use client";
+import React, { useState, useEffect } from "react";
+
 const Tree = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const lines = [];
-  for (let i = 0; i < 256; i++) {
-    const t = (6 * 360 * i) / 256;
-    const angle =
-      (Math.sin((t * Math.PI) / 180) + Math.cos((t * Math.PI) / 540) * 0.1) *
-      20;
-    lines.push({
-      transform: `rotate(${angle}deg)`,
-      animationDelay: `${-(i * (4 / 256))}s`,
-      color: ["#D8334A", "#FFCE54", "#2ECC71", "#5D9CEC"][i % 4],
-    });
+  if (mounted) {
+    for (let i = 0; i < 256; i++) {
+      const t = (6 * 360 * i) / 256;
+      const angle =
+        (Math.sin((t * Math.PI) / 180) + Math.cos((t * Math.PI) / 540) * 0.1) *
+        20;
+      lines.push({
+        transform: `rotate(${angle}deg)`,
+        animationDelay: `${-(i * (4 / 256))}s`,
+        color: ["#D8334A", "#FFCE54", "#2ECC71", "#5D9CEC"][i % 4],
+      });
+    }
   }
 
   return (
@@ -28,7 +39,7 @@ const Tree = () => {
       </ul>
 
       <ul className="p-0">
-        {lines.map((line, i) => (
+        {mounted && lines.map((line, i) => (
           <li
             key={i}
             className="matrix-line absolute left-1/2 w-[1px] h-[400px]"

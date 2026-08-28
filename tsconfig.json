@@ -1,14 +1,36 @@
 {
-    "compilerOptions": {
-      "outDir": "dist",
-      "declaration": true,
-      "emitDeclarationOnly": true,
-      "allowJs": true,
-      "skipLibCheck": true,
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "strict": true
-    },
-    "include": ["src"]
-  }
-  
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "src",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -22,7 +22,7 @@ export default function BorderImage({image = null, darkMode = false}) {
         />
         <div className={`${!darkMode ? 'border-gray-600' : 'border-gray-400'} relative rounded-full overflow-hidden h-28 w-28 border-2`}>
           <Image style={{marginTop:'0px'}}
-            src={image ?? ""}
+            src={image || "/img/image.jpg"}
             alt="Animated Image"
             width={256}
             height={256}

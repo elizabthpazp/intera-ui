@@ -1,4 +1,13 @@
+"use client";
+import React, { useState, useEffect } from "react";
+
 const TreeTriangle = () => {  
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const generateSwingLineStyle = (i) => ({
     height: `calc(100vh * ((${i + 4}) / (128 + 4)))`,
     animationDelay: `calc(-4s * (${i} / (128 / 7)))`,
@@ -20,7 +29,7 @@ const TreeTriangle = () => {
       </ul>
   
       <ul className="absolute top-0 right-0 left-0 w-full p-0">
-        {[...Array(64)].map((_, i) => (
+        {mounted && [...Array(64)].map((_, i) => (
           <li
             key={i}
             className="swing-line absolute left-1/2 top-4"
@@ -30,7 +39,7 @@ const TreeTriangle = () => {
       </ul>
     </div>
   );
-};
+}; 
  
 export default TreeTriangle;
 

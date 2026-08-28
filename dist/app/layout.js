@@ -1,4 +1,5 @@
 import React from "react";
+import "../globals.css";
 import { jsx as _jsx } from "react/jsx-runtime";
 export var metadata = {
   title: "React Components for free",

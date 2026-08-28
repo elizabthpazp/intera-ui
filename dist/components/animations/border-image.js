@@ -36,7 +36,7 @@ export default function BorderImage(_ref) {
           style: {
             marginTop: '0px'
           },
-          src: image !== null && image !== void 0 ? image : "",
+          src: image || "/img/image.jpg",
           alt: "Animated Image",
           width: 256,
           height: 256,
