@@ -15,7 +15,7 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "babel src --out-dir dist --extensions .js,.jsx && tsc --project tsconfig.json",
+    "build": "babel src --out-dir dist --extensions .js,.jsx && npx tsc src/components/index.js --declaration --allowJs --emitDeclarationOnly --outDir dist --moduleResolution node --target ES2017 --jsx preserve --esModuleInterop --skipLibCheck --lib dom,dom.iterable,esnext",
     "postbuild": "postcss src/globals.css -o dist/globals.css && postcss src/globals.isolated.css -o dist/globals.isolated.css --config postcss.library.config.js",
     "prepublishOnly": "npm run build"
   },

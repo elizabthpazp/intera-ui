@@ -17,22 +17,31 @@ export default ButtonCard;
  * @param {function} [props.onLogin=() => {}]
  * @param {string | null} [props.forgotLink=null]
  * @param {function} [props.onSignUp=() => {}]
+ * @param {string} [props.className=""] - Clases extra para el contenedor raíz (merge con cn)
+ * @param {string} [props.triggerClassName=""] - Clases extra para el botón trigger
+ * @param {string} [props.cardClassName=""] - Clases extra para la card desplegable
+ * @param {React.CSSProperties} [props.style] - Estilos inline raíz
  */
-declare function ButtonCard({ principalButton, darkMode, title, description, primaryButton, secondaryButton, emailPlaceholder, passwordPlaceholder, notShowArrow, notShowCombobox, notShowForgot, combobox, forgot, onLogin, forgotLink, onSignUp }: {
-    principalButton?: string | null | undefined;
-    darkMode?: boolean | undefined;
-    title?: string | null | undefined;
-    description?: string | null | undefined;
-    primaryButton?: string | null | undefined;
-    secondaryButton?: string | null | undefined;
-    emailPlaceholder?: string | null | undefined;
-    passwordPlaceholder?: string | null | undefined;
-    notShowArrow?: boolean | undefined;
-    notShowCombobox?: boolean | undefined;
-    notShowForgot?: boolean | undefined;
-    combobox?: string | null | undefined;
-    forgot?: string | null | undefined;
-    onLogin?: Function | undefined;
-    forgotLink?: string | null | undefined;
-    onSignUp?: Function | undefined;
-}): any;
+declare function ButtonCard({ principalButton, darkMode, title, description, primaryButton, secondaryButton, emailPlaceholder, passwordPlaceholder, notShowArrow, notShowCombobox, notShowForgot, combobox, forgot, onLogin, forgotLink, onSignUp, className, triggerClassName, cardClassName, style, }: {
+    principalButton?: string | null;
+    darkMode?: boolean;
+    title?: string | null;
+    description?: string | null;
+    primaryButton?: string | null;
+    secondaryButton?: string | null;
+    emailPlaceholder?: string | null;
+    passwordPlaceholder?: string | null;
+    notShowArrow?: boolean;
+    notShowCombobox?: boolean;
+    notShowForgot?: boolean;
+    combobox?: string | null;
+    forgot?: string | null;
+    onLogin?: Function;
+    forgotLink?: string | null;
+    onSignUp?: Function;
+    className?: string;
+    triggerClassName?: string;
+    cardClassName?: string;
+    style?: React.CSSProperties;
+}): React.JSX.Element;
+import React from 'react';

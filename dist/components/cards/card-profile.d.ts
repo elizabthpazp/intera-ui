@@ -10,15 +10,22 @@ export default CardProfile;
  * @param {function} [props.onClickRight=() => {}]
  * @param {function} [props.onClickLeft=() => {}]
  * @param {string|null} [props.image=null]
+ * @param {string} [props.className=""] - Clases para el contenedor externo
+ * @param {string} [props.cardClassName=""] - Clases para la card interna
+ * @param {React.CSSProperties} [props.style]
  */
-declare function CardProfile({ darkMode, title, subtitle, description, buttonLeftLabel, buttonRightLabel, onClickRight, onClickLeft, image }: {
-    darkMode?: boolean | undefined;
-    title?: string | null | undefined;
-    subtitle?: string | null | undefined;
-    description?: string | null | undefined;
-    buttonLeftLabel?: string | null | undefined;
-    buttonRightLabel?: string | null | undefined;
-    onClickRight?: Function | undefined;
-    onClickLeft?: Function | undefined;
-    image?: string | null | undefined;
-}): any;
+declare function CardProfile({ darkMode, title, subtitle, description, buttonLeftLabel, buttonRightLabel, onClickRight, onClickLeft, image, className, cardClassName, style, }: {
+    darkMode?: boolean;
+    title?: string | null;
+    subtitle?: string | null;
+    description?: string | null;
+    buttonLeftLabel?: string | null;
+    buttonRightLabel?: string | null;
+    onClickRight?: Function;
+    onClickLeft?: Function;
+    image?: string | null;
+    className?: string;
+    cardClassName?: string;
+    style?: React.CSSProperties;
+}): React.JSX.Element;
+import React from "react";

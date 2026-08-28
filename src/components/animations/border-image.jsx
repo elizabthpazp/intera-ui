@@ -21,7 +21,7 @@ export default function BorderImage({
   image = null, 
   darkMode = false,
   className = "",
-  style,
+  style = undefined,
   size = 112,
   alt = "Animated Image"
 }) {

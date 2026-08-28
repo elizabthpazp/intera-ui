@@ -9,15 +9,19 @@
  * @param {string} [props.shadowColor="#dd4b4c"]
  * @param {string} [props.textColor="#302E2EFF"]
  * @param {string} [props.containerColor="#ffa69f"]
+ * @param {string} [props.className=""]
+ * @param {React.CSSProperties} [props.style]
  */
-export default function GiftBox({ message, primaryColor, secondaryColor, secondaryAccentColor, tertiaryColor, accentColor, shadowColor, textColor, containerColor }: {
-    message?: string | null | undefined;
-    primaryColor?: string | undefined;
-    secondaryColor?: string | undefined;
-    secondaryAccentColor?: string | undefined;
-    tertiaryColor?: string | undefined;
-    accentColor?: string | undefined;
-    shadowColor?: string | undefined;
-    textColor?: string | undefined;
-    containerColor?: string | undefined;
-}): any;
+export default function GiftBox({ message, primaryColor, secondaryColor, secondaryAccentColor, tertiaryColor, accentColor, shadowColor, textColor, containerColor, className, style, }: {
+    message?: string | null;
+    primaryColor?: string;
+    secondaryColor?: string;
+    secondaryAccentColor?: string;
+    tertiaryColor?: string;
+    accentColor?: string;
+    shadowColor?: string;
+    textColor?: string;
+    containerColor?: string;
+    className?: string;
+    style?: React.CSSProperties;
+}): import("react").JSX.Element;
