@@ -67,7 +67,7 @@ export default function SwipeToConfirm({
       
       <motion.div 
         style={{ opacity }}
-        className={cn("absolute inset-0 flex items-center justify-center text-xs sm:text-sm font-black uppercase tracking-widest pointer-events-none select-none px-12", darkMode ? "text-gray-600" : "text-gray-400")}
+        className={cn("absolute inset-y-0 left-14 right-2 flex items-center justify-center text-xs sm:text-sm font-black uppercase tracking-widest pointer-events-none select-none", darkMode ? "text-gray-600" : "text-gray-400")}
       >
         {label}
       </motion.div>
@@ -99,9 +99,10 @@ export default function SwipeToConfirm({
           dragElastic={0.05}
           onDragEnd={handleDragEnd}
           style={{ x, scale }}
-          className={cn("relative z-10 w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center shadow-xl transition-colors", disabled ? "cursor-not-allowed" : "cursor-grab active:cursor-grabbing", darkMode ? "bg-white text-black" : "bg-black text-white")}
+          className={cn("relative z-10 w-12 h-12 sm:w-[50px] sm:h-[50px] ml-1 rounded-full flex items-center justify-center shadow-xl transition-colors shrink-0", disabled ? "cursor-not-allowed" : "cursor-grab active:cursor-grabbing", darkMode ? "bg-white text-black" : "bg-black text-white")}
         >
-          <ArrowRight size={24} />
+          <ArrowRight size={18} className="sm:hidden" />
+          <ArrowRight size={24} className="hidden sm:block" />
         </motion.div>
       )}
       

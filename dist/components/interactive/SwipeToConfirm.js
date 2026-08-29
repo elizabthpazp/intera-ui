@@ -94,7 +94,7 @@ export default function SwipeToConfirm(_ref) {
       style: {
         opacity: opacity
       },
-      className: cn("absolute inset-0 flex items-center justify-center text-xs sm:text-sm font-black uppercase tracking-widest pointer-events-none select-none px-12", darkMode ? "text-gray-600" : "text-gray-400"),
+      className: cn("absolute inset-y-0 left-14 right-2 flex items-center justify-center text-xs sm:text-sm font-black uppercase tracking-widest pointer-events-none select-none", darkMode ? "text-gray-600" : "text-gray-400"),
       children: label
     }), isConfirmed && /*#__PURE__*/_jsxs(motion.div, {
       initial: {
@@ -117,7 +117,7 @@ export default function SwipeToConfirm(_ref) {
           size: 14
         })
       })]
-    }), !isConfirmed && /*#__PURE__*/_jsx(motion.div, {
+    }), !isConfirmed && /*#__PURE__*/_jsxs(motion.div, {
       drag: disabled ? false : "x",
       dragConstraints: {
         left: 0,
@@ -129,10 +129,14 @@ export default function SwipeToConfirm(_ref) {
         x: x,
         scale: scale
       },
-      className: cn("relative z-10 w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center shadow-xl transition-colors", disabled ? "cursor-not-allowed" : "cursor-grab active:cursor-grabbing", darkMode ? "bg-white text-black" : "bg-black text-white"),
-      children: /*#__PURE__*/_jsx(ArrowRight, {
-        size: 24
-      })
+      className: cn("relative z-10 w-12 h-12 sm:w-[50px] sm:h-[50px] ml-1 rounded-full flex items-center justify-center shadow-xl transition-colors shrink-0", disabled ? "cursor-not-allowed" : "cursor-grab active:cursor-grabbing", darkMode ? "bg-white text-black" : "bg-black text-white"),
+      children: [/*#__PURE__*/_jsx(ArrowRight, {
+        size: 18,
+        className: "sm:hidden"
+      }), /*#__PURE__*/_jsx(ArrowRight, {
+        size: 24,
+        className: "hidden sm:block"
+      })]
     }), /*#__PURE__*/_jsx(motion.div, {
       className: cn("absolute left-0 top-0 bottom-0 pointer-events-none", darkMode ? "bg-white/10" : "bg-black/5"),
       style: {

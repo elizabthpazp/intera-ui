@@ -78,7 +78,7 @@ export default function ImageCompare(_ref) {
     onPointerMove: handlePointerMove,
     onPointerUp: handlePointerUp,
     onPointerLeave: handlePointerUp,
-    className: cn("relative overflow-hidden rounded-2xl select-none group border touch-none", darkMode ? "border-gray-800 bg-gray-900" : "border-gray-200 bg-gray-100", className),
+    className: cn("relative overflow-hidden rounded-2xl select-none group touch-none shadow-lg isolate", darkMode ? "bg-black ring-1 ring-white/10" : "bg-white ring-1 ring-black/[0.06]", className),
     style: _objectSpread({
       aspectRatio: "16/10"
     }, style),
