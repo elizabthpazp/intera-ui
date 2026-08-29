@@ -20,3 +20,13 @@ export { default as SwipeToConfirm } from "./interactive/SwipeToConfirm";
 export { default as FluidTabs } from "./interactive/FluidTabs";
 export { default as PerspectiveCard } from "./interactive/PerspectiveCard";
 export { default as InteractiveAccordion } from "./interactive/InteractiveAccordion";
+
+// New Premium Interactive (v2)
+export { default as CommandPalette } from "./interactive/CommandPalette";
+export { default as BottomSheet } from "./interactive/BottomSheet";
+export { default as ImageCompare } from "./interactive/ImageCompare";
+export { default as BentoGrid } from "./interactive/BentoGrid";
+export { default as KineticMorphText } from "./interactive/KineticMorphText";
+export { default as LiquidProgress } from "./interactive/LiquidProgress";
+export { default as OrbitalMenu } from "./interactive/OrbitalMenu";
+export { default as SpotlightGrid } from "./interactive/SpotlightGrid";

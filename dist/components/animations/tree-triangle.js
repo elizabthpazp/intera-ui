@@ -37,7 +37,7 @@ var TreeTriangle = function TreeTriangle(_ref) {
     };
   };
   return /*#__PURE__*/_jsxs("div", {
-    className: cn("relative w-full h-[400px]", className),
+    className: cn("relative w-full h-[300px] sm:h-[400px] overflow-hidden", className),
     style: style,
     children: [/*#__PURE__*/_jsx("ul", {
       className: "absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50",

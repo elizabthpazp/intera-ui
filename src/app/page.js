@@ -20,12 +20,22 @@ import {
   SwipeToConfirm,
   FluidTabs,
   PerspectiveCard,
-  InteractiveAccordion
+  InteractiveAccordion,
+  CommandPalette,
+  BottomSheet,
+  ImageCompare,
+  BentoGrid,
+  KineticMorphText,
+  LiquidProgress,
+  OrbitalMenu,
+  SpotlightGrid
 } from "../components";
-import { Sun, Moon, Home, Search, Settings, User, Bell, Rocket } from "lucide-react";
+import { Sun, Moon, Home, Search, Settings, User, Bell, Rocket, Zap, LayoutGrid, Sparkles, Droplet, Orbit, Eye } from "lucide-react";
 
 export default function Playground() {
   const [darkMode, setDarkMode] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [liquidVal, setLiquidVal] = useState(64);
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
@@ -55,7 +65,7 @@ export default function Playground() {
           </p>
         )}
       </div>
-      <div className={`p-12 rounded-[2.5rem] border transition-all duration-700 ${
+      <div className={`p-12 rounded-[2.5rem] border transition-colors duration-300 ${
         darkMode 
           ? 'bg-gray-900/40 border-gray-800 hover:border-gray-700 shadow-2xl shadow-black/50' 
           : 'bg-white border-gray-100 shadow-2xl shadow-gray-200/40 hover:shadow-gray-200/60'
@@ -90,6 +100,26 @@ export default function Playground() {
     { title: "Highly Customizable", content: "Every prop is exposed, giving you full control over behavior and visual style." },
   ];
 
+  const paletteItems = [
+    { id: "dock", label: "Open Magnetic Dock", icon: <LayoutGrid size={16}/>, shortcut: "⌘D", onSelect: () => console.log("dock") },
+    { id: "palette", label: "Toggle Theme", icon: <Sparkles size={16}/>, shortcut: "⌘T", onSelect: () => setDarkMode(!darkMode) },
+    { id: "sheet", label: "Open Bottom Sheet", icon: <Zap size={16}/>, shortcut: "⌘B", onSelect: () => setSheetOpen(true) },
+  ];
+
+  const bentoDemo = [
+    { id: "1", title: "Revenue", content: "$42,300", colSpan: "col-span-2", color: "from-violet-500 to-purple-600" },
+    { id: "2", title: "Inbox", content: "12 new", colSpan: "", rowSpan: "row-span-2", color: "from-blue-500 to-cyan-500" },
+    { id: "3", title: "Tasks", content: "8 pending", color: "from-emerald-500 to-teal-600" },
+    { id: "4", title: "Users", content: "1.2k", color: "from-orange-500 to-pink-500" },
+  ];
+
+  const spotlightItems = [
+    { id: "1", title: "Realtime", content: "Sync en 12ms con WebSocket" },
+    { id: "2", title: "Secure", content: "E2E encryption by default" },
+    { id: "3", title: "Fast", content: "Edge en 35 regiones" },
+    { id: "4", title: "Scalable", content: "Auto-scale a 1M rps" },
+  ];
+
   return (
     <main className={`min-h-screen transition-colors duration-700 ${darkMode ? 'bg-black text-white' : 'bg-[#FDFDFD] text-gray-900'}`}>
       {/* Header */}
@@ -122,6 +152,58 @@ export default function Playground() {
       </header>
 
       <div className="max-w-7xl mx-auto px-10 py-24">
+
+        {/* SECTION: Premium Interactive v2 — 8 nuevos */}
+        <Section title="Premium v2 — New">
+          <ComponentWrapper name="CommandPalette" description="⌘K palette con fuzzy search y morph. Pulsa ⌘K." fullWidth>
+            <div className="flex justify-center py-6">
+              <CommandPalette items={paletteItems} darkMode={darkMode} />
+            </div>
+          </ComponentWrapper>
+
+          <ComponentWrapper name="BottomSheet" description="Sheet gestual con drag elástico y snap.">
+            <div className="flex flex-col items-center gap-4 py-6">
+              <button type="button" onClick={() => setSheetOpen(true)} className={`px-6 py-3 rounded-xl font-bold shadow-lg select-none touch-manipulation will-change-transform ${darkMode ? 'bg-white text-black' : 'bg-black text-white'}`}>Open Sheet</button>
+              <BottomSheet open={sheetOpen} onOpenChange={setSheetOpen} title="Bottom Sheet" darkMode={darkMode}>
+                <div className="space-y-4">
+                  <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Arrastra hacia abajo para cerrar. Física spring real.</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className={`h-24 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`} />
+                    <div className={`h-24 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`} />
+                  </div>
+                </div>
+              </BottomSheet>
+            </div>
+          </ComponentWrapper>
+
+          <ComponentWrapper name="ImageCompare" description="Before/After con divider draggable." fullWidth>
+            <ImageCompare before="https://picsum.photos/seed/before/800/500" after="https://picsum.photos/seed/after/800/500" darkMode={darkMode} />
+          </ComponentWrapper>
+
+          <ComponentWrapper name="BentoGrid" description="Bento draggable con spring auto-layout." fullWidth>
+            <BentoGrid items={bentoDemo} darkMode={darkMode} />
+          </ComponentWrapper>
+
+          <ComponentWrapper name="KineticMorphText" description="Texto cinético que morfea (blur/slide/scale)." fullWidth>
+            <KineticMorphText texts={["InteraUI", "Interactive", "Modern", "Delightful"]} interval={2200} darkMode={darkMode} variant="blur" />
+          </ComponentWrapper>
+
+          <ComponentWrapper name="LiquidProgress" description="Progress líquido con onda y drag vertical.">
+            <div className="flex justify-center py-4">
+              <LiquidProgress value={liquidVal} onChange={setLiquidVal} darkMode={darkMode} label="Upload" />
+            </div>
+          </ComponentWrapper>
+
+          <ComponentWrapper name="OrbitalMenu" description="Menú orbital circular con items magnéticos.">
+            <div className="flex justify-center py-6">
+              <OrbitalMenu darkMode={darkMode} radius={80} />
+            </div>
+          </ComponentWrapper>
+
+          <ComponentWrapper name="SpotlightGrid" description="Grid con spotlight radial que sigue al mouse." fullWidth>
+            <SpotlightGrid items={spotlightItems} darkMode={darkMode} />
+          </ComponentWrapper>
+        </Section>
         
         {/* SECTION: Next-Gen Interactions (Batch 2) */}
         <Section title="Next-Gen Interactions">

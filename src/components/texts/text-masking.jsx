@@ -13,7 +13,7 @@ const TextMasking = ({ title = null, image = null, className = "", textClassName
   return (
     <div className={cn("relative flex items-center justify-center py-10", className)} style={style}>
       <h1
-        className={cn("text-7xl md:text-8xl font-black text-center uppercase tracking-tighter", textClassName)}
+        className={cn("text-4xl sm:text-6xl md:text-8xl font-black text-center uppercase tracking-tighter px-4 break-words", textClassName)}
         style={{
           backgroundImage: `url(${image || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2064&auto=format&fit=crop"})`,
           backgroundSize: "cover",

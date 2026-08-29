@@ -23,8 +23,8 @@ export default function GlassStack({
   };
 
   return (
-    <div className={cn("relative w-full h-[400px] flex items-center justify-center perspective-1000", className)} style={style}>
-      <div className="relative w-64 h-80 cursor-pointer" onClick={nextCard}>
+    <div className={cn("relative w-full h-[320px] sm:h-[400px] flex items-center justify-center perspective-1000", className)} style={style}>
+      <div className="relative w-56 h-72 sm:w-64 sm:h-80 max-w-[80vw] cursor-pointer" onClick={nextCard}>
         <AnimatePresence mode="popLayout">
           {items.map((item, i) => {
             const isFront = i === index;

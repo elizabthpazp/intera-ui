@@ -41,21 +41,31 @@ export default function InteractiveLens(_ref) {
     _useState4 = _slicedToArray(_useState3, 2),
     isHovered = _useState4[0],
     setIsHovered = _useState4[1];
-  var handleMouseMove = function handleMouseMove(e) {
+  var responsiveSize = Math.min(size, typeof window !== "undefined" ? window.innerWidth * 0.4 : size);
+  var handleMove = function handleMove(e) {
     var rect = e.currentTarget.getBoundingClientRect();
+    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    var clientY = e.touches ? e.touches[0].clientY : e.clientY;
     setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
+      x: clientX - rect.left,
+      y: clientY - rect.top
     });
   };
   return /*#__PURE__*/_jsxs("div", {
-    className: cn("relative overflow-hidden rounded-2xl cursor-none", className),
+    className: cn("relative overflow-hidden rounded-2xl md:cursor-none touch-none", className),
     style: style,
-    onMouseMove: handleMouseMove,
+    onMouseMove: handleMove,
+    onTouchMove: handleMove,
     onMouseEnter: function onMouseEnter() {
       return setIsHovered(true);
     },
     onMouseLeave: function onMouseLeave() {
+      return setIsHovered(false);
+    },
+    onTouchStart: function onTouchStart() {
+      return setIsHovered(true);
+    },
+    onTouchEnd: function onTouchEnd() {
       return setIsHovered(false);
     },
     children: [/*#__PURE__*/_jsx("div", {
@@ -64,8 +74,8 @@ export default function InteractiveLens(_ref) {
     }), /*#__PURE__*/_jsx(motion.div, {
       className: "absolute inset-0 pointer-events-none",
       animate: {
-        WebkitMaskImage: isHovered ? "radial-gradient(circle ".concat(size / 2, "px at ").concat(mousePos.x, "px ").concat(mousePos.y, "px, black 100%, transparent 100%)") : "radial-gradient(circle 0px at ".concat(mousePos.x, "px ").concat(mousePos.y, "px, black 100%, transparent 100%)"),
-        maskImage: isHovered ? "radial-gradient(circle ".concat(size / 2, "px at ").concat(mousePos.x, "px ").concat(mousePos.y, "px, black 100%, transparent 100%)") : "radial-gradient(circle 0px at ".concat(mousePos.x, "px ").concat(mousePos.y, "px, black 100%, transparent 100%)")
+        WebkitMaskImage: isHovered ? "radial-gradient(circle ".concat(responsiveSize / 2, "px at ").concat(mousePos.x, "px ").concat(mousePos.y, "px, black 100%, transparent 100%)") : "radial-gradient(circle 0px at ".concat(mousePos.x, "px ").concat(mousePos.y, "px, black 100%, transparent 100%)"),
+        maskImage: isHovered ? "radial-gradient(circle ".concat(responsiveSize / 2, "px at ").concat(mousePos.x, "px ").concat(mousePos.y, "px, black 100%, transparent 100%)") : "radial-gradient(circle 0px at ".concat(mousePos.x, "px ").concat(mousePos.y, "px, black 100%, transparent 100%)")
       },
       transition: {
         type: "spring",
@@ -78,12 +88,12 @@ export default function InteractiveLens(_ref) {
         children: children
       })
     }), isHovered && /*#__PURE__*/_jsx(motion.div, {
-      className: cn("absolute rounded-full border-2 pointer-events-none z-10", darkMode ? "border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)]" : "border-black/20 shadow-[0_0_20px_rgba(0,0,0,0.1)]"),
+      className: cn("absolute rounded-full border-2 pointer-events-none z-10 hidden sm:block", darkMode ? "border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)]" : "border-black/20 shadow-[0_0_20px_rgba(0,0,0,0.1)]"),
       style: {
-        width: size,
-        height: size,
-        left: mousePos.x - size / 2,
-        top: mousePos.y - size / 2
+        width: responsiveSize,
+        height: responsiveSize,
+        left: mousePos.x - responsiveSize / 2,
+        top: mousePos.y - responsiveSize / 2
       },
       transition: {
         type: "spring",

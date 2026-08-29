@@ -36,11 +36,11 @@ export default function MorphingSearch({
         layout
         initial={false}
         animate={{
-          width: isExpanded ? 300 : 48,
+          width: isExpanded ? "min(300px, 90vw)" : 48,
           borderRadius: isExpanded ? 12 : 24,
         }}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
-        className={cn("relative h-12 overflow-hidden flex items-center border shadow-sm", darkMode ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-800")}
+        className={cn("relative h-12 overflow-hidden flex items-center border shadow-sm max-w-[90vw]", darkMode ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-800")}
         onClick={() => !isExpanded && toggleExpand()}
       >
         <div className="absolute left-3 flex items-center justify-center w-6 h-6">

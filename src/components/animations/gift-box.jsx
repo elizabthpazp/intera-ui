@@ -29,7 +29,7 @@ export default function GiftBox({
   style,
 }) {
   return (
-    <div className={cn("h-[260px] relative z-60 flex justify-center items-end", className)} style={style}>
+    <div className={cn("h-[260px] relative z-60 flex justify-center items-end w-full max-w-full overflow-hidden scale-90 sm:scale-100 origin-bottom", className)} style={style}>
       <section className="absolute bottom-0 w-[150px] left-1/2 transform -translate-x-1/2 z-[12] h-[180px] group">
         <div
           className="absolute w-[120px] font-sans font-extrabold rounded-md shadow p-2.5 text-[15px] left-0 top-[100px] right-0 mx-auto leading-[26px] z-[-1] text-center transition-all duration-600 ease-in-out delay-[100ms] group-hover:top-[-10px] group-hover:delay-[400ms]"

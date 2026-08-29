@@ -14,13 +14,13 @@ var CatLoader = function CatLoader(_ref) {
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? 200 : _ref$size;
   return /*#__PURE__*/_jsx("div", {
-    className: cn("justify-center flex", className),
+    className: cn("justify-center flex w-full max-w-full overflow-hidden", className),
     style: style,
     children: /*#__PURE__*/_jsxs("div", {
       className: "cat",
       style: {
-        width: size,
-        maxWidth: "20em"
+        width: "min(".concat(size, "px, 70vw)"),
+        maxWidth: "100%"
       },
       children: [/*#__PURE__*/_jsx("div", {
         className: "cat__body"

@@ -43,7 +43,7 @@ var Tree = function Tree(_ref) {
     }
   }
   return /*#__PURE__*/_jsxs("div", {
-    className: cn("relative h-[390px]", className),
+    className: cn("relative h-[280px] sm:h-[390px] w-full max-w-full overflow-hidden", className),
     style: style,
     children: [/*#__PURE__*/_jsx("ul", {
       className: "absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50",
@@ -63,7 +63,7 @@ var Tree = function Tree(_ref) {
       className: "p-0",
       children: mounted && lines.map(function (line, i) {
         return /*#__PURE__*/_jsx("li", {
-          className: "matrix-line absolute left-1/2 w-[1px] h-[400px]",
+          className: "matrix-line absolute left-1/2 w-[1px] h-[300px] sm:h-[400px]",
           style: {
             transformOrigin: "50% 0%",
             transform: line.transform

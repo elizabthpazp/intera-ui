@@ -23,21 +23,28 @@ export default function InteractiveLens({
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseMove = (e) => {
+  const responsiveSize = Math.min(size, typeof window !== "undefined" ? window.innerWidth * 0.4 : size);
+
+  const handleMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
     setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
+      x: clientX - rect.left,
+      y: clientY - rect.top,
     });
   };
 
   return (
     <div
-      className={cn("relative overflow-hidden rounded-2xl cursor-none", className)}
+      className={cn("relative overflow-hidden rounded-2xl md:cursor-none touch-none", className)}
       style={style}
-      onMouseMove={handleMouseMove}
+      onMouseMove={handleMove}
+      onTouchMove={handleMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setIsHovered(false)}
     >
       <div className="w-full h-full opacity-40 grayscale select-none pointer-events-none">
         {background || children}
@@ -47,10 +54,10 @@ export default function InteractiveLens({
         className="absolute inset-0 pointer-events-none"
         animate={{
           WebkitMaskImage: isHovered
-            ? `radial-gradient(circle ${size / 2}px at ${mousePos.x}px ${mousePos.y}px, black 100%, transparent 100%)`
+            ? `radial-gradient(circle ${responsiveSize / 2}px at ${mousePos.x}px ${mousePos.y}px, black 100%, transparent 100%)`
             : `radial-gradient(circle 0px at ${mousePos.x}px ${mousePos.y}px, black 100%, transparent 100%)`,
           maskImage: isHovered
-            ? `radial-gradient(circle ${size / 2}px at ${mousePos.x}px ${mousePos.y}px, black 100%, transparent 100%)`
+            ? `radial-gradient(circle ${responsiveSize / 2}px at ${mousePos.x}px ${mousePos.y}px, black 100%, transparent 100%)`
             : `radial-gradient(circle 0px at ${mousePos.x}px ${mousePos.y}px, black 100%, transparent 100%)`,
         }}
         transition={{ type: "spring", damping: 20, stiffness: 300, mass: 0.5 }}
@@ -62,12 +69,12 @@ export default function InteractiveLens({
 
       {isHovered && (
         <motion.div
-          className={cn("absolute rounded-full border-2 pointer-events-none z-10", darkMode ? "border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)]" : "border-black/20 shadow-[0_0_20px_rgba(0,0,0,0.1)]")}
+          className={cn("absolute rounded-full border-2 pointer-events-none z-10 hidden sm:block", darkMode ? "border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)]" : "border-black/20 shadow-[0_0_20px_rgba(0,0,0,0.1)]")}
           style={{
-            width: size,
-            height: size,
-            left: mousePos.x - size / 2,
-            top: mousePos.y - size / 2,
+            width: responsiveSize,
+            height: responsiveSize,
+            left: mousePos.x - responsiveSize / 2,
+            top: mousePos.y - responsiveSize / 2,
           }}
           transition={{ type: "spring", damping: 20, stiffness: 300, mass: 0.5 }}
         />

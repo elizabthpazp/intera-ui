@@ -54,7 +54,7 @@ export default function PerspectiveCard(_ref) {
       rotateX: rotateX,
       transformStyle: "preserve-3d"
     }, style),
-    className: cn("relative w-64 h-96 rounded-3xl border shadow-2xl transition-colors duration-500 overflow-hidden", darkMode ? "bg-gray-900 border-gray-800" : "bg-white border-gray-100", className),
+    className: cn("relative w-full max-w-[16rem] sm:w-64 h-80 sm:h-96 max-w-[90vw] rounded-3xl border shadow-2xl transition-colors duration-500 overflow-hidden", darkMode ? "bg-gray-900 border-gray-800" : "bg-white border-gray-100", className),
     children: [/*#__PURE__*/_jsx("div", {
       style: {
         transform: "translateZ(75px)",

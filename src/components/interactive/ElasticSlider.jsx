@@ -29,12 +29,14 @@ export default function ElasticSlider({
   
   const sliderWidth = 260;
   const thumbSize = 24;
+  const [containerRef, setContainerRef] = React.useState(null);
+  const responsiveWidth = containerRef ? Math.min(sliderWidth, containerRef.clientWidth - 16) : sliderWidth;
 
   const percentage = (value / max) * 100;
 
   return (
-    <div className={cn("flex flex-col items-center gap-6 p-4", className)} style={style}>
-      <div className="relative w-[260px] h-2">
+    <div className={cn("flex flex-col items-center gap-6 p-4 w-full max-w-full", className)} style={style}>
+      <div ref={(el) => setContainerRef(el)} className="relative w-full max-w-[260px] h-2">
         <div className={cn("absolute inset-0 rounded-full", darkMode ? "bg-gray-800" : "bg-gray-200")} />
         
         <motion.div 
@@ -44,18 +46,18 @@ export default function ElasticSlider({
 
         <motion.div
           drag="x"
-          dragConstraints={{ left: 0, right: sliderWidth }}
+          dragConstraints={{ left: 0, right: responsiveWidth }}
           dragElastic={0.1}
           dragMomentum={false}
           onDrag={(e) => {
             const rect = e.target.parentElement.getBoundingClientRect();
             const newX = e.clientX - rect.left;
-            const clampedX = Math.min(Math.max(newX, 0), sliderWidth);
-            const newValue = Math.round((clampedX / sliderWidth) * max);
+            const clampedX = Math.min(Math.max(newX, 0), responsiveWidth);
+            const newValue = Math.round((clampedX / responsiveWidth) * max);
             setValue(newValue);
             onChange(newValue);
           }}
-          style={{ x: (value / max) * sliderWidth - thumbSize / 2 }}
+          style={{ x: (value / max) * responsiveWidth - thumbSize / 2 }}
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.9, cursor: "grabbing" }}
           className={cn("absolute top-1/2 -translate-y-1/2 w-6 h-6 rounded-full border-2 cursor-grab flex items-center justify-center shadow-lg transition-colors", darkMode ? "bg-gray-900 border-white" : "bg-white border-black")}
@@ -68,7 +70,7 @@ export default function ElasticSlider({
         key={value}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className={cn("text-2xl font-black italic tracking-tighter", darkMode ? "text-white" : "text-black")}
+        className={cn("text-xl sm:text-2xl font-black italic tracking-tighter", darkMode ? "text-white" : "text-black")}
       >
         {value}
       </motion.div>
