@@ -20,5 +20,15 @@ export { default as FluidTabs } from "./components/interactive/FluidTabs";
 export { default as PerspectiveCard } from "./components/interactive/PerspectiveCard";
 export { default as InteractiveAccordion } from "./components/interactive/InteractiveAccordion";
 
+// New Premium Interactive (v2)
+export { default as CommandPalette } from "./components/interactive/CommandPalette";
+export { default as BottomSheet } from "./components/interactive/BottomSheet";
+export { default as ImageCompare } from "./components/interactive/ImageCompare";
+export { default as BentoGrid } from "./components/interactive/BentoGrid";
+export { default as KineticMorphText } from "./components/interactive/KineticMorphText";
+export { default as LiquidProgress } from "./components/interactive/LiquidProgress";
+export { default as OrbitalMenu } from "./components/interactive/OrbitalMenu";
+export { default as SpotlightGrid } from "./components/interactive/SpotlightGrid";
+
 // Utils
 export { cn } from "./lib/utils";

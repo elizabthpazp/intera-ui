@@ -55,7 +55,7 @@ export default function MorphingSearch(_ref) {
       layout: true,
       initial: false,
       animate: {
-        width: isExpanded ? 300 : 48,
+        width: isExpanded ? "min(300px, 90vw)" : 48,
         borderRadius: isExpanded ? 12 : 24
       },
       transition: {
@@ -63,7 +63,7 @@ export default function MorphingSearch(_ref) {
         stiffness: 400,
         damping: 30
       },
-      className: cn("relative h-12 overflow-hidden flex items-center border shadow-sm", darkMode ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-800"),
+      className: cn("relative h-12 overflow-hidden flex items-center border shadow-sm max-w-[90vw]", darkMode ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-800"),
       onClick: function onClick() {
         return !isExpanded && toggleExpand();
       },

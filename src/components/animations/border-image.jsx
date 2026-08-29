@@ -55,8 +55,8 @@ export default function BorderImage({
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         />
         <div 
-          className={cn("relative rounded-full overflow-hidden border-2 bg-gray-100", !darkMode ? 'border-gray-600' : 'border-gray-400')}
-          style={{ width: size, height: size }}
+          className={cn("relative rounded-full overflow-hidden border-2 bg-gray-100 shrink-0", !darkMode ? 'border-gray-600' : 'border-gray-400')}
+          style={{ width: `min(${size}px, 30vw)`, height: `min(${size}px, 30vw)`, maxWidth: "100%" }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 

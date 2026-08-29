@@ -119,9 +119,7 @@ var ButtonCard = function ButtonCard(_ref) {
           return setIsOpen(false);
         }
       }), /*#__PURE__*/_jsxs("div", {
-        className: cn("absolute left-16 -translate-x-1/2 rounded-2xl p-6 border-2 transform transition-all duration-300 ease-out shadow-xl backdrop-blur-sm z-50", "top-[72px]",
-        // reemplaza top-18 (no existe en tailwind por defecto) por valor explícito
-        darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300', isOpen ? 'opacity-100 -translate-y-1/2 scale-100' : 'opacity-0 -translate-y-[40%] scale-95 pointer-events-none', "min-w-[320px]", cardClassName),
+        className: cn("absolute left-1/2 sm:left-16 -translate-x-1/2 rounded-2xl p-4 sm:p-6 border-2 transform transition-all duration-300 ease-out shadow-xl backdrop-blur-sm z-50 w-[92vw] max-w-[360px] sm:min-w-[320px] sm:w-auto", "top-[72px]", darkMode ? 'bg-gray-900 border-gray-900' : 'bg-gradient-to-b from-purple-50 to-white border-gray-300', isOpen ? 'opacity-100 -translate-y-1/2 scale-100' : 'opacity-0 -translate-y-[40%] scale-95 pointer-events-none', cardClassName),
         children: [/*#__PURE__*/_jsx("button", {
           onClick: function onClick() {
             return setIsOpen(false);

@@ -36,10 +36,10 @@ export default function GlassStack(_ref) {
     });
   };
   return /*#__PURE__*/_jsxs("div", {
-    className: cn("relative w-full h-[400px] flex items-center justify-center perspective-1000", className),
+    className: cn("relative w-full h-[320px] sm:h-[400px] flex items-center justify-center perspective-1000", className),
     style: style,
     children: [/*#__PURE__*/_jsx("div", {
-      className: "relative w-64 h-80 cursor-pointer",
+      className: "relative w-56 h-72 sm:w-64 sm:h-80 max-w-[80vw] cursor-pointer",
       onClick: nextCard,
       children: /*#__PURE__*/_jsx(AnimatePresence, {
         mode: "popLayout",

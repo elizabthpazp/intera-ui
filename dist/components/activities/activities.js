@@ -55,10 +55,10 @@ export default function Activities(_ref) {
     _useState4 = _slicedToArray(_useState3, 1),
     activitiesList = _useState4[0];
   return /*#__PURE__*/_jsx("div", {
-    className: cn("flex justify-center", className),
+    className: cn("flex justify-center w-full max-w-full", className),
     style: style,
     children: /*#__PURE__*/_jsxs("div", {
-      className: "relative max-w-md w-full p-4 rounded-xl",
+      className: "relative max-w-md w-full p-3 sm:p-4 rounded-xl",
       children: [activitiesList.length > 1 && /*#__PURE__*/_jsx("div", {
         className: "flex items-center justify-center transition-all duration-300 ease-out mb-4",
         children: /*#__PURE__*/_jsx("button", {
@@ -80,20 +80,21 @@ export default function Activities(_ref) {
               zIndex: activitiesList.length - index
             },
             children: [/*#__PURE__*/_jsxs("div", {
-              className: "flex items-center",
+              className: "flex items-center min-w-0 flex-1",
               children: [/*#__PURE__*/_jsx("span", {
-                className: cn("w-12 h-12 rounded-3xl mr-2", darkMode ? 'bg-gray-700' : 'bg-gray-300')
+                className: cn("w-10 h-10 sm:w-12 sm:h-12 rounded-2xl sm:rounded-3xl mr-2 shrink-0", darkMode ? 'bg-gray-700' : 'bg-gray-300')
               }), /*#__PURE__*/_jsxs("div", {
+                className: "min-w-0",
                 children: [/*#__PURE__*/_jsx("h2", {
-                  className: cn("m-0 text-base font-medium", darkMode ? 'text-white' : 'text-gray-900'),
+                  className: cn("m-0 text-sm sm:text-base font-medium truncate", darkMode ? 'text-white' : 'text-gray-900'),
                   children: activity.name || "Unnamed Activity"
                 }), /*#__PURE__*/_jsx("span", {
-                  className: cn("text-sm", darkMode ? 'text-gray-400' : 'text-gray-500'),
+                  className: cn("text-xs sm:text-sm", darkMode ? 'text-gray-400' : 'text-gray-500'),
                   children: activity.location || "Unknown Location"
                 })]
               })]
             }), /*#__PURE__*/_jsx("span", {
-              className: cn("text-sm", darkMode ? 'text-gray-400' : 'text-gray-500'),
+              className: cn("text-xs sm:text-sm shrink-0 ml-2", darkMode ? 'text-gray-400' : 'text-gray-500'),
               children: activity.date || "No Date"
             })]
           }, index);

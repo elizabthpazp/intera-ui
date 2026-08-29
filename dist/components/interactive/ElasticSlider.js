@@ -46,12 +46,20 @@ export default function ElasticSlider(_ref) {
   });
   var sliderWidth = 260;
   var thumbSize = 24;
+  var _React$useState = React.useState(null),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    containerRef = _React$useState2[0],
+    setContainerRef = _React$useState2[1];
+  var responsiveWidth = containerRef ? Math.min(sliderWidth, containerRef.clientWidth - 16) : sliderWidth;
   var percentage = value / max * 100;
   return /*#__PURE__*/_jsxs("div", {
-    className: cn("flex flex-col items-center gap-6 p-4", className),
+    className: cn("flex flex-col items-center gap-6 p-4 w-full max-w-full", className),
     style: style,
     children: [/*#__PURE__*/_jsxs("div", {
-      className: "relative w-[260px] h-2",
+      ref: function ref(el) {
+        return setContainerRef(el);
+      },
+      className: "relative w-full max-w-[260px] h-2",
       children: [/*#__PURE__*/_jsx("div", {
         className: cn("absolute inset-0 rounded-full", darkMode ? "bg-gray-800" : "bg-gray-200")
       }), /*#__PURE__*/_jsx(motion.div, {
@@ -63,20 +71,20 @@ export default function ElasticSlider(_ref) {
         drag: "x",
         dragConstraints: {
           left: 0,
-          right: sliderWidth
+          right: responsiveWidth
         },
         dragElastic: 0.1,
         dragMomentum: false,
         onDrag: function onDrag(e) {
           var rect = e.target.parentElement.getBoundingClientRect();
           var newX = e.clientX - rect.left;
-          var clampedX = Math.min(Math.max(newX, 0), sliderWidth);
-          var newValue = Math.round(clampedX / sliderWidth * max);
+          var clampedX = Math.min(Math.max(newX, 0), responsiveWidth);
+          var newValue = Math.round(clampedX / responsiveWidth * max);
           setValue(newValue);
           onChange(newValue);
         },
         style: {
-          x: value / max * sliderWidth - thumbSize / 2
+          x: value / max * responsiveWidth - thumbSize / 2
         },
         whileHover: {
           scale: 1.2
@@ -99,7 +107,7 @@ export default function ElasticSlider(_ref) {
         scale: 1,
         opacity: 1
       },
-      className: cn("text-2xl font-black italic tracking-tighter", darkMode ? "text-white" : "text-black"),
+      className: cn("text-xl sm:text-2xl font-black italic tracking-tighter", darkMode ? "text-white" : "text-black"),
       children: value
     }, value)]
   });

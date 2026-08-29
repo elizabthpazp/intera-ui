@@ -75,10 +75,11 @@ export default function BorderImage(_ref) {
           ease: "easeInOut"
         }
       }), /*#__PURE__*/_jsx("div", {
-        className: cn("relative rounded-full overflow-hidden border-2 bg-gray-100", !darkMode ? 'border-gray-600' : 'border-gray-400'),
+        className: cn("relative rounded-full overflow-hidden border-2 bg-gray-100 shrink-0", !darkMode ? 'border-gray-600' : 'border-gray-400'),
         style: {
-          width: size,
-          height: size
+          width: "min(".concat(size, "px, 30vw)"),
+          height: "min(".concat(size, "px, 30vw)"),
+          maxWidth: "100%"
         },
         children: /*#__PURE__*/_jsx("img", {
           style: {

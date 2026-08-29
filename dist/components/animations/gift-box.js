@@ -38,7 +38,7 @@ export default function GiftBox(_ref) {
     className = _ref$className === void 0 ? "" : _ref$className,
     style = _ref.style;
   return /*#__PURE__*/_jsx("div", {
-    className: cn("h-[260px] relative z-60 flex justify-center items-end", className),
+    className: cn("h-[260px] relative z-60 flex justify-center items-end w-full max-w-full overflow-hidden scale-90 sm:scale-100 origin-bottom", className),
     style: style,
     children: /*#__PURE__*/_jsxs("section", {
       className: "absolute bottom-0 w-[150px] left-1/2 transform -translate-x-1/2 z-[12] h-[180px] group",

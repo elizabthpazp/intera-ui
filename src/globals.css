@@ -8,6 +8,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* FIX: evita que la scrollbar cause que botones parezcan "subir/bajar" al tocar LiquidProgress/BottomSheet */
+html { scrollbar-gutter: stable; }
+body { overscroll-behavior-y: contain; }
+
 /* Namespace aislado: prefijo ia- para evitar colisiones. Se mantiene .swing-line por compatibilidad */
 @layer components{
   .ia-swing-line,

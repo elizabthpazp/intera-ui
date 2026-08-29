@@ -23,36 +23,41 @@ export default function MagneticDock({
   style,
 }) {
   const mouseX = useMotionValue(Infinity);
+  const [hoveredIdx, setHoveredIdx] = React.useState(null);
 
   return (
-    <motion.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
-      onMouseLeave={() => mouseX.set(Infinity)}
-      style={style}
-      className={cn(
-        "flex h-16 items-end gap-4 rounded-2xl px-4 pb-3 border",
-        darkMode 
-          ? "bg-gray-900/80 border-gray-800 backdrop-blur-md" 
-          : "bg-white/80 border-gray-200 backdrop-blur-md shadow-lg",
-        className
-      )}
-    >
-      {items.map((item, i) => (
-        <IconContainer
-          key={i}
-          mouseX={mouseX}
-          distance={distance}
-          magnification={magnification}
-          baseSize={baseSize}
-          item={item}
-          darkMode={darkMode}
-        />
-      ))}
-    </motion.div>
+    <div className="w-full overflow-visible flex justify-center py-4 px-2">
+      <motion.div
+        onMouseMove={(e) => mouseX.set(e.pageX)}
+        onMouseLeave={() => { mouseX.set(Infinity); setHoveredIdx(null); }}
+        style={style}
+        className={cn(
+          "flex h-14 sm:h-16 items-end gap-2 sm:gap-4 rounded-2xl px-2 sm:px-4 pb-2 sm:pb-3 border w-fit overflow-visible mx-auto",
+          darkMode 
+            ? "bg-gray-900/80 border-gray-800 backdrop-blur-md" 
+            : "bg-white/80 border-gray-200 backdrop-blur-md shadow-lg",
+          className
+        )}
+      >
+        {items.map((item, i) => (
+          <IconContainer
+            key={i}
+            mouseX={mouseX}
+            distance={distance}
+            magnification={magnification}
+            baseSize={baseSize}
+            item={item}
+            darkMode={darkMode}
+            isHovered={hoveredIdx === i}
+            onHoverChange={(h) => setHoveredIdx(h ? i : null)}
+          />
+        ))}
+      </motion.div>
+    </div>
   );
 }
 
-function IconContainer({ mouseX, distance, magnification, baseSize, item, darkMode }) {
+function IconContainer({ mouseX, distance, magnification, baseSize, item, darkMode, isHovered, onHoverChange }) {
   const ref = useRef(null);
 
   const distanceCalc = useTransform(mouseX, (val) => {
@@ -75,10 +80,12 @@ function IconContainer({ mouseX, distance, magnification, baseSize, item, darkMo
   return (
     <motion.div
       ref={ref}
-      style={{ width }}
+      style={{ width, zIndex: isHovered ? 20 : 1 }}
       onClick={item.onClick}
+      onMouseEnter={() => onHoverChange?.(true)}
+      onMouseLeave={() => onHoverChange?.(false)}
       className={cn(
-        "group relative aspect-square rounded-full flex items-center justify-center cursor-pointer transition-colors",
+        "group relative aspect-square rounded-full flex items-center justify-center cursor-pointer transition-colors shrink-0",
         darkMode ? "bg-gray-800 hover:bg-gray-700 text-white" : "bg-gray-100 hover:bg-gray-200 text-gray-800"
       )}
     >
@@ -86,8 +93,8 @@ function IconContainer({ mouseX, distance, magnification, baseSize, item, darkMo
         {item.icon}
       </div>
       
-      {/* Tooltip */}
-      <div className={cn("absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap", darkMode ? "bg-white text-black" : "bg-black text-white")}>
+      {/* Tooltip - con mayor z que el resto */}
+      <div className={cn("absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 shadow-lg border", darkMode ? "bg-white text-black border-gray-200" : "bg-black text-white border-gray-800")}>
         {item.label}
       </div>
     </motion.div>

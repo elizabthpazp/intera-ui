@@ -38,8 +38,8 @@ export default function Activities({
   );
 
   return (
-    <div className={cn("flex justify-center", className)} style={style}>
-      <div className="relative max-w-md w-full p-4 rounded-xl">
+    <div className={cn("flex justify-center w-full max-w-full", className)} style={style}>
+      <div className="relative max-w-md w-full p-3 sm:p-4 rounded-xl">
         {activitiesList.length > 1 && (
           <div
             className="flex items-center justify-center transition-all duration-300 ease-out mb-4"
@@ -81,18 +81,18 @@ export default function Activities({
                 zIndex: activitiesList.length - index,
               }}
             >
-              <div className="flex items-center">
-                <span className={cn("w-12 h-12 rounded-3xl mr-2", darkMode ? 'bg-gray-700' : 'bg-gray-300')}></span>
-                <div>
-                  <h2 className={cn("m-0 text-base font-medium", darkMode ? 'text-white' : 'text-gray-900')}>
+              <div className="flex items-center min-w-0 flex-1">
+                <span className={cn("w-10 h-10 sm:w-12 sm:h-12 rounded-2xl sm:rounded-3xl mr-2 shrink-0", darkMode ? 'bg-gray-700' : 'bg-gray-300')}></span>
+                <div className="min-w-0">
+                  <h2 className={cn("m-0 text-sm sm:text-base font-medium truncate", darkMode ? 'text-white' : 'text-gray-900')}>
                     {activity.name || "Unnamed Activity"}
                   </h2>
-                  <span className={cn("text-sm", darkMode ? 'text-gray-400' : 'text-gray-500')}>
+                  <span className={cn("text-xs sm:text-sm", darkMode ? 'text-gray-400' : 'text-gray-500')}>
                     {activity.location || "Unknown Location"}
                   </span>
                 </div>
               </div>
-              <span className={cn("text-sm", darkMode ? 'text-gray-400' : 'text-gray-500')}>
+              <span className={cn("text-xs sm:text-sm shrink-0 ml-2", darkMode ? 'text-gray-400' : 'text-gray-500')}>
                 {activity.date || "No Date"}
               </span>
             </div>

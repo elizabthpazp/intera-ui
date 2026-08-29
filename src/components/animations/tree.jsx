@@ -30,7 +30,7 @@ const Tree = ({ className = "", style }) => {
   }
 
   return (
-    <div className={cn("relative h-[390px]", className)} style={style}>
+    <div className={cn("relative h-[280px] sm:h-[390px] w-full max-w-full overflow-hidden", className)} style={style}>
       <ul className="absolute top-0 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-50" style={{marginLeft: '-10px'}}>
         {[...Array(5)].map((_, i) => (
           <li
@@ -48,7 +48,7 @@ const Tree = ({ className = "", style }) => {
         {mounted && lines.map((line, i) => (
           <li
             key={i}
-            className="matrix-line absolute left-1/2 w-[1px] h-[400px]"
+            className="matrix-line absolute left-1/2 w-[1px] h-[300px] sm:h-[400px]"
             style={{
               transformOrigin: "50% 0%",
               transform: line.transform,

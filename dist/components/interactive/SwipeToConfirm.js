@@ -59,6 +59,8 @@ export default function SwipeToConfirm(_ref) {
   var containerWidth = 280;
   var thumbSize = 50;
   var dragRange = containerWidth - thumbSize - 8;
+  // Responsive: en móvil usa 90vw, clamp a 280
+
   var opacity = useTransform(x, [0, dragRange], [1, 0]);
   var scale = useTransform(x, [0, dragRange], [1, 1.1]);
   var reset = useCallback(function () {
@@ -84,15 +86,15 @@ export default function SwipeToConfirm(_ref) {
     }
   };
   return /*#__PURE__*/_jsxs("div", {
-    className: cn("relative h-[60px] rounded-full p-1 border flex items-center overflow-hidden select-none", darkMode ? "bg-gray-900 border-gray-800" : "bg-gray-100 border-gray-200 shadow-inner", disabled && "opacity-50 cursor-not-allowed", className),
+    className: cn("relative h-14 sm:h-[60px] rounded-full p-1 border flex items-center overflow-hidden select-none w-full max-w-[280px]", darkMode ? "bg-gray-900 border-gray-800" : "bg-gray-100 border-gray-200 shadow-inner", disabled && "opacity-50 cursor-not-allowed", className),
     style: _objectSpread({
-      width: containerWidth
+      width: "min(280px, 90vw)"
     }, style),
     children: [/*#__PURE__*/_jsx(motion.div, {
       style: {
         opacity: opacity
       },
-      className: cn("absolute inset-0 flex items-center justify-center text-sm font-black uppercase tracking-widest pointer-events-none select-none", darkMode ? "text-gray-600" : "text-gray-400"),
+      className: cn("absolute inset-0 flex items-center justify-center text-xs sm:text-sm font-black uppercase tracking-widest pointer-events-none select-none px-12", darkMode ? "text-gray-600" : "text-gray-400"),
       children: label
     }), isConfirmed && /*#__PURE__*/_jsxs(motion.div, {
       initial: {
@@ -127,7 +129,7 @@ export default function SwipeToConfirm(_ref) {
         x: x,
         scale: scale
       },
-      className: cn("relative z-10 w-[50px] h-[50px] rounded-full flex items-center justify-center shadow-xl transition-colors", disabled ? "cursor-not-allowed" : "cursor-grab active:cursor-grabbing", darkMode ? "bg-white text-black" : "bg-black text-white"),
+      className: cn("relative z-10 w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center shadow-xl transition-colors", disabled ? "cursor-not-allowed" : "cursor-grab active:cursor-grabbing", darkMode ? "bg-white text-black" : "bg-black text-white"),
       children: /*#__PURE__*/_jsx(ArrowRight, {
         size: 24
       })

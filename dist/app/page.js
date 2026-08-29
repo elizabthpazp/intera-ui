@@ -7,14 +7,22 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 import React, { useState } from "react";
-import { ButtonCard, CardProfile, Activities, TreeTriangle, Tree, GiftBox, CatLoader, BorderImage, TextMasking, MagneticDock, InteractiveLens, MorphingSearch, ElasticSlider, GlassStack, MagneticButton, SwipeToConfirm, FluidTabs, PerspectiveCard, InteractiveAccordion } from "../components";
-import { Sun, Moon, Home, Search, Settings, User, Bell, Rocket } from "lucide-react";
+import { ButtonCard, CardProfile, Activities, TreeTriangle, Tree, GiftBox, CatLoader, BorderImage, TextMasking, MagneticDock, InteractiveLens, MorphingSearch, ElasticSlider, GlassStack, MagneticButton, SwipeToConfirm, FluidTabs, PerspectiveCard, InteractiveAccordion, CommandPalette, BottomSheet, ImageCompare, BentoGrid, KineticMorphText, LiquidProgress, OrbitalMenu, SpotlightGrid } from "../components";
+import { Sun, Moon, Home, Search, Settings, User, Bell, Rocket, Zap, LayoutGrid, Sparkles, Droplet, Orbit, Eye } from "lucide-react";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function Playground() {
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
     darkMode = _useState2[0],
     setDarkMode = _useState2[1];
+  var _useState3 = useState(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    sheetOpen = _useState4[0],
+    setSheetOpen = _useState4[1];
+  var _useState5 = useState(64),
+    _useState6 = _slicedToArray(_useState5, 2),
+    liquidVal = _useState6[0],
+    setLiquidVal = _useState6[1];
   var toggleDarkMode = function toggleDarkMode() {
     return setDarkMode(!darkMode);
   };
@@ -56,7 +64,7 @@ export default function Playground() {
           children: description
         })]
       }), /*#__PURE__*/_jsx("div", {
-        className: "p-12 rounded-[2.5rem] border transition-all duration-700 ".concat(darkMode ? 'bg-gray-900/40 border-gray-800 hover:border-gray-700 shadow-2xl shadow-black/50' : 'bg-white border-gray-100 shadow-2xl shadow-gray-200/40 hover:shadow-gray-200/60'),
+        className: "p-12 rounded-[2.5rem] border transition-colors duration-300 ".concat(darkMode ? 'bg-gray-900/40 border-gray-800 hover:border-gray-700 shadow-2xl shadow-black/50' : 'bg-white border-gray-100 shadow-2xl shadow-gray-200/40 hover:shadow-gray-200/60'),
         children: children
       })]
     });
@@ -127,6 +135,78 @@ export default function Playground() {
     title: "Highly Customizable",
     content: "Every prop is exposed, giving you full control over behavior and visual style."
   }];
+  var paletteItems = [{
+    id: "dock",
+    label: "Open Magnetic Dock",
+    icon: /*#__PURE__*/_jsx(LayoutGrid, {
+      size: 16
+    }),
+    shortcut: "⌘D",
+    onSelect: function onSelect() {
+      return console.log("dock");
+    }
+  }, {
+    id: "palette",
+    label: "Toggle Theme",
+    icon: /*#__PURE__*/_jsx(Sparkles, {
+      size: 16
+    }),
+    shortcut: "⌘T",
+    onSelect: function onSelect() {
+      return setDarkMode(!darkMode);
+    }
+  }, {
+    id: "sheet",
+    label: "Open Bottom Sheet",
+    icon: /*#__PURE__*/_jsx(Zap, {
+      size: 16
+    }),
+    shortcut: "⌘B",
+    onSelect: function onSelect() {
+      return setSheetOpen(true);
+    }
+  }];
+  var bentoDemo = [{
+    id: "1",
+    title: "Revenue",
+    content: "$42,300",
+    colSpan: "col-span-2",
+    color: "from-violet-500 to-purple-600"
+  }, {
+    id: "2",
+    title: "Inbox",
+    content: "12 new",
+    colSpan: "",
+    rowSpan: "row-span-2",
+    color: "from-blue-500 to-cyan-500"
+  }, {
+    id: "3",
+    title: "Tasks",
+    content: "8 pending",
+    color: "from-emerald-500 to-teal-600"
+  }, {
+    id: "4",
+    title: "Users",
+    content: "1.2k",
+    color: "from-orange-500 to-pink-500"
+  }];
+  var spotlightItems = [{
+    id: "1",
+    title: "Realtime",
+    content: "Sync en 12ms con WebSocket"
+  }, {
+    id: "2",
+    title: "Secure",
+    content: "E2E encryption by default"
+  }, {
+    id: "3",
+    title: "Fast",
+    content: "Edge en 35 regiones"
+  }, {
+    id: "4",
+    title: "Scalable",
+    content: "Auto-scale a 1M rps"
+  }];
   return /*#__PURE__*/_jsxs("main", {
     className: "min-h-screen transition-colors duration-700 ".concat(darkMode ? 'bg-black text-white' : 'bg-[#FDFDFD] text-gray-900'),
     children: [/*#__PURE__*/_jsx("header", {
@@ -160,6 +240,110 @@ export default function Playground() {
     }), /*#__PURE__*/_jsxs("div", {
       className: "max-w-7xl mx-auto px-10 py-24",
       children: [/*#__PURE__*/_jsxs(Section, {
+        title: "Premium v2 \u2014 New",
+        children: [/*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "CommandPalette",
+          description: "\u2318K palette con fuzzy search y morph. Pulsa \u2318K.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx("div", {
+            className: "flex justify-center py-6",
+            children: /*#__PURE__*/_jsx(CommandPalette, {
+              items: paletteItems,
+              darkMode: darkMode
+            })
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "BottomSheet",
+          description: "Sheet gestual con drag el\xE1stico y snap.",
+          children: /*#__PURE__*/_jsxs("div", {
+            className: "flex flex-col items-center gap-4 py-6",
+            children: [/*#__PURE__*/_jsx("button", {
+              type: "button",
+              onClick: function onClick() {
+                return setSheetOpen(true);
+              },
+              className: "px-6 py-3 rounded-xl font-bold shadow-lg select-none touch-manipulation will-change-transform ".concat(darkMode ? 'bg-white text-black' : 'bg-black text-white'),
+              children: "Open Sheet"
+            }), /*#__PURE__*/_jsx(BottomSheet, {
+              open: sheetOpen,
+              onOpenChange: setSheetOpen,
+              title: "Bottom Sheet",
+              darkMode: darkMode,
+              children: /*#__PURE__*/_jsxs("div", {
+                className: "space-y-4",
+                children: [/*#__PURE__*/_jsx("p", {
+                  className: "text-sm ".concat(darkMode ? 'text-gray-300' : 'text-gray-600'),
+                  children: "Arrastra hacia abajo para cerrar. F\xEDsica spring real."
+                }), /*#__PURE__*/_jsxs("div", {
+                  className: "grid grid-cols-2 gap-3",
+                  children: [/*#__PURE__*/_jsx("div", {
+                    className: "h-24 rounded-xl ".concat(darkMode ? 'bg-gray-800' : 'bg-gray-100')
+                  }), /*#__PURE__*/_jsx("div", {
+                    className: "h-24 rounded-xl ".concat(darkMode ? 'bg-gray-800' : 'bg-gray-100')
+                  })]
+                })]
+              })
+            })]
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "ImageCompare",
+          description: "Before/After con divider draggable.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(ImageCompare, {
+            before: "https://picsum.photos/seed/before/800/500",
+            after: "https://picsum.photos/seed/after/800/500",
+            darkMode: darkMode
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "BentoGrid",
+          description: "Bento draggable con spring auto-layout.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(BentoGrid, {
+            items: bentoDemo,
+            darkMode: darkMode
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "KineticMorphText",
+          description: "Texto cin\xE9tico que morfea (blur/slide/scale).",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(KineticMorphText, {
+            texts: ["InteraUI", "Interactive", "Modern", "Delightful"],
+            interval: 2200,
+            darkMode: darkMode,
+            variant: "blur"
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "LiquidProgress",
+          description: "Progress l\xEDquido con onda y drag vertical.",
+          children: /*#__PURE__*/_jsx("div", {
+            className: "flex justify-center py-4",
+            children: /*#__PURE__*/_jsx(LiquidProgress, {
+              value: liquidVal,
+              onChange: setLiquidVal,
+              darkMode: darkMode,
+              label: "Upload"
+            })
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "OrbitalMenu",
+          description: "Men\xFA orbital circular con items magn\xE9ticos.",
+          children: /*#__PURE__*/_jsx("div", {
+            className: "flex justify-center py-6",
+            children: /*#__PURE__*/_jsx(OrbitalMenu, {
+              darkMode: darkMode,
+              radius: 80
+            })
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "SpotlightGrid",
+          description: "Grid con spotlight radial que sigue al mouse.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(SpotlightGrid, {
+            items: spotlightItems,
+            darkMode: darkMode
+          })
+        })]
+      }), /*#__PURE__*/_jsxs(Section, {
         title: "Next-Gen Interactions",
         children: [/*#__PURE__*/_jsx(ComponentWrapper, {
           name: "MagneticButton",
