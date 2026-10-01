@@ -28,7 +28,20 @@ import {
   KineticMorphText,
   LiquidProgress,
   OrbitalMenu,
-  SpotlightGrid
+  SpotlightGrid,
+  NebulaDrift,
+  StarfallField,
+  PulseGrid,
+  FluxBorder,
+  LoopCards,
+  BloomText,
+  TrailBeam,
+  SmartTable,
+  FlowWizard,
+  DropVault,
+  SlotPicker,
+  PriceForge,
+  FlowBoard
 } from "../components";
 import { Sun, Moon, Home, Search, Settings, User, Bell, Rocket, Zap, LayoutGrid, Sparkles, Droplet, Orbit, Eye } from "lucide-react";
 
@@ -152,6 +165,89 @@ export default function Playground() {
       </header>
 
       <div className="max-w-7xl mx-auto px-10 py-24">
+
+        {/* SECTION: Intera Signature — reinterpretaciones originales */}
+        <Section title="Intera Signature — New">
+          <ComponentWrapper name="NebulaDrift" description="Aurora viva que sigue al mouse. Nuestro take del género aurora." fullWidth>
+            <NebulaDrift darkMode={darkMode}>
+              <div className="py-20 px-8 text-center">
+                <p className={`text-[10px] font-bold uppercase tracking-[0.4em] mb-4 ${darkMode ? 'text-white/40' : 'text-black/40'}`}>Intera signature</p>
+                <h3 className="text-4xl sm:text-5xl font-black tracking-tighter">Mueve el cursor<br/>y la nebulosa respira</h3>
+              </div>
+            </NebulaDrift>
+          </ComponentWrapper>
+
+          <ComponentWrapper name="StarfallField" description="Lluvia de meteoros con burst al click. Haz click para explotar." fullWidth>
+            <StarfallField darkMode={darkMode} density={16}>
+              <div className="py-20 px-8 text-center">
+                <h3 className={`text-3xl sm:text-4xl font-black tracking-tighter ${darkMode ? 'text-white' : 'text-violet-950'}`}>Click = meteor burst ✦</h3>
+                <p className={`text-sm mt-2 font-medium ${darkMode ? 'text-white/50' : 'text-violet-950/55'}`}>Puro CSS + física propia, cero canvas pesado</p>
+              </div>
+            </StarfallField>
+          </ComponentWrapper>
+
+          <ComponentWrapper name="PulseGrid" description="Rejilla que se ilumina cerca del cursor + ripple al click." fullWidth>
+            <div className={`rounded-[2.5rem] ${darkMode ? '' : ''}`}>
+              <PulseGrid darkMode={darkMode} rows={8} cols={16}>
+                <div className="py-16 px-8 text-center pointer-events-none">
+                  <h3 className={`text-2xl font-black tracking-tighter ${darkMode ? 'text-white' : 'text-black'}`}>Hover + Click</h3>
+                </div>
+              </PulseGrid>
+            </div>
+          </ComponentWrapper>
+
+          <ComponentWrapper name="FluxBorder" description="Borde cónico animado que acelera al hover + sheen magnético.">
+            <div className="flex justify-center py-6">
+              <FluxBorder darkMode={darkMode} glow="violet">
+                <div className="px-10 py-8 text-center">
+                  <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${darkMode ? 'text-white/40' : 'text-black/40'}`}>Pro tip</p>
+                  <p className="text-xl font-black tracking-tight mt-1">Hover me — acelero ⚡</p>
+                </div>
+              </FluxBorder>
+            </div>
+          </ComponentWrapper>
+
+          <ComponentWrapper name="LoopCards" description="Cinta infinita con pause, dirección y velocidad. Hover = pausa." fullWidth>
+            <LoopCards darkMode={darkMode} />
+          </ComponentWrapper>
+
+          <ComponentWrapper name="BloomText" description="Cada palabra florece con blur. Click en una palabra = pop." fullWidth>
+            <BloomText darkMode={darkMode} />
+          </ComponentWrapper>
+
+          <ComponentWrapper name="TrailBeam" description="Haz scroll: el orbe viaja con tu progreso. Haz scroll en la página." fullWidth>
+            <TrailBeam darkMode={darkMode} />
+          </ComponentWrapper>
+        </Section>
+
+        {/* SECTION: Intera Useful — resuelven problemas reales */}
+        <Section title="Useful — Pro Tools">
+          <ComponentWrapper name="SmartTable" description="Escríbeme: busca, filtra por estado, ordena, selecciona y exporta CSV. El admin que todo SaaS necesita." fullWidth>
+            <SmartTable darkMode={darkMode} onSelectionChange={(ids) => console.log("selected:", ids)} />
+          </ComponentWrapper>
+
+          <ComponentWrapper name="FlowWizard" description="Completa el onboarding: valida cada paso, no te deja avanzar con errores. Checkout / signup real." fullWidth>
+            <div className="max-w-xl mx-auto w-full">
+              <FlowWizard darkMode={darkMode} onComplete={(data) => console.log("wizard done:", data)} />
+            </div>
+          </ComponentWrapper>
+
+          <ComponentWrapper name="DropVault" description="Arrastra archivos de verdad: valida tipo/peso, muestra progreso y preview. Uploader listo para prod." fullWidth>
+            <DropVault darkMode={darkMode} onFilesChange={(f) => console.log("files:", f.length)} />
+          </ComponentWrapper>
+
+          <ComponentWrapper name="SlotPicker" description="Reserva una cita: navega meses, elige día y hora, confirma. Booking sin librerías." fullWidth>
+            <SlotPicker darkMode={darkMode} onConfirm={(b) => console.log("booking:", b)} />
+          </ComponentWrapper>
+
+          <ComponentWrapper name="PriceForge" description="Mueve el slider de seats, cambia a anual, activa add-ons: el total se recalcula vivo. Pricing que vende." fullWidth>
+            <PriceForge darkMode={darkMode} onCheckout={(c) => console.log("checkout:", c)} />
+          </ComponentWrapper>
+
+          <ComponentWrapper name="FlowBoard" description="Crea tareas con Enter y arrástralas entre columnas. Kanban local sin backend." fullWidth>
+            <FlowBoard darkMode={darkMode} onChange={(t) => console.log("board:", t.length)} />
+          </ComponentWrapper>
+        </Section>
 
         {/* SECTION: Premium Interactive v2 — 8 nuevos */}
         <Section title="Premium v2 — New">

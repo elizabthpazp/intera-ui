@@ -30,3 +30,21 @@ export { default as KineticMorphText } from "./interactive/KineticMorphText";
 export { default as LiquidProgress } from "./interactive/LiquidProgress";
 export { default as OrbitalMenu } from "./interactive/OrbitalMenu";
 export { default as SpotlightGrid } from "./interactive/SpotlightGrid";
+
+// Intera Signature — reinterpretaciones originales con toque propio
+// (inspiradas en el género de aceternity, implementación 100% propia)
+export { default as NebulaDrift } from "./interactive/NebulaDrift";
+export { default as StarfallField } from "./interactive/StarfallField";
+export { default as PulseGrid } from "./interactive/PulseGrid";
+export { default as FluxBorder } from "./interactive/FluxBorder";
+export { default as LoopCards } from "./interactive/LoopCards";
+export { default as BloomText } from "./interactive/BloomText";
+export { default as TrailBeam } from "./interactive/TrailBeam";
+
+// Intera Useful — utilidades que resuelven problemas reales (cero hover decorativo)
+export { default as SmartTable } from "./interactive/SmartTable";
+export { default as FlowWizard } from "./interactive/FlowWizard";
+export { default as DropVault } from "./interactive/DropVault";
+export { default as SlotPicker } from "./interactive/SlotPicker";
+export { default as PriceForge } from "./interactive/PriceForge";
+export { default as FlowBoard } from "./interactive/FlowBoard";
