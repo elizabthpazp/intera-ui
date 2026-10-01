@@ -7,7 +7,7 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 import React, { useState } from "react";
-import { ButtonCard, CardProfile, Activities, TreeTriangle, Tree, GiftBox, CatLoader, BorderImage, TextMasking, MagneticDock, InteractiveLens, MorphingSearch, ElasticSlider, GlassStack, MagneticButton, SwipeToConfirm, FluidTabs, PerspectiveCard, InteractiveAccordion, CommandPalette, BottomSheet, ImageCompare, BentoGrid, KineticMorphText, LiquidProgress, OrbitalMenu, SpotlightGrid } from "../components";
+import { ButtonCard, CardProfile, Activities, TreeTriangle, Tree, GiftBox, CatLoader, BorderImage, TextMasking, MagneticDock, InteractiveLens, MorphingSearch, ElasticSlider, GlassStack, MagneticButton, SwipeToConfirm, FluidTabs, PerspectiveCard, InteractiveAccordion, CommandPalette, BottomSheet, ImageCompare, BentoGrid, KineticMorphText, LiquidProgress, OrbitalMenu, SpotlightGrid, NebulaDrift, StarfallField, PulseGrid, FluxBorder, LoopCards, BloomText, TrailBeam, SmartTable, FlowWizard, DropVault, SlotPicker, PriceForge, FlowBoard } from "../components";
 import { Sun, Moon, Home, Search, Settings, User, Bell, Rocket, Zap, LayoutGrid, Sparkles, Droplet, Orbit, Eye } from "lucide-react";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function Playground() {
@@ -240,6 +240,170 @@ export default function Playground() {
     }), /*#__PURE__*/_jsxs("div", {
       className: "max-w-7xl mx-auto px-10 py-24",
       children: [/*#__PURE__*/_jsxs(Section, {
+        title: "Intera Signature \u2014 New",
+        children: [/*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "NebulaDrift",
+          description: "Aurora viva que sigue al mouse. Nuestro take del g\xE9nero aurora.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(NebulaDrift, {
+            darkMode: darkMode,
+            children: /*#__PURE__*/_jsxs("div", {
+              className: "py-20 px-8 text-center",
+              children: [/*#__PURE__*/_jsx("p", {
+                className: "text-[10px] font-bold uppercase tracking-[0.4em] mb-4 ".concat(darkMode ? 'text-white/40' : 'text-black/40'),
+                children: "Intera signature"
+              }), /*#__PURE__*/_jsxs("h3", {
+                className: "text-4xl sm:text-5xl font-black tracking-tighter",
+                children: ["Mueve el cursor", /*#__PURE__*/_jsx("br", {}), "y la nebulosa respira"]
+              })]
+            })
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "StarfallField",
+          description: "Lluvia de meteoros con burst al click. Haz click para explotar.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(StarfallField, {
+            darkMode: darkMode,
+            density: 16,
+            children: /*#__PURE__*/_jsxs("div", {
+              className: "py-20 px-8 text-center",
+              children: [/*#__PURE__*/_jsx("h3", {
+                className: "text-3xl sm:text-4xl font-black tracking-tighter ".concat(darkMode ? 'text-white' : 'text-violet-950'),
+                children: "Click = meteor burst \u2726"
+              }), /*#__PURE__*/_jsx("p", {
+                className: "text-sm mt-2 font-medium ".concat(darkMode ? 'text-white/50' : 'text-violet-950/55'),
+                children: "Puro CSS + f\xEDsica propia, cero canvas pesado"
+              })]
+            })
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "PulseGrid",
+          description: "Rejilla que se ilumina cerca del cursor + ripple al click.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx("div", {
+            className: "rounded-[2.5rem] ".concat(darkMode ? '' : ''),
+            children: /*#__PURE__*/_jsx(PulseGrid, {
+              darkMode: darkMode,
+              rows: 8,
+              cols: 16,
+              children: /*#__PURE__*/_jsx("div", {
+                className: "py-16 px-8 text-center pointer-events-none",
+                children: /*#__PURE__*/_jsx("h3", {
+                  className: "text-2xl font-black tracking-tighter ".concat(darkMode ? 'text-white' : 'text-black'),
+                  children: "Hover + Click"
+                })
+              })
+            })
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "FluxBorder",
+          description: "Borde c\xF3nico animado que acelera al hover + sheen magn\xE9tico.",
+          children: /*#__PURE__*/_jsx("div", {
+            className: "flex justify-center py-6",
+            children: /*#__PURE__*/_jsx(FluxBorder, {
+              darkMode: darkMode,
+              glow: "violet",
+              children: /*#__PURE__*/_jsxs("div", {
+                className: "px-10 py-8 text-center",
+                children: [/*#__PURE__*/_jsx("p", {
+                  className: "text-[10px] font-bold uppercase tracking-[0.3em] ".concat(darkMode ? 'text-white/40' : 'text-black/40'),
+                  children: "Pro tip"
+                }), /*#__PURE__*/_jsx("p", {
+                  className: "text-xl font-black tracking-tight mt-1",
+                  children: "Hover me \u2014 acelero \u26A1"
+                })]
+              })
+            })
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "LoopCards",
+          description: "Cinta infinita con pause, direcci\xF3n y velocidad. Hover = pausa.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(LoopCards, {
+            darkMode: darkMode
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "BloomText",
+          description: "Cada palabra florece con blur. Click en una palabra = pop.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(BloomText, {
+            darkMode: darkMode
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "TrailBeam",
+          description: "Haz scroll: el orbe viaja con tu progreso. Haz scroll en la p\xE1gina.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(TrailBeam, {
+            darkMode: darkMode
+          })
+        })]
+      }), /*#__PURE__*/_jsxs(Section, {
+        title: "Useful \u2014 Pro Tools",
+        children: [/*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "SmartTable",
+          description: "Escr\xEDbeme: busca, filtra por estado, ordena, selecciona y exporta CSV. El admin que todo SaaS necesita.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(SmartTable, {
+            darkMode: darkMode,
+            onSelectionChange: function onSelectionChange(ids) {
+              return console.log("selected:", ids);
+            }
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "FlowWizard",
+          description: "Completa el onboarding: valida cada paso, no te deja avanzar con errores. Checkout / signup real.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx("div", {
+            className: "max-w-xl mx-auto w-full",
+            children: /*#__PURE__*/_jsx(FlowWizard, {
+              darkMode: darkMode,
+              onComplete: function onComplete(data) {
+                return console.log("wizard done:", data);
+              }
+            })
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "DropVault",
+          description: "Arrastra archivos de verdad: valida tipo/peso, muestra progreso y preview. Uploader listo para prod.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(DropVault, {
+            darkMode: darkMode,
+            onFilesChange: function onFilesChange(f) {
+              return console.log("files:", f.length);
+            }
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "SlotPicker",
+          description: "Reserva una cita: navega meses, elige d\xEDa y hora, confirma. Booking sin librer\xEDas.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(SlotPicker, {
+            darkMode: darkMode,
+            onConfirm: function onConfirm(b) {
+              return console.log("booking:", b);
+            }
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "PriceForge",
+          description: "Mueve el slider de seats, cambia a anual, activa add-ons: el total se recalcula vivo. Pricing que vende.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(PriceForge, {
+            darkMode: darkMode,
+            onCheckout: function onCheckout(c) {
+              return console.log("checkout:", c);
+            }
+          })
+        }), /*#__PURE__*/_jsx(ComponentWrapper, {
+          name: "FlowBoard",
+          description: "Crea tareas con Enter y arr\xE1stralas entre columnas. Kanban local sin backend.",
+          fullWidth: true,
+          children: /*#__PURE__*/_jsx(FlowBoard, {
+            darkMode: darkMode,
+            onChange: function onChange(t) {
+              return console.log("board:", t.length);
+            }
+          })
+        })]
+      }), /*#__PURE__*/_jsxs(Section, {
         title: "Premium v2 \u2014 New",
         children: [/*#__PURE__*/_jsx(ComponentWrapper, {
           name: "CommandPalette",
